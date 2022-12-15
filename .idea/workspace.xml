@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix Java version">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/css/main.073c9b0a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/css/main.073c9b0a.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/js/787.cda612ba.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/js/787.cda612ba.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/js/main.61db2afc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/js/main.61db2afc.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/js/main.61db2afc.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add Dockerfile">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/Owner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -131,7 +124,7 @@
       <updated>1671032396104</updated>
       <workItem from="1671032398604" duration="509000" />
       <workItem from="1671044152554" duration="5678000" />
-      <workItem from="1671114148068" duration="3349000" />
+      <workItem from="1671114148068" duration="5276000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -182,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671115035216</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add Dockerfile">
+      <created>1671117956213</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671117956213</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,7 +209,8 @@
     <MESSAGE value="Add dependency maven-compiler-plugin" />
     <MESSAGE value="Remove dependency maven-compiler-plugin" />
     <MESSAGE value="Fix Java version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Java version" />
+    <MESSAGE value="Add Dockerfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Dockerfile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
