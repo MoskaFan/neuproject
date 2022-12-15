@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add dependency maven-compiler-plugin">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Remove dependency maven-compiler-plugin">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,10 +45,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a",
     "ts.external.directory.path": "/Users/iuliiaatutova/IdeaProjects/neuproject/frontend/node_modules/typescript/lib"
   }
 }]]></component>
@@ -95,7 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1671032396104</updated>
       <workItem from="1671032398604" duration="509000" />
-      <workItem from="1671044152554" duration="5365000" />
+      <workItem from="1671044152554" duration="5678000" />
+      <workItem from="1671114148068" duration="75000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671112748082</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove dependency maven-compiler-plugin">
+      <created>1671113784780</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671113784780</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +151,7 @@
     <MESSAGE value="Init project" />
     <MESSAGE value="Setup sonar" />
     <MESSAGE value="Add dependency maven-compiler-plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add dependency maven-compiler-plugin" />
+    <MESSAGE value="Remove dependency maven-compiler-plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove dependency maven-compiler-plugin" />
   </component>
 </project>
