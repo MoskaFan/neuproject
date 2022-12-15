@@ -1,2 +1,4 @@
 /.idea/
 *.iml
+/build
+/backend/src/main/resources/static/
