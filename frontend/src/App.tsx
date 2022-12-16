@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import SignUp from "./SignUp";
+import useOwner from "./UseOwner";
+import NavigationBar from "./NavigationBar";
 
 function App() {
+    const {addOwner} = useOwner();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <BrowserRouter >
+          <div className={"App"}>
+              <NavigationBar />
+              <div><Routes>
+                  <Route path = {"/api/owners/signup"} element= {<SignUp  addOwner={addOwner}/>}/>
+              </Routes>
+              </div>
+
+          </div>
+
+
+      </BrowserRouter>
+
   );
 }
 

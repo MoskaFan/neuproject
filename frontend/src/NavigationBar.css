@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Raleway,sans-serif;
+
+}
+.nav-bar{
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+.nav-bar a{
+    color: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+    text-decoration: none;
+}
+.nav-bar ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.site-title{
+
+    font: italic 5em "Fira Sans", serif;
+    color: goldenrod;
+    font-weight: bold;
+    font-stretch: expanded;
+}
+.nav-bar li.active{
+    color: #555;
+}
+.nav-bar li:hover{
+    color: #777;
+}
