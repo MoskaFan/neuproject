@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix import">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,26 +89,11 @@
       <recent name="$PROJECT_DIR$/backend/src/test/ressources" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="de.neuefische.backend.service" />
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest.addOwner">
-    <configuration name="BackendApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.BackendApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.OwnerServiceTest">
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -138,6 +126,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OwnerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest.addOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="addOwner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -164,18 +183,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.OwnerServiceTest" />
+      <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
       <item itemvalue="JUnit.OwnerControllerTest" />
-      <item itemvalue="JUnit.BackendApplicationTests.contextLoads" />
       <item itemvalue="JUnit.OwnerControllerTest.addOwner" />
       <item itemvalue="npm.build" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerServiceTest" />
+        <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
         <item itemvalue="JUnit.OwnerControllerTest.addOwner" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="npm.build" />
-        <item itemvalue="JUnit.BackendApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +211,8 @@
       <workItem from="1671032398604" duration="509000" />
       <workItem from="1671044152554" duration="5678000" />
       <workItem from="1671114148068" duration="9625000" />
-      <workItem from="1671201131308" duration="6040000" />
+      <workItem from="1671201131308" duration="7379000" />
+      <workItem from="1671210622453" duration="2285000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -262,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671207308731</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fix import">
+      <created>1671207652565</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671207652565</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +321,8 @@
     <MESSAGE value="Add Dockerfile" />
     <MESSAGE value="Add modells owner, location, address" />
     <MESSAGE value="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
+    <MESSAGE value="Fix import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix import" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
