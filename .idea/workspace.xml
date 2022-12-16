@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add changes modell location">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/OwnerDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/repository/OwnerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/IDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/OwnerControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -203,7 +190,7 @@
       <workItem from="1671032398604" duration="509000" />
       <workItem from="1671044152554" duration="5678000" />
       <workItem from="1671114148068" duration="9625000" />
-      <workItem from="1671201131308" duration="5582000" />
+      <workItem from="1671201131308" duration="6040000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -268,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671119881118</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner">
+      <created>1671207308731</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671207308731</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +291,8 @@
     <MESSAGE value="Fix Java version" />
     <MESSAGE value="Add Dockerfile" />
     <MESSAGE value="Add modells owner, location, address" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add modells owner, location, address" />
+    <MESSAGE value="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
