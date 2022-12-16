@@ -1,3 +1,5 @@
+package de.neuefische.backend.modelle;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
