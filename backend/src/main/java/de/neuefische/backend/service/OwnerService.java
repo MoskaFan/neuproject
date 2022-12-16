@@ -2,7 +2,6 @@ package de.neuefische.backend.service;
 import de.neuefische.backend.repository.OwnerRepository;
 import de.neuefische.backend.modelle.Owner;
 import de.neuefische.backend.modelle.OwnerDTO;
-import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
