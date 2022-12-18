@@ -1,4 +1,4 @@
-package de.neuefische.backend;
+package de.neuefische.backend.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
