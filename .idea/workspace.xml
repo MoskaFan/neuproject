@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix test coverage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add jacoco dependency" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -223,7 +221,7 @@
       <workItem from="1671201131308" duration="7379000" />
       <workItem from="1671210622453" duration="12969000" />
       <workItem from="1671279929788" duration="2818000" />
-      <workItem from="1671364808514" duration="2683000" />
+      <workItem from="1671364808514" duration="3037000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -337,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671366232397</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Add jacoco dependency">
+      <created>1671367880460</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1671367880460</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +377,8 @@
     <MESSAGE value="Add hook addOwner, component sign up, first styles" />
     <MESSAGE value="Fix signup" />
     <MESSAGE value="Fix test coverage" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix test coverage" />
+    <MESSAGE value="Add jacoco dependency" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jacoco dependency" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
