@@ -10,11 +10,12 @@ import axios from 'axios';
 function App() {
 
 
-    function addOwner(newOwner: LoginData){
-        axios.post("/api/owners/signup/", newOwner)
 
+    function addOwner(owner: LoginData){
+        axios.post("/api/owners/signup/", owner)
             .catch(console.error)
     }
+
   return (
 
       <BrowserRouter >
