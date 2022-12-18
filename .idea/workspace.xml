@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add jacoco plugin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix jacoco plugin">
       <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -224,7 +223,7 @@
       <workItem from="1671201131308" duration="7379000" />
       <workItem from="1671210622453" duration="12969000" />
       <workItem from="1671279929788" duration="2818000" />
-      <workItem from="1671364808514" duration="3684000" />
+      <workItem from="1671364808514" duration="4038000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -352,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671368238687</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Fix jacoco plugin">
+      <created>1671368592647</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1671368592647</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +395,8 @@
     <MESSAGE value="Fix test coverage" />
     <MESSAGE value="Add jacoco dependency" />
     <MESSAGE value="Add jacoco plugin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add jacoco plugin" />
+    <MESSAGE value="Fix jacoco plugin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix jacoco plugin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
