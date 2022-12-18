@@ -2,23 +2,35 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./SignUp";
-import useOwner from "./UseOwner";
 import NavigationBar from "./NavigationBar";
+import {LoginData} from "./modell/LoginData";
+import axios from 'axios';
+
 
 function App() {
-    const {addOwner} = useOwner();
+
+
+    function addOwner(newOwner: LoginData){
+        axios.post("/api/owners/signup/", newOwner)
+
+            .catch(console.error)
+    }
   return (
 
       <BrowserRouter >
-          <div className={"App"}>
-              <NavigationBar />
-              <div><Routes>
-                  <Route path = {"/api/owners/signup"} element= {<SignUp  addOwner={addOwner}/>}/>
-              </Routes>
-              </div>
+              <header className={"App"}>
+                  <NavigationBar />
+              </header>
+                  <div>
+                      <Routes>
+                      <Route path = {"/api/owners/signup"} element= {<SignUp  addOwner={addOwner}/>}/>
+                      </Routes>
+                  </div>
 
-          </div>
 
+              <footer>
+
+              </footer>
 
       </BrowserRouter>
 

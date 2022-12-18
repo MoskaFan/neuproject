@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import {ChangeEvent, FormEvent, useState} from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { LoginData } from './modell/LoginData';
 import {Avatar, Box, Button, Container, TextField, Typography} from "@mui/material";
 
@@ -29,7 +28,7 @@ export default function SignUp(props: SignUpProps) {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        if(inputValue.name === "" || inputValue.password === ""){
+        if(inputValue.email === "" || inputValue.password === ""){
             setError(true);
         }else
         {
@@ -104,7 +103,7 @@ export default function SignUp(props: SignUpProps) {
                 required
                 fullWidth
                 id="name"
-                label="Name"
+                label="Name: "
                 autoFocus
                 value={inputValue.name}
                 onChange ={handleOnChange}
@@ -114,7 +113,7 @@ export default function SignUp(props: SignUpProps) {
                 required
                 fullWidth
                 id="email"
-                label="Email"
+                label="Email: "
                 name="email"
                 autoComplete="email"
                 value={inputValue.email}
@@ -125,7 +124,7 @@ export default function SignUp(props: SignUpProps) {
                 required
                 fullWidth
                 id="password"
-                label="Password"
+                label="Password: "
                 name="password"
                 autoComplete="password"
                 value={inputValue.password}
