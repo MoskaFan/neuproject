@@ -10,10 +10,10 @@ export default function NavigationBar() {
 
     return (
         <nav className={"nav-bar"}>
-            <NavLink to={"/api/"} className={"site-title"}>Perfect Location</NavLink>
+            <NavLink to={"/"} className={"site-title"}>Perfect Location</NavLink>
             <ul >
                 <li >
-                    <NavLink to={"/api/owners/signup"}>Sign Up</NavLink>
+                    <NavLink to={"owners/register/"}>Sign Up</NavLink>
                 </li>
                 <li className={"app-body"}>
 

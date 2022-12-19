@@ -1,9 +1,9 @@
 
 export type LoginData={
-    id?:string,
-    name:string,
-    email: string,
-    password:string,
+    id?:"",
+    name:"",
+    email: "",
+    password:"",
     locationIds: string[]
 
 }

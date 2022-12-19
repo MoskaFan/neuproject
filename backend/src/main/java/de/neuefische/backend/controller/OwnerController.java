@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping ("api/owners")
+@RequestMapping ("/api/auth")
 public class OwnerController {
     private final OwnerService ownerService;
 
     public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
-    @PostMapping("/signup")
+    @PostMapping("register")
     public Owner addOwner(@RequestBody OwnerDTO ownerDTO){
         return ownerService.addOwner(ownerDTO);
     }

@@ -1,13 +1,12 @@
-import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import { LoginData } from './modell/LoginData';
-import {Avatar, Box, Button, Container, TextField, Typography} from "@mui/material";
+import axios from 'axios';
+import './SignUp.css'
 
 
-type SignUpProps = {
-    addOwner(newOwner: LoginData): void;
-}
 
-export default function SignUp(props: SignUpProps) {
+
+export default function SignUp() {
 
     const emptyInput: LoginData = {
         "name": "",
@@ -17,142 +16,85 @@ export default function SignUp(props: SignUpProps) {
     }
 
 
-    const[submitted, setSubmitted] = useState<boolean>(false);
-    const[error, setError] = useState<boolean>(false);
+    const [profile, setProfile] = useState(emptyInput);
+    const [passwordShown, setPasswordShown] = useState(false);
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
-    const [inputValue, setInputValue] = useState(emptyInput)
-
-    useEffect(()=>{
-
-    }, [inputValue])
-
-    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault()
-        if(inputValue.email === "" || inputValue.password === ""){
-            setError(true);
-        }else
-        {
-            setSubmitted(true);
-            setError(false);
-            props.addOwner(inputValue)
-            setInputValue(emptyInput)
-        }
-
-    }
-
-    function handleOnChange(event: ChangeEvent<HTMLInputElement>){
-        const fieldName = event.target.name
-        const fieldValue = event.target.value
-
-        setInputValue(prevState => ({
-            ...prevState, [fieldName]: fieldValue
-        }))
-    }
-
-
-
-
-    const successMessage = () => {
-        return (
-            <div
-                className="success"
-                style={{
-                    display: submitted ? '' : 'none',
-                }}>
-                <h1>User {inputValue.name} successfully registered!!</h1>
-            </div>
-        );
+    const togglePasswordVisiblity = () => {
+        setPasswordShown(!passwordShown);
     };
-    const errorMessage = () => {
-        return (
-            <div
-                className="error"
-                style={{
-                    display: error ? '' : 'none',
-                }}>
-                <h1>Please enter all the fields</h1>
-            </div>
-        );
+
+    function refreshPage() {
+        window.location.reload();
+    }
+
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
+        const {name, value} = e.target;
+        setProfile((prev) => ({...prev, [name]: value}));
+    }
+
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+
+            let response = await axios.post("/api/auth/register", JSON.stringify({
+                "email": profile.email,
+                "name": profile.name,
+                "password": profile.password,
+                "locationIds": profile.locationIds
+            }));
+            setSuccessMessage(response.data.message);
+            setErrorMessage('');
+            setProfile(emptyInput);
+            console.log(response.data.message);
+        } catch (err: any) {
+            let error = err.response.data;
+
+            setErrorMessage(err.response.data);
+            setSuccessMessage('');
+            console.log(error);
+        }
     };
 
     return (
-    <div>
-    <Container component="main" maxWidth="xs">
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className="form-header">
+                    <h1>Sign up</h1>
+                </div>
 
-    <Box
-        sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-        }}
-    >
-        <Avatar src="/broken-image.jpg" />
-        <Typography component="h1" variant="h5">
-            Sign up
-        </Typography>
-        <div className="messages">
-            {errorMessage()}
-            {successMessage()}
-        </div>
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+                <div className="form">
+                    <label htmlFor="name">Fullname: </label>
+                    <input type="text" name="name" value={profile.name} onChange={handleChange} />
 
-            <TextField
-                autoComplete="given-name"
-                name="name"
-                required
-                fullWidth
-                id="name"
-                label="Name: "
-                autoFocus
-                value={inputValue.name}
-                onChange ={handleOnChange}
-            />
+                    <label htmlFor="email">Email: </label>
+                    <input type="email" name="email" value={profile.email} onChange={handleChange} />
 
-            <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email: "
-                name="email"
-                autoComplete="email"
-                value={inputValue.email}
-                onChange ={handleOnChange}
-            />
-
-            <TextField
-                required
-                fullWidth
-                id="password"
-                label="Password: "
-                name="password"
-                autoComplete="password"
-                value={inputValue.password}
-                onChange ={handleOnChange}
-            />
-
-            <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-
-            >
-                Sign Up
-            </Button>
-
-        </Box>
-    </Box>
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Typography component="h1" variant="h5">
-            Iuliia Atutova
-        </Typography>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-    </Typography>
-</Container>
-</div>
-
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type={passwordShown ? 'text' : 'password'}
+                        name="password"
+                        value={profile.password}
+                        onChange={handleChange}
+                    />
+                    <i className="eye" onClick={togglePasswordVisiblity}>
+                    </i>
+                    <button type="submit" className = {"btn"}>Sign Up</button>
+                    {errorMessage.length > 0 ? (
+                        <div className="error-msg"> {errorMessage} </div>
+                    ) : null}
+                    {successMessage.length > 0 ? (
+                        <div className="success-msg">
+                            {successMessage}{' '}
+                            <button onClick={refreshPage} className="refresh">
+                                Refresh form
+                            </button>
+                        </div>
+                    ) : null}
+                </div>
+            </form>
+        </>
     );
 }
