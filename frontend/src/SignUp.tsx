@@ -39,12 +39,12 @@ export default function SignUp() {
         e.preventDefault();
         try {
 
-            let response = await axios.post("/api/auth/register", JSON.stringify({
+            let response = await axios.post("http://localhost:8080/api/auth/register",{
                 "email": profile.email,
                 "name": profile.name,
                 "password": profile.password,
                 "locationIds": profile.locationIds
-            }));
+            });
             setSuccessMessage(response.data.message);
             setErrorMessage('');
             setProfile(emptyInput);
