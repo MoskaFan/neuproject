@@ -3,34 +3,35 @@ import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./SignUp";
 import NavigationBar from "./NavigationBar";
-import {LoginData} from "./modell/LoginData";
-import axios from 'axios';
+import {Typography} from "@mui/material";
 
 
 function App() {
 
 
 
-    function addOwner(owner: LoginData){
-        axios.post("/api/owners/signup/", owner)
-            .catch(console.error)
-    }
-
   return (
 
       <BrowserRouter >
-              <header className={"App"}>
+              <header className={"header"}>
                   <NavigationBar />
               </header>
                   <div>
                       <Routes>
-                      <Route path = {"/api/owners/signup"} element= {<SignUp  addOwner={addOwner}/>}/>
+                      <Route path = {"owners/register/"} element= {<SignUp/>}/>
                       </Routes>
                   </div>
 
 
-              <footer>
-
+              <footer className={"footer"}>
+                  <Typography variant="body2" color="text.secondary" align="center">
+                      {'Copyright © '}
+                      <Typography component="h1" variant="h5">
+                          Iuliia Atutova
+                      </Typography>{' '}
+                      {new Date().getFullYear()}
+                      {'.'}
+                  </Typography>
               </footer>
 
       </BrowserRouter>

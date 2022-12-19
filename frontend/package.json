@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.11.0",
     "@mui/styled-engine": "^5.11.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -21,6 +22,7 @@
     "mui": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-router-dom": "^6.5.0",
     "react-scripts": "^5.0.1",
     "styled-components": "^5.3.6",
@@ -50,5 +52,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
