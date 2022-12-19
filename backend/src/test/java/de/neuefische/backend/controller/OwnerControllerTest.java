@@ -34,7 +34,7 @@ class OwnerControllerTest {
     void addOwner() throws Exception {
         Owner owner = new Owner("155", "name", "test@test.com", "12345", new ArrayList<>());
         ownerRepository.save(owner);
-        mockMvc.perform(post("/api/owners/signup")
+        mockMvc.perform(post("/api/auth/register")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {"name": "name",
