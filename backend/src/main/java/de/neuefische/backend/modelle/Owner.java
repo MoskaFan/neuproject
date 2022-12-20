@@ -16,7 +16,7 @@ import java.util.List;
 public class Owner {
     @Id
     private String id;
-    private String name;
+    private String username;
     private String email;
     private String password;
     private List<String> locationIds;
