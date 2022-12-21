@@ -1,7 +1,7 @@
 
 export type LoginData={
     id?:"",
-    name:"",
+    username:"",
     email: "",
     password:"",
     locationIds: string[]

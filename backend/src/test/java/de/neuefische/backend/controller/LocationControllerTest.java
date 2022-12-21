@@ -58,7 +58,7 @@ class LocationControllerTest {
                                 "image": "image",
                                 "description": "description",
                                 "website": "website",
-                                "price": "124",
+                                "pricePerPerson": 124,
                                 "size": 20.00,
                                 "eventType":"Hochzeit",
                                 "maxCapacity": 50,
@@ -81,17 +81,17 @@ class LocationControllerTest {
                                 "image": "image",
                                 "description": "description",
                                 "website": "website",
-                                "price": "124",
+                                "pricePerPerson": 124,
                                 "size": 20.00,
                                 "eventType":"Hochzeit",
                                 "maxCapacity": 50,
                                 "address": {
-                                "adressId": "134",
+
                                 "country": "Deutschland",
                                 "city": "Hamburg",
                                 "zipCode": "00000",
                                 "street": "Test Street",
-                                "houseNumber": "12"                              
+                                "houseNumber": "12"
                                 },
                                 "startDate" : "2022-12-20",
                                 "endDate" : "2022-12-28"

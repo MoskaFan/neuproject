@@ -13,10 +13,13 @@ export default function NavigationBar() {
             <NavLink to={"/"} className={"site-title"}>Perfect Location</NavLink>
             <ul >
                 <li >
-                    <NavLink to={"owners/register/"}>Sign Up</NavLink>
+                    <NavLink to={"/api/owners/register/"}>Sign Up</NavLink>
                 </li>
-                <li className={"app-body"}>
-
+                <li >
+                    <NavLink to={"api/owners/login"}>Login</NavLink>
+                </li>
+                <li>
+                    <NavLink to={"/api/locations/newlocation"}>Location anlegen</NavLink>
                 </li>
 
 

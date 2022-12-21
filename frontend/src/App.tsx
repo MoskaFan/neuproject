@@ -4,11 +4,13 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./SignUp";
 import NavigationBar from "./NavigationBar";
 import {Typography} from "@mui/material";
+import LoginPage from './LoginPage';
+import OwnerUse from './OwnerUse';
 
 
 function App() {
 
-
+    const {login, addOwner} = OwnerUse()
 
   return (
 
@@ -18,7 +20,8 @@ function App() {
               </header>
                   <div>
                       <Routes>
-                      <Route path = {"owners/register/"} element= {<SignUp/>}/>
+                          <Route path = {"api/owners/register/"} element= {<SignUp addOwner={addOwner}/>}/>
+                          <Route path={"api/owners/login"} element={<LoginPage login={login}/>} />
                       </Routes>
                   </div>
 
