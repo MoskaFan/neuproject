@@ -4,6 +4,7 @@ import de.neuefische.backend.modelle.Owner;
 import de.neuefische.backend.modelle.OwnerDTO;
 import de.neuefische.backend.repository.OwnerRepository;
 import org.junit.jupiter.api.Test;
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.test.annotation.DirtiesContext;
 
 
@@ -24,10 +25,11 @@ class OwnerServiceTest {
     void addOwner() {
     OwnerDTO owner = new OwnerDTO( "name", "test@test.com", "12345", new ArrayList<>());
     String id = idGenerator.generateID();
-    Owner newOwner = new Owner(id, owner.name(), owner.email(),
-            owner.password(),owner.locationIds());
+    String password = new Argon2PasswordEncoder().encode(owner.password());
+    Owner newOwner = new Owner(id, owner.username(), owner.email(),
+            password,owner.locationIds());
     when(ownerRepository.save(newOwner)).thenReturn(newOwner);
     Owner result = ownerService.addOwner(owner);
-    assertEquals(result.getName(), owner.name());
+    assertEquals(result.getUsername(), owner.username());
     }
 }

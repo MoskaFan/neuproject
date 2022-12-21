@@ -14,6 +14,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 
+import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
@@ -42,26 +43,30 @@ class OwnerControllerTest {
     @Test
     @DirtiesContext
     void addOwner() throws Exception {
+
         Owner owner = new Owner("155", "StandardUser", "test@test.com",
-                "12345", new ArrayList<>());
+                "password", new ArrayList<>());
+
+
         ownerRepository.save(owner);
         mockMvc.perform(post("/api/owners/register")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {"name": "StandardUser",
+                                {"username": "StandardUser",
                                 "email":  "test@test.com",
-                                "password":  "12345",
+                                "password": "password",
                                 "locationIds": []
                                 }
                                 """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
-                               {"name": "StandardUser",
-                                "email":  "test@test.com",
-                                "password":  "12345",
-                                "locationIds": []
-                                }
-                                                """));
+                         {
+                         "username": "StandardUser",
+                          "email":  "test@test.com",
+                          "locationIds": []
+                        }
+                         """));
+
 
     }
     @Test
@@ -69,28 +74,19 @@ class OwnerControllerTest {
     @WithMockUser(username="StandardUser")
 
     void login() throws Exception {
-        MvcResult response = mockMvc.perform(post("api/owners/login")
+        mockMvc.perform(post("/api/owners/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(
                                 """
                                         {
-                                             "name": "StandardUser",
-   
-                                        "email": "test@test.com",
-                                        "password": "12345"
+                                             "username": "StandardUser"
+
                                         }
                                                 """
                         )
                         .with(csrf())
                 )
-                .andExpect(status().isOk())
-                .andReturn();
+                .andExpect(status().isOk());
 
-        String content = response.getResponse().getContentAsString();
-        Owner result = objectMapper.readValue(content, Owner.class);
-        Owner expected = new Owner(result.getId(), result.getUsername(),
-                result.getEmail(), result.getPassword(), result.getLocationIds());
-
-        assertEquals(result, expected);
     }
 }
