@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix signup">
-      <change afterPath="$PROJECT_DIR$/frontend/src/LoginPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/OwnerUse.tsx" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix tests">
+      <change afterPath="$PROJECT_DIR$/frontend/src/AddLocation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/LocationUse.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modell/Address.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modell/Date.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/modell/LocationData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/SignUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modell/LoginData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/modell/LoginData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +109,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationControllerTest.addLocation">
+  <component name="RunManager" selected="npm.start">
     <configuration name="LocationControllerTest.addLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -217,11 +209,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="JUnit.LocationControllerTest.addLocation" />
         <item itemvalue="JUnit.OwnerControllerTest.login" />
         <item itemvalue="JUnit.OwnerControllerTest.addOwner" />
         <item itemvalue="JUnit.OwnerControllerTest" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +234,7 @@
       <workItem from="1671364808514" duration="21418000" />
       <workItem from="1671528885367" duration="8672000" />
       <workItem from="1671547752596" duration="13240000" />
-      <workItem from="1671564181702" duration="16714000" />
+      <workItem from="1671564181702" duration="21128000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -419,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671567304309</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Fix tests">
+      <created>1671622375859</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1671622375859</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -461,7 +460,8 @@
     <MESSAGE value="Change endpoints" />
     <MESSAGE value="Add security, add login, addlocation" />
     <MESSAGE value="Fix signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix signup" />
+    <MESSAGE value="Fix tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix tests" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
