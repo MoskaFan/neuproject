@@ -6,22 +6,27 @@ import NavigationBar from "./NavigationBar";
 import {Typography} from "@mui/material";
 import LoginPage from './LoginPage';
 import OwnerUse from './OwnerUse';
+import AddLocation from './AddLocation';
+
+import LocationUse from './LocationUse';
 
 
 function App() {
 
     const {login, addOwner} = OwnerUse()
+    const {addLocation} = LocationUse()
 
-  return (
+    return (
 
-      <BrowserRouter >
-              <header className={"header"}>
-                  <NavigationBar />
-              </header>
-                  <div>
-                      <Routes>
-                          <Route path = {"api/owners/register/"} element= {<SignUp addOwner={addOwner}/>}/>
-                          <Route path={"api/owners/login"} element={<LoginPage login={login}/>} />
+        <BrowserRouter>
+            <header className={"header"}>
+                <NavigationBar/>
+            </header>
+            <div>
+                <Routes>
+                    <Route path={"api/owners/register/"} element={<SignUp addOwner={addOwner}/>}/>
+                    <Route path={"api/owners/login"} element={<LoginPage login={login}/>}/>
+                    <Route path={"api/locations/newlocation"} element={<AddLocation addLocation={addLocation}/>} />
                       </Routes>
                   </div>
 
