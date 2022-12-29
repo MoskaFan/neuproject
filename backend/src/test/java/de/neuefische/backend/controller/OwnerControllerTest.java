@@ -44,7 +44,7 @@ class OwnerControllerTest {
     @WithMockUser(username = "StandardUser")
     @Test
     @DirtiesContext
-    void addOwner() throws Exception {
+    void when_positiv_then_new_owner_is_created() throws Exception {
 
 
         mockMvc.perform(post("/api/owners").contentType(MediaType.APPLICATION_JSON).content("""
@@ -67,7 +67,7 @@ class OwnerControllerTest {
     @Test
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
-    void login() throws Exception {
+    void when_positiv_then_user_is_logged_in() throws Exception {
         mockMvc.perform(post("/api/owners/login").contentType(MediaType.APPLICATION_JSON).content("""
                 {
                      "username": "StandardUser"
@@ -80,7 +80,7 @@ class OwnerControllerTest {
     @Test
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
-    void getOwnerById() throws Exception {
+    void when_positiv_then_user_is_found_by_id() throws Exception {
         OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com", "password", new ArrayList<>());
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(), ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
@@ -98,7 +98,7 @@ class OwnerControllerTest {
     @Test
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
-    void updateOwner() throws Exception {
+    void when_positiv_then_the_consisting_owner_is_updated() throws Exception {
         OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com", "password", new ArrayList<>());
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(), ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
@@ -120,7 +120,7 @@ class OwnerControllerTest {
     @WithMockUser(username="username")
     @Test
     @DirtiesContext
-    void helloMe() throws Exception {
+    void when_positiv_then_the_username_of_owner_is_determined() throws Exception {
         mockMvc.perform(get("/api/owners/login/me"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("username"));
