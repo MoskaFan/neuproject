@@ -10,7 +10,7 @@ import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 @Service
@@ -34,15 +34,13 @@ public class OwnerService implements UserDetailsService {
         return ownerRepository.save(newOwner);
     }
 
-    public Owner getOwnerById(String ownerId){
-        return ownerRepository.findById(ownerId).orElseThrow(() -> new NoSuchElementException());
+    public Optional<Owner> getOwnerById(String ownerId) {
+
+            return ownerRepository.findById(ownerId);
+
     }
-    public Owner findOwnerByUsername(String username){
-        return ownerRepository.findByUsername(username).orElseThrow(()-> new NoSuchElementException());
-    }
-    private List<Owner> listOwners() {
-        return ownerRepository.findAll();
-    }
+
+
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
@@ -55,17 +53,12 @@ public class OwnerService implements UserDetailsService {
     }
 
     public Owner updateOwner(String ownerId, Owner owner) {
-        checkIfOwnerExists(ownerId);
+        if(getOwnerById(ownerId).isPresent()){
+            return ownerRepository.insert(owner);
+        }
         return ownerRepository.save(owner);
     }
-    public Owner checkIfOwnerExists(String id) throws UsernameNotFoundException{
-        for(Owner owner : listOwners()){
-            if(owner.getId().equals(id)){
-                return owner;
-            }
-        }
-        throw new UsernameNotFoundException("User is  not found: "+ id);
-    }
+
 }
 
 

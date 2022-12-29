@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.security.Principal;
+import java.util.Optional;
 
 
 @RestController
@@ -27,7 +28,7 @@ public class OwnerController {
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
     @GetMapping("/{ownerId}")
-    public Owner getOwnerById(@PathVariable String ownerId){
+    public Optional<Owner> getOwnerById(@PathVariable String ownerId){
         return ownerService.getOwnerById(ownerId);
     }
     @PutMapping("/{ownerId}")

@@ -5,35 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add LocationCard, Location Gallery">
-      <change afterPath="$PROJECT_DIR$/frontend/src/LocationCard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/LocationCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/LocationGallery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/LocationGallery.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/entity/OwnerData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/OwnerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/OwnerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/AddLocation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/LocationUse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/LocationUse.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/OwnerUse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UserOwner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/SignUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modell/Address.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/Address.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modell/Date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/Date.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modell/LocationData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/LocationData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/modell/LoginData.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +237,7 @@
       <workItem from="1671528885367" duration="8672000" />
       <workItem from="1671547752596" duration="13240000" />
       <workItem from="1671564181702" duration="37316000" />
-      <workItem from="1672067668922" duration="34492000" />
+      <workItem from="1672067668922" duration="37496000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -461,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671632003616</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Add LocationCard, Location Gallery">
+      <created>1672334559212</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1672334559215</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
