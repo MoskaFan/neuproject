@@ -53,12 +53,19 @@ public class OwnerService implements UserDetailsService {
     }
 
     public Owner updateOwner(String ownerId, Owner owner) {
-        if(getOwnerById(ownerId).isPresent()){
-            return ownerRepository.insert(owner);
-        }
+        checkIfOwnerExists(ownerId);
         return ownerRepository.save(owner);
     }
 
+    private void checkIfOwnerExists(String id) throws NoSuchOwnerException {
+        for (Owner owner:
+                ownerRepository.findAll()) {
+            if (owner.getId().equals(id)) {
+                return;
+            }
+        }
+        throw new NoSuchOwnerException("User with id"+ id+" not found ");
+    }
 }
 
 

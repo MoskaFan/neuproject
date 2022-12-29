@@ -39,7 +39,7 @@ class LocationControllerTest {
     @WithMockUser(username = "StandardUser")
     @Test
     @DirtiesContext
-    void addLocation() throws Exception {
+    void when_positiv_then_new_location_is_created() throws Exception {
         mockMvc.perform(post("/api/locations/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
