@@ -10,7 +10,8 @@ export default function UserOwner() {
     useEffect(()=> {
         axios.get("/api/owners/login/me")
             .then(response => response.data)
-            .then(setUserName)
+            .then(data => setUserName(data))
+
     }, [])
 
 
@@ -23,10 +24,7 @@ export default function UserOwner() {
             }
         })
             .then(response => response.data)
-            .then(data => {
-                setUserName(data)
-
-            })
+            .then(data => setUserName(data))
     }
 
 

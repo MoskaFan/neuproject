@@ -22,59 +22,35 @@ export default function SignUp(props: SignUpProps) {
 
     const [profile, setProfile] = useState(emptyInput);
     const [passwordShown, setPasswordShown] = useState(false);
-    const[submitted, setSubmitted] = useState<boolean>(false);
-    const[error, setError] = useState<boolean>(false);
 
 
 
-    const togglePasswordVisiblity = () => {
+    function togglePasswordVisiblity(){
         setPasswordShown(!passwordShown);
-    };
+    }
 
 
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    function handleChange(e: ChangeEvent<HTMLInputElement>)  {
         e.preventDefault();
         const {name, value} = e.target;
         setProfile((prev) => ({...prev, [name]: value}));
     }
 
-    const handleSubmit = (event: FormEvent) => {
+    function handleSubmit (event: FormEvent) {
         event.preventDefault()
         if(profile.username === "" || profile.password === ""){
-            setError(true);
+
         }else
         {
-            setSubmitted(true);
-            setError(false);
+
             props.addOwner(profile)
             setProfile(emptyInput)
         }
 
 
     }
-    const successMessage = () => {
-        return (
-            <div
-                className="success"
-                style={{
-                    display: submitted ? '' : 'none',
-                }}>
-                <h1>User {profile.username} successfully registered!!</h1>
-            </div>
-        );
-    };
-    const errorMessage = () => {
-        return (
-            <div
-                className="error"
-                style={{
-                    display: error ? '' : 'none',
-                }}>
-                <h1>Please enter all the fields</h1>
-            </div>
-        );
-    };
+
 
     return (
         <>
@@ -101,11 +77,6 @@ export default function SignUp(props: SignUpProps) {
                     <input type="text" name="email" value={profile.email} onChange={handleChange} />
                     <Button type="submit" className = {"btn"}>Sign Up</Button>
 
-
-                    <div className="messages">
-                        {errorMessage()}
-                        {successMessage()}
-                    </div>
                     </div>
             </form>
         </>
