@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 @Document("owners")
 @Data
@@ -19,6 +20,6 @@ public class Owner {
     private String username;
     private String email;
     private String password;
-    private List<String> locationIds;
+    private List<String> locations = new ArrayList<>();
 
 }

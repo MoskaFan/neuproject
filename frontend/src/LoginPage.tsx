@@ -2,8 +2,9 @@ import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
+import './SignUp.css'
 type LoginPageProps = {
-    login: (username: string, password: string) => Promise<string>
+    login: (username: string, password: string) => Promise<void>
 }
 
 export default function LoginPage(props: LoginPageProps) {
@@ -26,6 +27,7 @@ export default function LoginPage(props: LoginPageProps) {
         event.preventDefault()
         props.login(username, password)
             .then(() => {
+
                 navigate("/api/locations/newlocation")
             })
 
@@ -33,15 +35,21 @@ export default function LoginPage(props: LoginPageProps) {
 
 
     return (
-        <div className={"LoginPage"}>
-            <form onSubmit={onSubmit} className={"LoginForm"}>
+
+            <form onSubmit={onSubmit} >
+                <div className="form-header">
+                    <h1>Login</h1>
+                </div>
+                <div className="form">
                 <label>Fullname: </label>
                 <input type={"text"} value={username} onChange={onUsernameChange} className={"Textfield"}/><br/>
                 <label>Password: </label>
                 <input type={"password"} value={password} onChange={onPasswordChange} className={"Textfield"}/><br/>
-                <Button type={"submit"} className={"LoginButton"}>Login</Button>
+
+                <Button type={"submit"} className = {"btn"}>Login</Button>
+                </div>
             </form>
-        </div>
+
     )
 
 }

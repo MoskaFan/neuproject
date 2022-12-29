@@ -1,19 +1,19 @@
 package de.neuefische.backend.modelle;
 
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
+
 
 public record LocationDTO(
          String name,
          String image,
          String description,
          String website,
-         BigDecimal pricePerPerson,
-         double size,
+         String pricePerPerson,
+         String size,
          String eventType,
-         int maxCapacity,
+         String maxCapacity,
          Address address,
-         LocalDate startDate,
-         LocalDate endDate) {
+         String startDate,
+         String endDate) {
+
 }

@@ -1,8 +1,7 @@
 package de.neuefische.backend.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.neuefische.backend.modelle.Address;
-import de.neuefische.backend.modelle.Location;
+
 
 import de.neuefische.backend.repository.LocationRepository;
 
@@ -17,8 +16,6 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -28,7 +25,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 @ActiveProfiles("StandardUser")
-
 class LocationControllerTest {
     @Autowired
     MockMvc mockMvc;
@@ -38,65 +34,58 @@ class LocationControllerTest {
     LocationRepository locationRepository;
     @Autowired
     ObjectMapper objectMapper;
-    @WithMockUser(username="StandardUser")
+
+
+    @WithMockUser(username = "StandardUser")
     @Test
     @DirtiesContext
     void addLocation() throws Exception {
-        Location newLocation = new Location("123","name", "image","description",
-                "website", new BigDecimal("124"), 20.00,
-                "Hochzeit", 50, new Address("134", "Deutschland",
-                "Hamburg", "00000",
-                "Test Street", "12"),
-                LocalDate.of(2022, 12, 20),
-                LocalDate.of(2022, 12, 28));
-                locationRepository.save(newLocation);
-        mockMvc.perform(post("/api/locations/newlocation")
+        mockMvc.perform(post("/api/locations/")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {"id": "123",
-                                "name": "name",
-                                "image": "image",
-                                "description": "description",
-                                "website": "website",
-                                "pricePerPerson": 124,
-                                "size": 20.00,
-                                "eventType":"Hochzeit",
-                                "maxCapacity": 50,
-                                "address": {
-                                "adressId": "134",
-                                "country": "Deutschland",
-                                "city": "Hamburg",
-                                "zipCode": "00000",
-                                "street": "Test Street",
-                                "houseNumber": "12"
-                                },
-                                "startDate" : "2022-12-20",
-                                "endDate" : "2022-12-28"
+                                            {
+                                            "name": "name",
+                                            "image": "image",
+                                            "description": "description",
+                                            "website": "website",
+                                            "pricePerPerson": "120",
+                                            "size": "20",
+                                            "eventType":"Hochzeit",
+                                            "maxCapacity": "50",
+                                            "address": {
+
+                                                "country": "Deutschland",
+                                                "city": "Hamburg",
+                                                "zipCode": "00000",
+                                                "street": "Test Street",
+                                                "houseNumber": "12"
+                                                 }
+             
                                 }
-                                """).with(csrf()))
+                                                            """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
-                              {
+                        {
                                 "name": "name",
                                 "image": "image",
                                 "description": "description",
                                 "website": "website",
-                                "pricePerPerson": 124,
-                                "size": 20.00,
+                                "pricePerPerson": "120",
+                                "size": "20",
                                 "eventType":"Hochzeit",
-                                "maxCapacity": 50,
+                                "maxCapacity": "50",
                                 "address": {
 
-                                "country": "Deutschland",
-                                "city": "Hamburg",
-                                "zipCode": "00000",
-                                "street": "Test Street",
-                                "houseNumber": "12"
-                                },
-                                "startDate" : "2022-12-20",
-                                "endDate" : "2022-12-28"
-                                }
-                                                """));
+                                    "country": "Deutschland",
+                                    "city": "Hamburg",
+                                    "zipCode": "00000",
+                                    "street": "Test Street",
+                                    "houseNumber": "12"
+                        }
+                          
+                        }
+                                                                    """));
 
     }
 }
+

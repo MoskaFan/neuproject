@@ -1,13 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
-import {LoginData} from "./modell/LoginData";
+import {useEffect, useState} from "react";
+import {OwnerData} from "../entity/OwnerData";
+
 
 const API_URL = "/api/owners/";
 
-export default function OwnerUse() {
+export default function UserOwner() {
     const [userName, setUserName] = useState<string>()
+    useEffect(()=> {
+        axios.get("/api/owners/login/me")
+            .then(response => response.data)
+            .then(setUserName)
+    }, [])
 
-    function login(username: string, password: string){
+
+    function login(username: string, password: string): Promise<void>{
 
         return axios.post(API_URL + "login", undefined, {
             auth: {
@@ -18,14 +25,19 @@ export default function OwnerUse() {
             .then(response => response.data)
             .then(data => {
                 setUserName(data)
-                return data
+
             })
     }
-    function addOwner(newUser: LoginData){
-        axios.post(API_URL + "register", newUser)
+
+
+    function addOwner(newUser: OwnerData){
+        axios.post(API_URL, newUser)
 
             .catch(console.error)
     }
+
+
+
 
 
     return {login, addOwner}

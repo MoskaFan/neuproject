@@ -1,21 +1,22 @@
 import { Button } from '@mui/material';
-import React, {ChangeEvent, FormEvent, useEffect, useState} from 'react';
-import { LoginData } from './modell/LoginData';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
+import { OwnerData } from './entity/OwnerData';
 
 import './SignUp.css'
 
 
 type SignUpProps = {
-    addOwner(newUser: LoginData): void;
+    addOwner(newUser: OwnerData): void;
 }
 
 export default function SignUp(props: SignUpProps) {
 
-    const emptyInput: LoginData = {
+    const emptyInput: OwnerData = {
         "username": "",
-        "email": "",
         "password": "",
-        "locationIds": []
+        "email":"",
+        "locationIds":[]
+
     }
 
 
@@ -24,9 +25,7 @@ export default function SignUp(props: SignUpProps) {
     const[submitted, setSubmitted] = useState<boolean>(false);
     const[error, setError] = useState<boolean>(false);
 
-    useEffect(()=>{
 
-    }, [profile])
 
     const togglePasswordVisiblity = () => {
         setPasswordShown(!passwordShown);
@@ -88,8 +87,6 @@ export default function SignUp(props: SignUpProps) {
                     <label htmlFor="username">Fullname: </label>
                     <input type="text" name="username" value={profile.username} onChange={handleChange} />
 
-                    <label htmlFor="email">Email: </label>
-                    <input type="email" name="email" value={profile.email} onChange={handleChange} />
 
                     <label htmlFor="password">Password</label>
                     <input
@@ -100,6 +97,8 @@ export default function SignUp(props: SignUpProps) {
                     />
                     <i className="eye" onClick={togglePasswordVisiblity}>
                     </i>
+                    <label htmlFor="email">Email: </label>
+                    <input type="text" name="email" value={profile.email} onChange={handleChange} />
                     <Button type="submit" className = {"btn"}>Sign Up</Button>
 
 

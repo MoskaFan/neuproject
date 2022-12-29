@@ -1,8 +1,8 @@
 
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "@mui/material";
-import { LocationData} from "./modell/LocationData";
-
+import { LocationData} from "./entity/LocationData";
+import './SignUp.css'
 
 
 
@@ -18,30 +18,18 @@ export default function AddLocation(props: AddLocationProps) {
         image:"",
         description:"",
         website:"",
-        pricePerPerson:0,
-        size: 0.0,
+        pricePerPerson:"",
+        size: "",
         eventType:"",
-        maxCapacity: 0,
-        address: {"country":"",
-        "city":"",
-        "zipCode":"",
-        "Street":"",
-        "houseNumber":""},
-        startDate: {"year":0,
-        "month": 0,
-        "dayOfMonth":0},
-        endDate: {"year":0,
-            "month": 0,
-            "dayOfMonth":0}
+        maxCapacity: "",
+
     }
 
 
     const [location, setLocation] = useState(emptyInput);
 
 
-    useEffect(()=>{
 
-    }, [location])
 
 
 
@@ -66,7 +54,10 @@ export default function AddLocation(props: AddLocationProps) {
     return (
         <>
             <form onSubmit={handleSubmit}>
-
+                <div className="form-header">
+                    <h1>Location anlegen</h1>
+                </div>
+                <div className="form">
                     <label htmlFor="name">Bezeichnung von Location: </label>
                     <input type="text" name="name" value={location.name} onChange={handleChange} />
 
@@ -83,11 +74,11 @@ export default function AddLocation(props: AddLocationProps) {
                 <input type="number" name="size" value={location.size} onChange={handleChange} />
                 <label htmlFor="eventType">Anlass: </label>
                 <input type="text" name="eventType" value={location.eventType} onChange={handleChange} />
-                <label htmlFor="maxCapacity">Anlass: </label>
+                <label htmlFor="maxCapacity">Maximale Kapazität: </label>
                 <input type="number" name="maxCapacity" value={location.maxCapacity} onChange={handleChange} />
                     <Button type="submit" className = {"btn"}>Speichern</Button>
 
-
+                </div>
 
             </form>
         </>

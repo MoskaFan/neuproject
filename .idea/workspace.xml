@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="AddLocation in frontend">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add LocationCard, Location Gallery">
+      <change afterPath="$PROJECT_DIR$/frontend/src/LocationCard.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/LocationCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/LocationGallery.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/LocationGallery.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/entity/OwnerData.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Address.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/OwnerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/OwnerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/AddLocation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/LocationUse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/LocationUse.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/NavigationBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/OwnerUse.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UserOwner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modell/Address.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/Address.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modell/Date.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/Date.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modell/LocationData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/LocationData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/modell/LoginData.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +43,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Record" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -92,6 +119,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend/src/hooks" />
       <recent name="$PROJECT_DIR$/frontend/src/modell" />
       <recent name="$PROJECT_DIR$/backend/src/test/ressources" />
     </key>
@@ -104,7 +132,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerServiceTest.addOwner">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest">
     <configuration name="LocationControllerTest.addLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -131,13 +159,12 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.addOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -147,23 +174,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="login" />
+      <option name="METHOD_NAME" value="addOwner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerServiceTest.addOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.helloMe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
-      <option name="METHOD_NAME" value="addOwner" />
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="helloMe" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerControllerTest.updateOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="updateOwner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -183,32 +226,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
-      <item itemvalue="JUnit.OwnerControllerTest.login" />
+      <item itemvalue="JUnit.OwnerControllerTest.helloMe" />
+      <item itemvalue="JUnit.OwnerControllerTest.updateOwner" />
       <item itemvalue="JUnit.LocationControllerTest.addLocation" />
       <item itemvalue="JUnit.OwnerControllerTest" />
-      <item itemvalue="npm.start" />
+      <item itemvalue="JUnit.OwnerControllerTest.addOwner" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
         <item itemvalue="JUnit.OwnerControllerTest" />
-        <item itemvalue="npm.start" />
+        <item itemvalue="JUnit.OwnerControllerTest.helloMe" />
+        <item itemvalue="JUnit.OwnerControllerTest.updateOwner" />
+        <item itemvalue="JUnit.OwnerControllerTest.addOwner" />
         <item itemvalue="JUnit.LocationControllerTest.addLocation" />
-        <item itemvalue="JUnit.OwnerControllerTest.login" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +262,8 @@
       <workItem from="1671364808514" duration="21418000" />
       <workItem from="1671528885367" duration="8672000" />
       <workItem from="1671547752596" duration="13240000" />
-      <workItem from="1671564181702" duration="22033000" />
+      <workItem from="1671564181702" duration="37316000" />
+      <workItem from="1672067668922" duration="34492000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -420,7 +454,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671630926204</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Fix tests">
+      <created>1671632003615</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1671632003616</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -462,9 +503,11 @@
     <MESSAGE value="Change endpoints" />
     <MESSAGE value="Add security, add login, addlocation" />
     <MESSAGE value="Fix signup" />
-    <MESSAGE value="Fix tests" />
     <MESSAGE value="AddLocation in frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="AddLocation in frontend" />
+    <MESSAGE value="Fix tests" />
+    <MESSAGE value="Fix bug login" />
+    <MESSAGE value="Add LocationCard, Location Gallery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add LocationCard, Location Gallery" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

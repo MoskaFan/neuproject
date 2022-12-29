@@ -34,8 +34,9 @@ public class SecurityConfig {
                         , HttpStatus.UNAUTHORIZED.getReasonPhrase()))
                 .and()
                 .authorizeRequests()
-                .antMatchers("api/locations/newlocation").authenticated()
-                .antMatchers("/").permitAll()
+
+                .antMatchers("/api/").permitAll()
+
                 .and().build();
     }
 }
