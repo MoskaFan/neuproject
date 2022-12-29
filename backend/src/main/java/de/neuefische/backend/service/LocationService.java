@@ -6,6 +6,8 @@ import de.neuefische.backend.modelle.LocationDTO;
 import de.neuefische.backend.repository.LocationRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LocationService {
 
@@ -28,5 +30,8 @@ public class LocationService {
                 location.endDate());
 
         return locationRepository.save(newLocation);
+    }
+    public List<Location> listLocations() {
+        return locationRepository.findAll();
     }
 }
