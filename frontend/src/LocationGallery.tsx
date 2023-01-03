@@ -9,7 +9,7 @@ type LocationGalleryProps = {
 export default function LocationGallery(props: LocationGalleryProps){
 
     const locationComponent = props.locations.map((location: LocationData) => {
-        return <LocationCard location={location} />
+        return <LocationCard location={location} key={location.id}/>
     })
 
     return(

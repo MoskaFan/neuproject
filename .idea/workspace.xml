@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix bug by add location">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add key by LocationCard">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/SignUp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +227,7 @@
       <workItem from="1671547752596" duration="13240000" />
       <workItem from="1671564181702" duration="37316000" />
       <workItem from="1672067668922" duration="42373000" />
-      <workItem from="1672347295509" duration="33434000" />
+      <workItem from="1672347295509" duration="34592000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -475,7 +474,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672745131273</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Add test for addLocation">
+      <created>1672749784883</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1672749784884</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,8 +503,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix Java version" />
-    <MESSAGE value="Add Dockerfile" />
     <MESSAGE value="Add modells owner, location, address" />
     <MESSAGE value="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner" />
     <MESSAGE value="Fix import" />
@@ -522,7 +526,9 @@
     <MESSAGE value="Fix problems from review" />
     <MESSAGE value="Add handle to names of methods in frontend" />
     <MESSAGE value="Fix bug by add location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug by add location" />
+    <MESSAGE value="Add test for addLocation" />
+    <MESSAGE value="Add key by LocationCard" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add key by LocationCard" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
