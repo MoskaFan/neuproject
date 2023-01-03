@@ -1,27 +1,28 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "@mui/material";
-import {LocationData} from "./entity/LocationData";
 import './SignUp.css'
+import {LocationData} from "./entity/LocationData";
 
 
 type AddLocationProps = {
-    addLocation(newLocation: LocationData): void;
+    addLocation(location: LocationData): void;
 }
 
 export default function AddLocation(props: AddLocationProps) {
 
     const emptyInput: LocationData = {
 
-        name: "",
-        image: "",
-        description: "",
-        website: "",
-        pricePerPerson: "",
-        size: "",
-        eventType: "",
-        maxCapacity: "",
+            name: "",
+            image: "",
+            description: "",
+            website: "",
+            pricePerPerson: "",
+            size: "",
+            eventType: "",
+            maxCapacity: "",
 
     }
+
 
     const [location, setLocation] = useState(emptyInput);
 

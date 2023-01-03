@@ -1,16 +1,22 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {OwnerData} from "../entity/OwnerData";
+import {LocationData} from "../entity/LocationData";
 
 
 const API_URL = "/api/owners/";
 
 export default function UserOwner() {
-    const [userName, setUserName] = useState<string>()
+    const [userName, setUserName] = useState<string>("")
+
+
     useEffect(()=> {
         axios.get("/api/owners/login/me")
             .then(response => response.data)
-            .then(data => setUserName(data))
+            .then(data => {
+                setUserName(data.userName);
+
+            })
 
     }, [])
 
@@ -24,7 +30,11 @@ export default function UserOwner() {
             }
         })
             .then(response => response.data)
-            .then(data => setUserName(data))
+            .then(data => {
+                setUserName(data.userName)
+
+            })
+
     }
 
 
@@ -37,6 +47,14 @@ export default function UserOwner() {
 
 
 
+        function addLocation(newLocation: LocationData){
+            axios.put("/api/owners/login/me", newLocation)
 
-    return {login, addOwner}
+                .catch(console.error)
+        }
+
+
+
+
+    return {login, addOwner, addLocation}
 }

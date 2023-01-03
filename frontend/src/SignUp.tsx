@@ -15,7 +15,7 @@ export default function SignUp(props: SignUpProps) {
         "username": "",
         "password": "",
         "email":"",
-        "locationIds":[]
+        "locations":[]
 
     }
 
