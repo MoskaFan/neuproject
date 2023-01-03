@@ -1,4 +1,7 @@
 package de.neuefische.backend.service;
+import de.neuefische.backend.modelle.Location;
+import de.neuefische.backend.modelle.LocationDTO;
+import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.repository.OwnerRepository;
 import de.neuefische.backend.modelle.Owner;
 import de.neuefische.backend.modelle.OwnerDTO;
@@ -9,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,11 +21,13 @@ import java.util.Optional;
 public class OwnerService implements UserDetailsService {
 
     private final OwnerRepository ownerRepository;
+    private final LocationRepository locationRepository;
 
     private final IDGenerator idGenerator;
 
-    public OwnerService(OwnerRepository ownerRepository, IDGenerator idGenerator) {
+    public OwnerService(OwnerRepository ownerRepository, LocationRepository locationRepository, IDGenerator idGenerator) {
         this.ownerRepository = ownerRepository;
+        this.locationRepository = locationRepository;
         this.idGenerator = idGenerator;
     }
 
@@ -52,20 +58,31 @@ public class OwnerService implements UserDetailsService {
         return new User(owner.getUsername(), owner.getPassword(), List.of());
     }
 
-    public Owner updateOwner(String ownerId, Owner owner) {
-        checkIfOwnerExists(ownerId);
+
+
+
+
+    public Owner getOwnerByUserName(String username) {
+        return ownerRepository.findByUsername(username).orElseThrow(()-> new NoSuchOwnerException(username));
+
+    }
+
+    public Owner addLocation(Principal principal, LocationDTO locationDTO) {
+        Owner owner = getOwnerByUserName(principal.getName());
+        String id = idGenerator.generateID();
+        Location location = new Location(id, locationDTO.name(),
+                locationDTO.image(), locationDTO.description(),
+                locationDTO.website(),
+                locationDTO.pricePerPerson(), locationDTO.size(),
+                locationDTO.eventType(), locationDTO.maxCapacity(),
+                locationDTO.address(), locationDTO.startDate(),
+                locationDTO.endDate());
+        owner.getLocations().add(location);
+        locationRepository.save(location);
         return ownerRepository.save(owner);
     }
 
-    private void checkIfOwnerExists(String id) throws NoSuchOwnerException {
-        for (Owner owner:
-                ownerRepository.findAll()) {
-            if (owner.getId().equals(id)) {
-                return;
-            }
-        }
-        throw new NoSuchOwnerException("User with id"+ id+" not found ");
-    }
+
 }
 
 

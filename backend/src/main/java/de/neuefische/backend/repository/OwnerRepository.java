@@ -12,4 +12,5 @@ public interface OwnerRepository extends MongoRepository<Owner, String> {
 
 
     Optional <Owner> findByUsername(String username);
+
 }

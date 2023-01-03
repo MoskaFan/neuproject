@@ -20,6 +20,6 @@ public class Owner {
     private String username;
     private String email;
     private String password;
-    private List<String> locations = new ArrayList<>();
+    private List<Location> locations = new ArrayList<>();
 
 }
