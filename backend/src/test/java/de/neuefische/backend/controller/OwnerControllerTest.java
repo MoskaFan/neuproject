@@ -98,23 +98,54 @@ class OwnerControllerTest {
     @Test
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
-    void when_positiv_then_the_consisting_owner_is_updated() throws Exception {
-        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com", "password", new ArrayList<>());
-        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(), ownerDTO.password(), ownerDTO.locations());
+    void when_positiv_then_location_is_added_by_consisting_owner() throws Exception {
+        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
+                "password", new ArrayList<>());
+        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
+                ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/10").contentType(MediaType.APPLICATION_JSON).content("""
-                {"username": "StandardUser",
-                "email":  "test@test.com",
-                "password": "password",
-                "locations": ["123"]
-                }
-                """).with(csrf())).andExpect(status().isOk()).andExpect(content().json("""
-                 {
-                 "username": "StandardUser",
-                  "email":  "test@test.com",
-                  "locations": ["123"]
-                }
-                 """));
+        mockMvc.perform(put("/api/owners/login/me").contentType(MediaType.APPLICATION_JSON).content("""
+                 {"name": "name",
+                 "image": "image",
+                 "description": "description",
+                 "website": "website",
+                 "pricePerPerson":"120",                  
+                 "size": "20",                         
+                 "eventType":"Hochzeit",                           
+                 "maxCapacity": "50",
+                 "address": {
+                 "country": "Deutschland",
+                 "city": "Hamburg",                               
+                 "zipCode": "00000",                               
+                 "street": "Test Street",                               
+                 "houseNumber": "12"}
+                }                
+                """).with(csrf()))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+{"id":"10",
+"username":"StandardUser",
+"email":"test@test.com",
+"password":"password",
+"locations":[{"name":"name",
+"image":"image",
+"description":"description",
+"website":"website",
+"pricePerPerson":"120",
+"size":"20",
+"eventType":"Hochzeit",
+"maxCapacity":"50",
+"address":
+{"addressId":null,
+"country":"Deutschland",
+"city":"Hamburg",
+"zipCode":"00000",
+"street":"Test Street",
+"houseNumber":"12"},
+"startDate":null,
+"endDate":null}]}
+
+"""));
     }
 
     @WithMockUser(username="username")

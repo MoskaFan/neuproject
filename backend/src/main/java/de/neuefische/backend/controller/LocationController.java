@@ -1,6 +1,6 @@
 package de.neuefische.backend.controller;
 import de.neuefische.backend.modelle.Location;
-import de.neuefische.backend.modelle.LocationDTO;
+
 import de.neuefische.backend.service.LocationService;
 
 import org.springframework.web.bind.annotation.*;
@@ -18,15 +18,7 @@ public class LocationController {
 
     }
 
-    @PostMapping()
-    public Location addLocation(@RequestBody LocationDTO locationDTO){
 
-
-
-            return locationService.addLocation( locationDTO);
-
-
-        }
 
 
     @GetMapping()
