@@ -40,10 +40,9 @@ export default function SignUp(props: SignUpProps) {
     function handleSubmit (event: FormEvent) {
         event.preventDefault()
         if(profile.username === "" || profile.password === ""){
-
+            console.log("Bitte geben Sie die Daten")
         }else
         {
-
             props.addOwner(profile)
             setProfile(emptyInput)
         }
