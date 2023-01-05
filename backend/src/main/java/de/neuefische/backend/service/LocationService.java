@@ -9,7 +9,6 @@ public class LocationService {
 
     public LocationService(LocationRepository locationRepository) {
         this.locationRepository = locationRepository;
-
     }
 
     public List<Location> listLocations() {
