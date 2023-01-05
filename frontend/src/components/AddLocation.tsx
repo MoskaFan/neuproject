@@ -48,10 +48,11 @@ export default function AddLocation(props: AddLocationProps) {
             <div className="form">
                 <label htmlFor="name">Bezeichnung von Location: </label>
 
-                <TextField variant="filled" type="text"
-                           name="name"
-                           value={location.name}
-                           onChange={handleChange}/>
+                <input
+                    type="text"
+                    name="name"
+                    value={location.name}
+                    onChange={handleChange}/>
                 <br/><br/>
                 <label htmlFor="image">Image von Location: </label>
                 <input
