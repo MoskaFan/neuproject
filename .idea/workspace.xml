@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change sonar settings" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Return sonar settings">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,8 +107,23 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest">
-    <configuration name="LocationControllerTest.when_positiv_then_empty_list_is_got" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.BackendApplicationTests">
+    <configuration name="BackendApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.BackendApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LocationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -115,8 +133,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.LocationControllerTest" />
-      <option name="METHOD_NAME" value="when_positiv_then_empty_list_is_got" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -152,22 +169,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerServiceTest.addOwner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
-      <option name="METHOD_NAME" value="addOwner" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -194,20 +195,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.BackendApplicationTests" />
+      <item itemvalue="JUnit.LocationControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
-      <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
-      <item itemvalue="JUnit.LocationControllerTest.when_positiv_then_empty_list_is_got" />
       <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="JUnit.OwnerControllerTest" />
+        <item itemvalue="JUnit.LocationControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
         <item itemvalue="npm.start" />
-        <item itemvalue="JUnit.OwnerServiceTest.addOwner" />
-        <item itemvalue="JUnit.LocationControllerTest.when_positiv_then_empty_list_is_got" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +233,7 @@
       <workItem from="1672067668922" duration="42373000" />
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
-      <workItem from="1672844562310" duration="24821000" />
+      <workItem from="1672844562310" duration="26225000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -528,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672921586668</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Return sonar settings">
+      <created>1672921958840</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1672921958841</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +558,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix test coverage" />
     <MESSAGE value="Add jacoco dependency" />
     <MESSAGE value="Add jacoco plugin" />
     <MESSAGE value="Fix jacoco plugin" />
@@ -575,14 +582,18 @@
     <MESSAGE value="Fix bug with AddLocation.tsx" />
     <MESSAGE value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
     <MESSAGE value="Change sonar settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change sonar settings" />
+    <MESSAGE value="Return sonar settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Return sonar settings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/neuproject$OwnerControllerTest.ic" NAME="OwnerControllerTest Coverage Results" MODIFIED="1672919705633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/neuproject$LocationControllerTest.ic" NAME="LocationControllerTest Coverage Results" MODIFIED="1672923303168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>de.neuefische.backend.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/neuproject$OwnerControllerTest.ic" NAME="OwnerControllerTest Coverage Results" MODIFIED="1672923384846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>de.neuefische.backend.controller.*</FILTER>
     </SUITE>
   </component>
