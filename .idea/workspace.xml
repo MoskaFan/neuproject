@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix test when_positive_then_location_is_added_by_consisting_owner">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonar-backend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonar-backend.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/sonar-frontend.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/sonar-frontend.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change sonar settings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,7 +232,7 @@
       <workItem from="1672067668922" duration="42373000" />
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
-      <workItem from="1672844562310" duration="24034000" />
+      <workItem from="1672844562310" duration="24821000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -525,7 +521,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672919229156</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Change sonar settings">
+      <created>1672921586665</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1672921586668</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +550,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add hook addOwner, component sign up, first styles" />
     <MESSAGE value="Fix test coverage" />
     <MESSAGE value="Add jacoco dependency" />
     <MESSAGE value="Add jacoco plugin" />
@@ -572,7 +574,8 @@
     <MESSAGE value="Fix bug with login" />
     <MESSAGE value="Fix bug with AddLocation.tsx" />
     <MESSAGE value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
+    <MESSAGE value="Change sonar settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change sonar settings" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
