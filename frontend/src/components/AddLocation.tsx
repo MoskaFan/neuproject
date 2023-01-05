@@ -4,6 +4,7 @@ import '../styles/AddLocation.css'
 import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";
 
+
 type AddLocationProps = {
     addLocation(newLocation: LocationData): void;
 }
@@ -16,13 +17,12 @@ export default function AddLocation(props: AddLocationProps) {
         image: "",
         description: "",
         website: "",
-        pricePerPerson: "",
-        size: "",
+        pricePerPerson: 0,
+        size: 0,
         eventType: "",
-        maxCapacity: "",
-        startDate: "",
-        endDate: ""
-
+        maxCapacity: 0,
+        startDate: new Date().toLocaleDateString(),
+        endDate: new Date().toLocaleDateString()
     }
 
     const [location, setLocation] = useState(emptyLocation);

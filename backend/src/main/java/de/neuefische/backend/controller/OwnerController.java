@@ -32,7 +32,7 @@ public class OwnerController {
     public Owner addLocation(Principal principal, @RequestBody LocationDTO locationDTO){
         return ownerService.addLocation(principal, locationDTO);
     }
-    @GetMapping("login/me")
+    @GetMapping("/login/me")
     public String helloMe(Principal principal){
 
         if(principal != null){

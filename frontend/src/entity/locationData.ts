@@ -1,16 +1,16 @@
 import { Address } from "./address"
 
 export type LocationData={
-    id?:"",
-    name:"",
-    image?:"",
-    description?:"",
-    website?:"",
-    pricePerPerson?:"",
-    size?: "",
-    eventType?:"",
-    maxCapacity?: "",
+    id?:string,
+    name:string,
+    image?:string,
+    description?:string,
+    website?:string,
+    pricePerPerson?:number,
+    size?: number,
+    eventType?:string,
+    maxCapacity?: number,
     address?: Address,
-    startDate?: "",
-    endDate?: ""
+    startDate?: string,
+    endDate?: string
 }

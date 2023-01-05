@@ -38,7 +38,7 @@ export default function UseOwner() {
     }
 
     function addLocation(newLocation: LocationData){
-        axios.put("/api/owners/login/me", newLocation)
+        axios.put("http://localhost:3000/api/owners/login/me", newLocation)
             .catch(console.error)
     }
 
