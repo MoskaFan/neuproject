@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix code smell">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add new integration test">
       <change afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,37 +108,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser">
-    <configuration name="BackendApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.BackendApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LocationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.LocationControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.OwnerControllerTest">
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -170,7 +140,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.when_positive_then_user_is_logged_in" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -180,7 +150,38 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="when_positive_then_location_is_added_by_consisting_owner" />
+      <option name="METHOD_NAME" value="when_positive_then_user_is_logged_in" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest.testLoadUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="testLoadUserByUsername" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,20 +203,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.BackendApplicationTests" />
-      <item itemvalue="JUnit.LocationControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser" />
-      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
+      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_user_is_logged_in" />
+      <item itemvalue="JUnit.OwnerServiceTest" />
+      <item itemvalue="JUnit.OwnerServiceTest.testLoadUserByUsername" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser" />
-        <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="JUnit.OwnerControllerTest" />
-        <item itemvalue="JUnit.LocationControllerTest" />
-        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_user_is_logged_in" />
+        <item itemvalue="JUnit.OwnerServiceTest.testLoadUserByUsername" />
+        <item itemvalue="JUnit.OwnerServiceTest" />
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +241,7 @@
       <workItem from="1672067668922" duration="42373000" />
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
-      <workItem from="1672844562310" duration="28895000" />
+      <workItem from="1672844562310" duration="32521000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -557,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672924652864</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Add new integration test">
+      <created>1672926555460</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672926555460</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +587,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix jacoco plugin" />
     <MESSAGE value="Fix frontend coverage" />
     <MESSAGE value="Fix integration test" />
     <MESSAGE value="Change endpoints" />
@@ -604,7 +611,8 @@
     <MESSAGE value="Return sonar settings" />
     <MESSAGE value="Remove test for contextLoads" />
     <MESSAGE value="Fix code smell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix code smell" />
+    <MESSAGE value="Add new integration test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add new integration test" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
@@ -617,7 +625,7 @@
     <SUITE FILE_PATH="coverage/neuproject$BackendApplicationTests.ic" NAME="BackendApplicationTests Coverage Results" MODIFIED="1672923458371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>de.neuefische.backend.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/neuproject$OwnerControllerTest.ic" NAME="OwnerControllerTest Coverage Results" MODIFIED="1672923384846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/neuproject$OwnerControllerTest.ic" NAME="OwnerControllerTest Coverage Results" MODIFIED="1672927125739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>de.neuefische.backend.controller.*</FILTER>
     </SUITE>
   </component>
