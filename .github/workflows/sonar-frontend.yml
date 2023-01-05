@@ -1,7 +1,7 @@
 name: sonar-frontend
 on:
   push:
-    -master
+
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
