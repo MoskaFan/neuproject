@@ -1,27 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
+import '../styles/App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./SignUp";
-import NavigationBar from "./NavigationBar";
-import {Box, Typography} from "@mui/material";
 import LoginPage from './LoginPage';
-import { Layout } from "antd";
-
-
 import AddLocation from './AddLocation';
-
-
-import UserOwner from './hooks/UserOwner';
-import { LocationData } from './entity/LocationData';
 import LocationGallery from './LocationGallery';
 import axios from 'axios';
-
-const { Header, Content, Footer} = Layout;
+import { LocationData } from '../entity/locationData';
+import UseOwner from "../hooks/UseOwner";
+import Footer from "./Footer";
+import Header from "./Header";
+import Home from "./Home";
 
 function App() {
 
-    const {login, addOwner, addLocation} = UserOwner()
-
+    const {login, addOwner, addLocation} = UseOwner()
     const [locations, setLocations] = useState<LocationData[]>([])
 
     useEffect(() => {
@@ -31,43 +24,21 @@ function App() {
     function getLocations() {
         axios.get('/api/locations/')
             .then((response) => {
-
                 setLocations(response.data)
             })
     }
 
     return (
-
         <BrowserRouter>
-            <Layout>
-                <Header className={"header"}>
-
-                    <NavigationBar/>
-                </Header>
-                <Content>
-                    <div>
+                <Header></Header>
                         <Routes>
                             <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                             <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                             <Route path={"/locations/newlocation"} element={<AddLocation addLocation={addLocation}/> } />
                             <Route path={"/locations"} element={<LocationGallery locations={locations}/>}/>
+                            <Route path={"/"} element={<Home/>}/>
                         </Routes>
-                    </div>
-                </Content>
-                <Footer className={"footer"}>
-                    <Box>
-                        <Typography variant="body2" color="text.secondary" align="center">
-                            {'Copyright © '}
-                            <Typography component="h1" variant="h5">
-                                Iuliia Atutova
-                            </Typography>{' '}
-                            {new Date().getFullYear()}
-                            {'.'}
-                        </Typography>
-                    </Box>
-
-                </Footer>
-            </Layout>
+                <Footer></Footer>
       </BrowserRouter>
 
   );

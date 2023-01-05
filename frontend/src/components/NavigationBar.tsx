@@ -1,12 +1,7 @@
-
 import {NavLink} from "react-router-dom";
-import './NavigationBar.css';
-
-
+import '../styles/NavigationBar.css';
 
 export default function NavigationBar() {
-
-
 
     return (
         <nav className={"nav-bar"}>
@@ -21,8 +16,6 @@ export default function NavigationBar() {
                 <li>
                     <NavLink to={"/locations/newlocation"}>Location anlegen</NavLink>
                 </li>
-
-
             </ul>
         </nav>
     )

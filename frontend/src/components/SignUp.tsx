@@ -1,9 +1,7 @@
 import { Button } from '@mui/material';
 import React, {ChangeEvent, FormEvent, useState} from 'react';
-import { OwnerData } from './entity/OwnerData';
-
-import './SignUp.css'
-
+import { OwnerData } from '../entity/ownerData';
+import '../styles/SignUp.css'
 
 type SignUpProps = {
     addOwner(newUser: OwnerData): void;
@@ -11,30 +9,23 @@ type SignUpProps = {
 
 export default function SignUp(props: SignUpProps) {
 
-    const emptyInput: OwnerData = {
+    const emptyUserObject: OwnerData = {
         "username": "",
         "password": "",
         "email":"",
         "locations":[]
-
     }
 
-
-    const [profile, setProfile] = useState(emptyInput);
+    const [profile, setProfile] = useState(emptyUserObject);
     const [passwordShown, setPasswordShown] = useState(false);
-
-
 
     function togglePasswordVisiblity(){
         setPasswordShown(!passwordShown);
     }
 
-
-
-    function handleChange(e: ChangeEvent<HTMLInputElement>)  {
-        e.preventDefault();
-        const {name, value} = e.target;
-        setProfile((prev) => ({...prev, [name]: value}));
+    function handleChange(event: ChangeEvent<HTMLInputElement>)  {
+        const {name, value} = event.target;
+        setProfile((prevOwner) => ({...prevOwner, [name]: value}));
     }
 
     function handleSubmit (event: FormEvent) {
@@ -44,25 +35,21 @@ export default function SignUp(props: SignUpProps) {
         }else
         {
             props.addOwner(profile)
-            setProfile(emptyInput)
+            setProfile(emptyUserObject)
         }
-
-
     }
 
-
     return (
-        <>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form">
                 <div className="form-header">
                     <h1>Sign up</h1>
                 </div>
-
-                <div className="form">
+                <div>
                     <label htmlFor="username">Fullname: </label>
-                    <input type="text" name="username" value={profile.username} onChange={handleChange} />
-
-
+                    <input type="text"
+                           name="username"
+                           value={profile.username}
+                           onChange={handleChange} />
                     <label htmlFor="password">Password</label>
                     <input
                         type={passwordShown ? 'text' : 'password'}
@@ -70,14 +57,15 @@ export default function SignUp(props: SignUpProps) {
                         value={profile.password}
                         onChange={handleChange}
                     />
-                    <i className="eye" onClick={togglePasswordVisiblity}>
-                    </i>
+                    <i className="eye" onClick={togglePasswordVisiblity}></i>
                     <label htmlFor="email">Email: </label>
-                    <input type="text" name="email" value={profile.email} onChange={handleChange} />
+                    <input
+                        type="text"
+                        name="email"
+                        value={profile.email}
+                        onChange={handleChange} />
                     <Button type="submit" className = {"btn"}>Sign Up</Button>
-
                     </div>
             </form>
-        </>
     );
 }
