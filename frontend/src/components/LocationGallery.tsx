@@ -1,9 +1,8 @@
-import {LocationData} from "./entity/LocationData";
+import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
 
 type LocationGalleryProps = {
     locations: LocationData[];
-
 }
 
 export default function LocationGallery(props: LocationGalleryProps){

@@ -1,5 +1,4 @@
-import { Address } from "./Address"
-import { Date } from "./Date"
+import { Address } from "./address"
 
 export type LocationData={
     id?:"",
@@ -12,7 +11,6 @@ export type LocationData={
     eventType?:"",
     maxCapacity?: "",
     address?: Address,
-    startDate?: Date,
-    endDate?: Date
-
+    startDate?: "",
+    endDate?: ""
 }

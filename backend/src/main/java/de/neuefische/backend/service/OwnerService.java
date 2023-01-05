@@ -11,26 +11,22 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.security.Principal;
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 public class OwnerService implements UserDetailsService {
 
     private final OwnerRepository ownerRepository;
     private final LocationRepository locationRepository;
+    private final IDGeneratorService idGenerator;
 
-    private final IDGenerator idGenerator;
-
-    public OwnerService(OwnerRepository ownerRepository, LocationRepository locationRepository, IDGenerator idGenerator) {
+    public OwnerService(OwnerRepository ownerRepository, LocationRepository locationRepository, IDGeneratorService idGenerator) {
         this.ownerRepository = ownerRepository;
         this.locationRepository = locationRepository;
         this.idGenerator = idGenerator;
     }
-
 
     public Owner addOwner(OwnerDTO owner){
         String id = idGenerator.generateID();
@@ -41,12 +37,8 @@ public class OwnerService implements UserDetailsService {
     }
 
     public Optional<Owner> getOwnerById(String ownerId) {
-
             return ownerRepository.findById(ownerId);
-
     }
-
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
@@ -58,25 +50,20 @@ public class OwnerService implements UserDetailsService {
         return new User(owner.getUsername(), owner.getPassword(), List.of());
     }
 
-
-
-
-
     public Owner getOwnerByUserName(String username) {
         return ownerRepository.findByUsername(username).orElseThrow(()-> new NoSuchOwnerException(username));
 
     }
-
     public Owner addLocation(Principal principal, LocationDTO locationDTO) {
         Owner owner = getOwnerByUserName(principal.getName());
         String id = idGenerator.generateID();
-        Location location = new Location(id, locationDTO.name(),
-                locationDTO.image(), locationDTO.description(),
-                locationDTO.website(),
-                locationDTO.pricePerPerson(), locationDTO.size(),
-                locationDTO.eventType(), locationDTO.maxCapacity(),
-                locationDTO.address(), locationDTO.startDate(),
-                locationDTO.endDate());
+        Location location = new Location(id, locationDTO.getName(),
+                locationDTO.getImage(), locationDTO.getDescription(),
+                locationDTO.getWebsite(),
+                locationDTO.getPricePerPerson(), locationDTO.getSize(),
+                locationDTO.getEventType(), locationDTO.getMaxCapacity(),
+                locationDTO.getAddress(), locationDTO.getStartDate(),
+                locationDTO.getEndDate());
         owner.getLocations().add(location);
         locationRepository.save(location);
         return ownerRepository.save(owner);

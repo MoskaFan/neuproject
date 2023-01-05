@@ -1,4 +1,4 @@
-import {LocationData} from "./LocationData";
+import {LocationData} from "./locationData";
 
 export type OwnerData ={
     id?:"",
