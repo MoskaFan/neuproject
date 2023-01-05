@@ -100,18 +100,17 @@ class OwnerControllerTest {
                          "image": "image",
                          "description": "description",
                          "website": "website",
-                         "pricePerPerson":"120",                  
-                         "size": "20",                         
-                         "eventType":"Hochzeit",                           
-                         "maxCapacity": "50",
+                         "pricePerPerson":120,
+                         "size": 20,
+                         "eventType":"Hochzeit",
+                         "maxCapacity": 50,
                          "address": {
                          "country": "Deutschland",
-                         "city": "Hamburg",                               
-                         "zipCode": "00000",                               
-                         "street": "Test Street",                               
-                         "houseNumber": "12"}
-                        }                
-                        """).with(csrf()))
+                         "city": "Hamburg",
+                         "zipCode": "00000",
+                         "street": "Test Street",
+                         "houseNumber": "12"}}
+                         """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
                         {"id":"10",
@@ -122,10 +121,10 @@ class OwnerControllerTest {
                         "image":"image",
                         "description":"description",
                         "website":"website",
-                        "pricePerPerson":"120",
-                        "size":"20",
+                        "pricePerPerson":120,
+                        "size":20,
                         "eventType":"Hochzeit",
-                        "maxCapacity":"50",
+                        "maxCapacity":50,
                         "address":
                         {"addressId":null,
                         "country":"Deutschland",
@@ -133,8 +132,8 @@ class OwnerControllerTest {
                         "zipCode":"00000",
                         "street":"Test Street",
                         "houseNumber":"12"},
-                        "startDate":null,
-                        "endDate":null}]}
+                        "startDate": null,
+                        "endDate": null}]}
 
                         """));
     }

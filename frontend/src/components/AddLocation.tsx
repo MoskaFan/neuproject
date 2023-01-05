@@ -37,7 +37,7 @@ export default function AddLocation(props: AddLocationProps) {
         event.preventDefault()
         props.addLocation(location)
         setLocation(emptyLocation)
-        navigate("/api/locations")
+        navigate("/locations")
     }
 
     return (
