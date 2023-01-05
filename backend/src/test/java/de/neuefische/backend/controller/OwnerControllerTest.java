@@ -1,6 +1,8 @@
 package de.neuefische.backend.controller;
+
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.neuefische.backend.modelle.Owner;
 import de.neuefische.backend.modelle.OwnerDTO;
@@ -15,7 +17,9 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+
 import java.util.ArrayList;
+
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -60,10 +64,13 @@ class OwnerControllerTest {
     @WithMockUser(username = "StandardUser")
     void when_positive_then_user_is_logged_in() throws Exception {
         mockMvc.perform(post("/api/owners/login").contentType(MediaType.APPLICATION_JSON).content("""
-                {
-                     "username": "StandardUser"
-                }
-                        """).with(csrf())).andExpect(status().isOk());
+                        {
+                             "username": "StandardUser",
+                             "password": "password",
+                             "email": "test@test.com"
+                        }
+                                """).with(csrf())).andExpect(status().isOk())
+                .andExpect(content().string("StandardUser"));
 
     }
 
@@ -96,21 +103,21 @@ class OwnerControllerTest {
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
         mockMvc.perform(put("/api/owners/login/me").contentType(MediaType.APPLICATION_JSON).content("""
-                         {"name": "name",
-                         "image": "image",
-                         "description": "description",
-                         "website": "website",
-                         "pricePerPerson":120,
-                         "size": 20,
-                         "eventType":"Hochzeit",
-                         "maxCapacity": 50,
-                         "address": {
-                         "country": "Deutschland",
-                         "city": "Hamburg",
-                         "zipCode": "00000",
-                         "street": "Test Street",
-                         "houseNumber": "12"}}
-                         """).with(csrf()))
+                        {"name": "name",
+                        "image": "image",
+                        "description": "description",
+                        "website": "website",
+                        "pricePerPerson":120,
+                        "size": 20,
+                        "eventType":"Hochzeit",
+                        "maxCapacity": 50,
+                        "address": {
+                        "country": "Deutschland",
+                        "city": "Hamburg",
+                        "zipCode": "00000",
+                        "street": "Test Street",
+                        "houseNumber": "12"}}
+                        """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
                         {"id":"10",
@@ -146,9 +153,10 @@ class OwnerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("username"));
     }
+
     @Test
     @DirtiesContext
-    void when_positive_then__expectAnonymousUser() throws Exception {
+    void when_positive_then_expect_anonymous_user() throws Exception {
 
         mockMvc.perform(get("/api/owners/login/me"))
                 .andExpect(status().isOk())
