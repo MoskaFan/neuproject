@@ -100,20 +100,16 @@ export default function AddLocation(props: AddLocationProps) {
                 <input
                     type={"date"}
                     name={"startDate"}
-                    value={"location.startDate"}
+                    value={location.startDate}
                     onChange={handleChange}/>
                 <label>Bis wann ist die Location verfügbar?</label>
                 <input
                     type={"date"}
                     name={"endDate"}
-                    value={"location.endDate"}
+                    value={location.endDate}
                     onChange={handleChange}/>
             </div>
         </form>
 
     );
-}
-
-function preventDefault() {
-    throw new Error("Function not implemented.");
 }

@@ -44,12 +44,14 @@ export default function LoginPage(props: LoginPageProps) {
                 <input
                     type={"text"}
                     value={owner.username}
+                    name={"username"}
                     onChange={handleChange}
                     className={"Textfield"}/><br/>
                 <label>Password: </label>
                 <input
                     type={"password"}
                     value={owner.password}
+                    name={"password"}
                     onChange={handleChange}
                     className={"Textfield"}/><br/>
                 <Button type={"submit"} className = {"btn"}>Login</Button>
