@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
-import {Button, TextField} from "@mui/material";
+import {Button} from "@mui/material";
 import '../styles/AddLocation.css'
 import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";

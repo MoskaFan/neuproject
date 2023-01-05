@@ -146,4 +146,12 @@ class OwnerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("username"));
     }
+    @Test
+    @DirtiesContext
+    void when_positive_then__expectAnonymousUser() throws Exception {
+
+        mockMvc.perform(get("/api/owners/login/me"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("anonymousUser"));
+    }
 }

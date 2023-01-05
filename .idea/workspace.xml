@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Remove test for contextLoads">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix code smell">
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/SignUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/SignUp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,10 +19,10 @@
       <list>
         <option value="Record" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -107,7 +108,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BackendApplicationTests">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser">
     <configuration name="BackendApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -153,6 +154,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OwnerControllerTest.when_positive_then__expectAnonymousUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="when_positive_then__expectAnonymousUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -183,32 +200,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="JUnit.BackendApplicationTests" />
       <item itemvalue="JUnit.LocationControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest" />
+      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser" />
       <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
-      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then__expectAnonymousUser" />
         <item itemvalue="JUnit.BackendApplicationTests" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.LocationControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -233,7 +240,7 @@
       <workItem from="1672067668922" duration="42373000" />
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
-      <workItem from="1672844562310" duration="26920000" />
+      <workItem from="1672844562310" duration="28895000" />
     </task>
     <task id="LOCAL-00001" summary="Init project">
       <created>1671045080035</created>
@@ -543,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672923718210</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Fix code smell">
+      <created>1672924652861</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1672924652864</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +579,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add jacoco plugin" />
     <MESSAGE value="Fix jacoco plugin" />
     <MESSAGE value="Fix frontend coverage" />
     <MESSAGE value="Fix integration test" />
@@ -590,7 +603,8 @@
     <MESSAGE value="Change sonar settings" />
     <MESSAGE value="Return sonar settings" />
     <MESSAGE value="Remove test for contextLoads" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove test for contextLoads" />
+    <MESSAGE value="Fix code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix code smell" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
