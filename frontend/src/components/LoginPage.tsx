@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "@mui/material";
 import {useNavigate} from "react-router-dom";
-import '../styles/SignUp.css'
+import "../styles/SiLoLoc.css"
 import { LoginData } from "../entity/loginData";
 
 type LoginPageProps = {

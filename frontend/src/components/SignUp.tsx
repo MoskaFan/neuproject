@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import React, {ChangeEvent, FormEvent, useState} from 'react';
 import { OwnerData } from '../entity/ownerData';
-import '../styles/SignUp.css'
+import "../styles/SiLoLoc.css"
 
 type SignUpProps = {
     addOwner(newUser: OwnerData): void;
@@ -44,26 +44,27 @@ export default function SignUp(props: SignUpProps) {
                 <div className="form-header">
                     <h1>Sign up</h1>
                 </div>
+
                 <div>
-                    <label htmlFor="username">Fullname: </label>
+                    <label htmlFor="username">Fullname: </label><br/>
                     <input type="text"
                            name="username"
                            value={profile.username}
-                           onChange={handleChange} />
-                    <label htmlFor="password">Password</label>
+                           onChange={handleChange} /><br/>
+                    <label htmlFor="password">Password: </label><br/>
                     <input
                         type={passwordShown ? 'text' : 'password'}
                         name="password"
                         value={profile.password}
                         onChange={handleChange}
-                    />
+                    /><br/>
                     <i className="eye" onClick={togglePasswordVisiblity}></i>
-                    <label htmlFor="email">Email: </label>
+                    <label htmlFor="email">Email: </label><br/>
                     <input
                         type="text"
                         name="email"
                         value={profile.email}
-                        onChange={handleChange} />
+                        onChange={handleChange} /><br/>
                     <Button type="submit" className = {"btn"}>Sign Up</Button>
                     </div>
             </form>

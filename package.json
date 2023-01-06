@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/jest": "^29.2.5",
+    "@types/mocha": "^10.0.1"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "node-modules": "^1.0.1"
+  }
+}

@@ -4,12 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change class to record by LocationDTO">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix React problem">
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/reportWebVitals.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/my-app/src/setupTests.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/SiLoLoc.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/entity/address.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/address.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/AddLocation.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/LocationCard.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/LocationGallery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/SignUp.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +61,8 @@
         <option value="Class" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
-        <option value="CSS File" />
         <option value="JUnit5 Test Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -110,7 +148,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner">
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -126,7 +164,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.when_positive_then_user_is_logged_in" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -136,7 +174,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="when_positive_then_user_is_logged_in" />
+      <option name="METHOD_NAME" value="when_positive_then_location_is_added_by_consisting_owner" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -194,20 +232,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
       <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
       <item itemvalue="JUnit.OwnerControllerTest" />
-      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_user_is_logged_in" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
-        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_user_is_logged_in" />
       </list>
     </recent_temporary>
   </component>
@@ -233,14 +271,7 @@
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
       <workItem from="1672844562310" duration="37821000" />
-      <workItem from="1672939832071" duration="10144000" />
-    </task>
-    <task id="LOCAL-00002" summary="Setup sonar">
-      <created>1671112271757</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1671112271757</updated>
+      <workItem from="1672939832071" duration="20691000" />
     </task>
     <task id="LOCAL-00003" summary="Add dependency maven-compiler-plugin">
       <created>1671112748081</created>
@@ -578,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672993075705</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Fix React problem">
+      <created>1672997851438</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1672997851439</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +638,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix signup" />
     <MESSAGE value="AddLocation in frontend" />
     <MESSAGE value="Fix tests" />
     <MESSAGE value="Fix bug login" />
@@ -625,7 +662,8 @@
     <MESSAGE value="Add junit test for loaduserbyusername &amp; refactor components" />
     <MESSAGE value="Change security config" />
     <MESSAGE value="Change class to record by LocationDTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change class to record by LocationDTO" />
+    <MESSAGE value="Fix React problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix React problem" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
