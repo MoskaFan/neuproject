@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change security config">
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/LocationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change class to record by LocationDTO">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/modelle/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +110,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest">
+  <component name="RunManager" selected="npm.start">
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -200,10 +203,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
-        <item itemvalue="npm.build" />
-        <item itemvalue="npm.start" />
         <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_user_is_logged_in" />
       </list>
     </recent_temporary>
@@ -230,14 +233,7 @@
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
       <workItem from="1672844562310" duration="37821000" />
-      <workItem from="1672939832071" duration="6851000" />
-    </task>
-    <task id="LOCAL-00001" summary="Init project">
-      <created>1671045080035</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1671045080036</updated>
+      <workItem from="1672939832071" duration="10144000" />
     </task>
     <task id="LOCAL-00002" summary="Setup sonar">
       <created>1671112271757</created>
@@ -575,7 +571,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672992109692</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Change class to record by LocationDTO">
+      <created>1672993075684</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1672993075705</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +600,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add security, add login, addlocation" />
     <MESSAGE value="Fix signup" />
     <MESSAGE value="AddLocation in frontend" />
     <MESSAGE value="Fix tests" />
@@ -622,7 +624,8 @@
     <MESSAGE value="Change integration test for login" />
     <MESSAGE value="Add junit test for loaduserbyusername &amp; refactor components" />
     <MESSAGE value="Change security config" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change security config" />
+    <MESSAGE value="Change class to record by LocationDTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change class to record by LocationDTO" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

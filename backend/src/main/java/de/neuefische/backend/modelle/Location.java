@@ -1,4 +1,5 @@
 package de.neuefische.backend.modelle;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,12 +21,15 @@ public class Location {
     private String image;
     private String description;
     private String website;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigDecimal pricePerPerson;
     private int size;
     private String eventType;
     private int maxCapacity;
     private Address address;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate startDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate endDate;
 
 
