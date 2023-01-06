@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/App.css';
+import './App.css';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import SignUp from "./SignUp";
-import LoginPage from './LoginPage';
-import AddLocation from './AddLocation';
-import LocationGallery from './LocationGallery';
+import SignUp from "./components/SignUp";
+import LoginPage from './components/LoginPage';
+import AddLocation from './components/AddLocation';
+import LocationGallery from './components/LocationGallery';
 import axios from 'axios';
-import { LocationData } from '../entity/locationData';
-import UseOwner from "../hooks/UseOwner";
-import Footer from "./Footer";
-import Header from "./Header";
-import Home from "./Home";
+import { LocationData } from './entity/locationData';
+import UseOwner from "./hooks/UseOwner";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
 
