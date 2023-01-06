@@ -57,13 +57,13 @@ public class OwnerService implements UserDetailsService {
     public Owner addLocation(Principal principal, LocationDTO locationDTO) {
         Owner owner = getOwnerByUserName(principal.getName());
         String id = idGenerator.generateID();
-        Location location = new Location(id, locationDTO.getName(),
-                locationDTO.getImage(), locationDTO.getDescription(),
-                locationDTO.getWebsite(),
-                locationDTO.getPricePerPerson(), locationDTO.getSize(),
-                locationDTO.getEventType(), locationDTO.getMaxCapacity(),
-                locationDTO.getAddress(), locationDTO.getStartDate(),
-                locationDTO.getEndDate());
+        Location location = new Location(id, locationDTO.name(),
+                locationDTO.image(), locationDTO.description(),
+                locationDTO.website(),
+                locationDTO.pricePerPerson(), locationDTO.size(),
+                locationDTO.eventType(), locationDTO.maxCapacity(),
+                locationDTO.address(), locationDTO.startDate(),
+                locationDTO.endDate());
         owner.getLocations().add(location);
         locationRepository.save(location);
         return ownerRepository.save(owner);
