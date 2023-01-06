@@ -8,6 +8,7 @@ import {OwnerData} from "../entity/ownerData";
 const API_URL = "/api/owners/";
 
 export default function UseOwner() {
+    // eslint-disable-next-line
     const [userName, setUserName] = useState<string>("")
 
     useEffect(()=> {

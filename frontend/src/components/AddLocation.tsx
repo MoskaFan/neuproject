@@ -21,8 +21,8 @@ export default function AddLocation(props: AddLocationProps) {
         size: 0,
         eventType: "",
         maxCapacity: 0,
-        startDate: new Date().toLocaleDateString(),
-        endDate: new Date().toLocaleDateString()
+        startDate: "",
+        endDate: ""
     }
 
     const [location, setLocation] = useState(emptyLocation);
