@@ -1,9 +1,9 @@
-.footer {
-
-    bottom:0;
-    width:100%;
+.footer{
     background-color: #777777;
-    height: 10rem;
-    justify-content: center;
-
+    position: fixed;
+    height: 5rem;
+    bottom: 0;
+    left:0;
+    right:0;
+    text-align: center;
 }

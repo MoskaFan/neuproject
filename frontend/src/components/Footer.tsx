@@ -1,17 +1,15 @@
-import {Typography} from "@mui/material";
 import React from "react";
 import "../styles/Footer.css"
 
 export default function Footer() {
 
 return(
-<div>
+<section className={"footer"}>
 
-        <Typography>
-            Copyright: Iuliia Atutova
-        </Typography>{' '}
+
+    <span>Copyright: Iuliia Atutova</span><br/>
         {new Date().getFullYear()}
         {'.'}
-</div>
+</section>
 );
 }

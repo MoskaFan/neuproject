@@ -1,5 +1,5 @@
 import {Card} from "react-bootstrap";
-import "../styles/LocationCard.css"
+
 import {LocationData} from "../entity/locationData";
 
 type LocationCardProps = {

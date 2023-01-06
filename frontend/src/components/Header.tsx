@@ -1,11 +1,12 @@
 import React from "react";
 import NavigationBar from "./NavigationBar";
-import "../styles/Header.css"
+import "../App.css"
+
 export default function Header() {
 
     return(
-        <div className={"header"}>
+        <section className={"header"}>
             <NavigationBar/>
-        </div>
+        </section>
     );
 }

@@ -1,12 +1,20 @@
+body{
+    margin: 0;
+    font-family: Raleway,sans-serif;
+    width:100%;
+
+}
 .nav-bar{
     background-color: white;
     color: black;
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left:0;
+    right:0;
+
 }
 .nav-bar a{
     color: inherit;
@@ -25,7 +33,7 @@
 }
 .site-title{
 
-    font: italic 5em "Fira Sans", serif;
+    font: italic 3em "Fira Sans", serif;
     color: goldenrod;
     font-weight: bold;
     font-stretch: expanded;
