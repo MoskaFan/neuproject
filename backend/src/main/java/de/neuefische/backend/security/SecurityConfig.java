@@ -31,6 +31,11 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/**").permitAll()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .failureUrl("/login?error=1")
+                .permitAll()
                 .and().build();
     }
 }
