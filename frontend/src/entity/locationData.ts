@@ -1,4 +1,3 @@
-import { Address } from "./address"
 
 export type LocationData={
     id?:string,
@@ -10,7 +9,13 @@ export type LocationData={
     size?: number,
     eventType?:string,
     maxCapacity?: number,
-    address?: Address,
+    address: {
+        country: string,
+        city: string,
+        zipCode: string,
+        street: string,
+        houseNumber: string
+    },
     startDate?: string,
     endDate?: string
 }
