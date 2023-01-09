@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change styles, fix test addLocation, add address to addLocation in frontend">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix bug by add houseNumber">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/entity/address.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +109,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner">
+  <component name="RunManager" selected="npm.start">
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -204,8 +202,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
         <item itemvalue="npm.start" />
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
         <item itemvalue="npm.build" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
@@ -234,14 +232,7 @@
       <workItem from="1672347295509" duration="35672000" />
       <workItem from="1672753581489" duration="21795000" />
       <workItem from="1672844562310" duration="37821000" />
-      <workItem from="1672939832071" duration="39050000" />
-    </task>
-    <task id="LOCAL-00004" summary="Remove dependency maven-compiler-plugin">
-      <created>1671113784780</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1671113784780</updated>
+      <workItem from="1672939832071" duration="43328000" />
     </task>
     <task id="LOCAL-00005" summary="Fix Java version">
       <created>1671114253405</created>
@@ -579,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673016697197</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Fix bug by add address">
+      <created>1673140061572</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1673140061574</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,8 +599,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix tests" />
-    <MESSAGE value="Fix bug login" />
     <MESSAGE value="Add LocationCard, Location Gallery" />
     <MESSAGE value="Fix security hotspot" />
     <MESSAGE value="Fix names of test methods" />
@@ -626,7 +622,9 @@
     <MESSAGE value="Change class to record by LocationDTO" />
     <MESSAGE value="Fix React problem" />
     <MESSAGE value="Change styles, fix test addLocation, add address to addLocation in frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change styles, fix test addLocation, add address to addLocation in frontend" />
+    <MESSAGE value="Fix bug by add address" />
+    <MESSAGE value="Fix bug by add houseNumber" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug by add houseNumber" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
