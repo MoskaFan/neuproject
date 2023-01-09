@@ -141,7 +141,7 @@ export default function AddLocation(props: AddLocationProps) {
                 <label htmlFor="houseNummer">Hausnummer: </label><br/>
                 <input
                     type="text"
-                    name="houseNummer"
+                    name="houseNumber"
                     value={location.address.houseNumber}
                     onChange={handleChangeAddress}/><br/>
                 <label>Seit wann ist die Location verfügbar?</label><br/>
