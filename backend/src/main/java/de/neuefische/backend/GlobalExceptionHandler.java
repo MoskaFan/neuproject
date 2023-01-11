@@ -1,4 +1,5 @@
 package de.neuefische.backend;
+import de.neuefische.backend.service.NoSuchOwnerException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -18,4 +19,12 @@ public class GlobalExceptionHandler {
         responseBody.put("message", "Sorry! The request could be handled!");
         return new ResponseEntity<>(responseBody, HttpStatus.BAD_REQUEST);
 }
+    @ExceptionHandler(NoSuchOwnerException.class)
+    public ResponseEntity <Map<String, Object>> handleGeneralException(NoSuchOwnerException
+                                                                       exception){
+        Map<String, Object> responseBody = new LinkedHashMap<>();
+        responseBody.put("timestamp", LocalDateTime.now());
+        responseBody.put("message", exception.getMessage());
+        return new ResponseEntity<>(responseBody, HttpStatus.NOT_FOUND);
+    }
 }
