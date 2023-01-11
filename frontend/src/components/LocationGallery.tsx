@@ -1,6 +1,6 @@
 import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
-import {ChangeEvent, useState} from "react";
+import {ChangeEvent, FormEvent, useState} from "react";
 import {Button} from "@mui/material";
 
 
@@ -18,39 +18,41 @@ export default function LocationGallery(props: LocationGalleryProps){
     const [searchEventType, setSearchEventType] = useState("")
     const [filteredLocations, setFilteredLocations] = useState(props.locations)
 
-
-    const locationComponent = filteredLocations.map((location: LocationData) => {
-        return <LocationCard location={location} key={location.id}/>
-    })
-
-
     function filterListByCity(){
         const filteredListByCity = filteredLocations.filter((location) =>
-            location.address.city.toLowerCase().includes(searchCity.toLowerCase()))
-        return setFilteredLocations(filteredListByCity)
+            location.address.city.toLowerCase()===searchCity.toLowerCase())
+        console.log(filteredListByCity)
+        setFilteredLocations(filteredListByCity)
     }
-    function filterListByEventType(){
-        const filteredListByEventType = filteredLocations.filter((location) =>
-            location.eventType?.toLowerCase().includes(searchEventType.toLowerCase()))
-        return setFilteredLocations(filteredListByEventType)
+
+    function handleClick(event: FormEvent<HTMLFormElement>){
+        event.preventDefault();
+        filterListByCity()
     }
+
     function filterListByCapacity(event:ChangeEvent<HTMLInputElement>){
         const value = event.target.value
-            if(value === "1"){
-                return setFilteredLocations(filteredLocations.filter((location) =>
-                    location.maxCapacity! < 50))
-            }else if(value === "2"){
+        if(value === "1"){
+            return setFilteredLocations(filteredLocations.filter((location) =>
+                location.maxCapacity! < 50))
+        }else if(value === "2"){
             return setFilteredLocations(filteredLocations.filter((location) =>
                 location.maxCapacity! > 50 && location.maxCapacity!<100))
-            }else{
-                return setFilteredLocations(filteredLocations.filter((location) =>
-                    location.maxCapacity!>100))
-            }
-
+        }else{
+            return setFilteredLocations(filteredLocations.filter((location) =>
+                location.maxCapacity!>100))
+        }
     }
+
+    function filterListByEventType(){
+        const filteredListByEventType = filteredLocations.filter((location) =>
+            location.eventType?.toLowerCase()===searchEventType.toLowerCase())
+         setFilteredLocations(filteredListByEventType)
+    }
+
     function filterListByPrice(event:ChangeEvent<HTMLInputElement>){
 
-            return setFilteredLocations(filteredLocations.filter((location) =>
+             setFilteredLocations(filteredLocations.filter((location) =>
                 location.pricePerPerson! > minPrice && location.pricePerPerson! < maxPrice))
 
 
@@ -58,13 +60,13 @@ export default function LocationGallery(props: LocationGalleryProps){
     function filterListBySize(event:ChangeEvent<HTMLInputElement>){
         const value = event.target.value
         if(value === "1"){
-            return setFilteredLocations(filteredLocations.filter((location) =>
+             setFilteredLocations(filteredLocations.filter((location) =>
                 location.size! < 100))
         }else if(value === "2"){
-            return setFilteredLocations(filteredLocations.filter((location) =>
+             setFilteredLocations(filteredLocations.filter((location) =>
                 location.size! > 100 && location.size! < 200))
         }else{
-            return setFilteredLocations(filteredLocations.filter((location) =>
+             setFilteredLocations(filteredLocations.filter((location) =>
                 location.size!>200))
         }
 
@@ -91,11 +93,13 @@ export default function LocationGallery(props: LocationGalleryProps){
     function handleSize(event:ChangeEvent<HTMLInputElement>) {
         setSearchSize(event.target.value)
     }
-
+    const locationComponent = filteredLocations.map((location: LocationData) => {
+        return <LocationCard location={location} key={location.id}/>
+    })
 
     return(
         <div>
-            <form >
+            <form onSubmit={handleClick}>
                 <fieldset>
                     <h3>Stadt:</h3>
                     <label htmlFor="City">Stadt:</label>

@@ -50,7 +50,7 @@ public class OwnerService implements UserDetailsService {
         return new User(owner.getUsername(), owner.getPassword(), List.of());
     }
 
-    public Owner getOwnerByUserName(String username) {
+    public Owner getOwnerByUserName(String username) throws NoSuchOwnerException{
         return ownerRepository.findByUsername(username).orElseThrow(()-> new NoSuchOwnerException(username));
 
     }
