@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add GlobalExceptionHandler, search ba">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change search bar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
     </list>
@@ -237,14 +237,7 @@
       <workItem from="1672753581489" duration="21795000" />
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
-      <workItem from="1673263812574" duration="38141000" />
-    </task>
-    <task id="LOCAL-00007" summary="Fix Java version">
-      <created>1671115035216</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1671115035216</updated>
+      <workItem from="1673263812574" duration="41539000" />
     </task>
     <task id="LOCAL-00008" summary="Add Dockerfile">
       <created>1671117956213</created>
@@ -582,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673431913907</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Change search bar">
+      <created>1673441911120</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1673441911124</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -604,7 +604,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix security hotspot" />
     <MESSAGE value="Fix names of test methods" />
     <MESSAGE value="Fix problems from review" />
     <MESSAGE value="Add handle to names of methods in frontend" />
@@ -629,7 +628,8 @@
     <MESSAGE value="Fix bug by add address" />
     <MESSAGE value="Fix bug by add houseNumber" />
     <MESSAGE value="Add GlobalExceptionHandler, search ba" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GlobalExceptionHandler, search ba" />
+    <MESSAGE value="Change search bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change search bar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
