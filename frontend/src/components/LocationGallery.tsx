@@ -18,6 +18,10 @@ export default function LocationGallery(props: LocationGalleryProps){
     const [searchEventType, setSearchEventType] = useState("")
     const [filteredLocations, setFilteredLocations] = useState(props.locations)
 
+    function handleCityChange(event:ChangeEvent<HTMLInputElement>) {
+        setSearchCity(event.target.value)
+    }
+
     function filterListByCity(){
         const filteredListByCity = filteredLocations.filter((location) =>
             location.address.city.toLowerCase()===searchCity.toLowerCase())
@@ -27,8 +31,28 @@ export default function LocationGallery(props: LocationGalleryProps){
 
     function handleClick(event: FormEvent<HTMLFormElement>){
         event.preventDefault();
+
         filterListByCity()
     }
+    const filterData = (locations: LocationData[]) => {
+        let data = [...filteredLocations]
+            if(searchCity !== null){
+                filterListByCity()
+            }
+            if(searchEventType !== null){
+                filterListByEventType()
+            }
+            if(searchSize !== null){
+                filterListBySize()
+            }
+            if(searchCapacity !== null){
+                filterListByCapacity()
+            }
+            if(minPrice !== null && maxPrice !== null){
+                filterListByPrice()
+            }
+    }
+
 
     function filterListByCapacity(event:ChangeEvent<HTMLInputElement>){
         const value = event.target.value
@@ -72,9 +96,6 @@ export default function LocationGallery(props: LocationGalleryProps){
 
     }
 
-    function handleCityChange(event:ChangeEvent<HTMLInputElement>) {
-        setSearchCity(event.target.value)
-    }
 
     function handleEventType(event:ChangeEvent<HTMLInputElement>) {
         setSearchEventType(event.target.value)
