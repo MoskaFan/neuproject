@@ -9,7 +9,7 @@ export type LocationData={
     size?: number,
     eventType?:string,
     maxCapacity?: number,
-    address: {
+    address?: {
         country: string,
         city: string,
         zipCode: string,
