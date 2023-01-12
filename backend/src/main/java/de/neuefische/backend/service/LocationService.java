@@ -3,7 +3,6 @@ import de.neuefische.backend.modelle.Location;
 import de.neuefische.backend.repository.LocationRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 @Service
 public class LocationService {
@@ -17,16 +16,5 @@ public class LocationService {
         return locationRepository.findAll();
     }
 
-    public List<Location> listLocationsByCity(String city) {
-        List<Location> newList = new ArrayList<>();
-        List<Location> list = locationRepository.findAll();
-        if(city != null){
-            for(Location location : list){
-                if(location.getAddress().getCity().toLowerCase().contains(city.toLowerCase())){
-                    newList.add(location);
-                }
-            }
 
-        }return newList;
-    }
 }

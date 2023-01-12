@@ -17,10 +17,6 @@ public class LocationController {
     public List<Location> getLocationList(){
         return locationService.listLocations();
     }
-    @GetMapping("/search/")
-    public List<Location> getBook(@RequestParam(name="city", required=false) String city){
 
-        return locationService.listLocationsByCity(city);
-    }
 
 }

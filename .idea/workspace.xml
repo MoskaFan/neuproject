@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change GlobalExceptionHandler">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change SearchBar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseLocation.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
         <option value="JUnit5 Test Class" />
         <option value="CSS File" />
         <option value="TypeScript File" />
-        <option value="TypeScript JSX File" />
         <option value="Class" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -238,21 +243,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="1873000" />
-    </task>
-    <task id="LOCAL-00010" summary="Add addOwner function, OwnerRepository, OwnerController, OwnerService, add integration test for addOwner">
-      <created>1671207308731</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1671207308731</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Fix import">
-      <created>1671207652565</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1671207652565</updated>
+      <workItem from="1673458208986" duration="24275000" />
     </task>
     <task id="LOCAL-00012" summary="Add junit test for addOwner">
       <created>1671213008276</created>
@@ -583,7 +574,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673457028633</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Change filters">
+      <created>1673509494915</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1673509494916</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Add OnClick">
+      <created>1673509957547</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1673509957547</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,9 +610,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add handle to names of methods in frontend" />
-    <MESSAGE value="Fix bug by add location" />
-    <MESSAGE value="Add test for addLocation" />
     <MESSAGE value="Add key by LocationCard" />
     <MESSAGE value="Refactor Code" />
     <MESSAGE value="Fix bug with login" />
@@ -630,7 +632,10 @@
     <MESSAGE value="Change search bar" />
     <MESSAGE value="Change filteredLocations" />
     <MESSAGE value="Change GlobalExceptionHandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change GlobalExceptionHandler" />
+    <MESSAGE value="Change filters" />
+    <MESSAGE value="Add OnClick" />
+    <MESSAGE value="Change SearchBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change SearchBar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
