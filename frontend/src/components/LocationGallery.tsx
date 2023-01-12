@@ -51,6 +51,7 @@ export default function LocationGallery(props: LocationGalleryProps){
             if(minPrice !== null && maxPrice !== null){
                 filterListByPrice()
             }
+            return data
     }
 
 
@@ -114,7 +115,7 @@ export default function LocationGallery(props: LocationGalleryProps){
     function handleSize(event:ChangeEvent<HTMLInputElement>) {
         setSearchSize(event.target.value)
     }
-    const locationComponent = filteredLocations.map((location: LocationData) => {
+    const locationComponent = filterData.map((location: LocationData) => {
         return <LocationCard location={location} key={location.id}/>
     })
 
@@ -146,7 +147,9 @@ export default function LocationGallery(props: LocationGalleryProps){
                     <h3>Fläche:</h3>
                     <div>
                         <input type="checkbox" id="hundert" name="hundert"
-                               onChange = {handleSize} value = {1}/>
+                               onChange = {handleSize} value = {1} onClick = {(event: React.MouseEvent)=>{
+                                   const el = event.target as HTMLElement}}/>
+
                         <label htmlFor="hundert">0-100 m2</label>
                     </div>
                     <div>
