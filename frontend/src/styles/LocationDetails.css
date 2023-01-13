@@ -1,0 +1,23 @@
+.location{
+    display: inline;
+    justify-content: center;
+}
+.table{
+    text-align: center;
+}
+.table h1{
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.table img{
+    margin: 2rem;
+}
+.table-header{
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.calendar{
+    margin: 5rem;
+}
+

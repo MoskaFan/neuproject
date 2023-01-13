@@ -41,6 +41,7 @@ function App() {
                     <Route path={"/locations"} element={<LocationGallery locations={locations}/>}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
+
                 </Routes>
             </section>
 

@@ -16,6 +16,9 @@ export default function NavigationBar() {
                 <li>
                     <NavLink to={"/locations/newlocation"}>Location anlegen</NavLink>
                 </li>
+                <li>
+                    <NavLink to={"/locations"}>Locations</NavLink>
+                </li>
             </ul>
         </nav>
     )
