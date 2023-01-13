@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add getLocationByID, add LocationDetails">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add Routr LocationDetails">
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,14 +243,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="51087000" />
-    </task>
-    <task id="LOCAL-00017" summary="Add jacoco dependency">
-      <created>1671367880460</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1671367880460</updated>
+      <workItem from="1673458208986" duration="61167000" />
     </task>
     <task id="LOCAL-00018" summary="Add jacoco plugin">
       <created>1671368238687</created>
@@ -586,7 +581,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673620393881</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Add Routr LocationDetails">
+      <created>1673629820113</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1673629820114</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +610,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
     <MESSAGE value="Change sonar settings" />
     <MESSAGE value="Return sonar settings" />
     <MESSAGE value="Remove test for contextLoads" />
@@ -633,7 +634,8 @@
     <MESSAGE value="Change search filters" />
     <MESSAGE value="Remove filter size" />
     <MESSAGE value="Add getLocationByID, add LocationDetails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add getLocationByID, add LocationDetails" />
+    <MESSAGE value="Add Routr LocationDetails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Routr LocationDetails" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
