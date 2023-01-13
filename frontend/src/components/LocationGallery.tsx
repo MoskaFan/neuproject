@@ -2,6 +2,7 @@ import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
 import {ChangeEvent, useState} from "react";
 import "../styles/Gallery.css"
+import {Typography} from "@mui/material";
 
 
 type LocationGalleryProps = {
@@ -54,6 +55,8 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
     return (
         <section>
+            <img alt = "location" src = "https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg" />
+            <Typography variant={"h1"} className={"h1"}>Geben Sie die Suchkriterien:</Typography>
             <section className={"search-element"}>
                 <form className = "search-bar">
                     <fieldset>
