@@ -1,0 +1,25 @@
+.search-element{
+    margin-bottom: 2rem;
+    text-align: center;
+
+}
+
+.search-bar{
+    display: flex;
+}
+
+.search-bar input{
+    width: 10rem;
+}
+.search-bar fieldset{
+    width: 15rem;
+}
+.search-bar fieldset h3{
+    justify-content: center;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}

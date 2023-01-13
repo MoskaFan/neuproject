@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change search filters">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Remove filter size">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/LocationCard.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +24,9 @@
       <list>
         <option value="Record" />
         <option value="JUnit5 Test Class" />
-        <option value="CSS File" />
         <option value="TypeScript File" />
         <option value="Class" />
+        <option value="CSS File" />
         <option value="TypeScript JSX File" />
       </list>
     </option>
@@ -239,21 +244,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="41107000" />
-    </task>
-    <task id="LOCAL-00014" summary="Fix signup">
-      <created>1671365799555</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1671365799555</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Fix signup">
-      <created>1671365832510</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1671365832511</updated>
+      <workItem from="1673458208986" duration="48145000" />
     </task>
     <task id="LOCAL-00016" summary="Fix test coverage">
       <created>1671366232396</created>
@@ -584,7 +575,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673609548453</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Change search filters">
+      <created>1673609905285</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1673609905290</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Remove filter size">
+      <created>1673610086937</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1673610086944</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +611,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix bug with login" />
     <MESSAGE value="Fix bug with AddLocation.tsx" />
     <MESSAGE value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
     <MESSAGE value="Change sonar settings" />
@@ -631,7 +635,8 @@
     <MESSAGE value="Change SearchBar" />
     <MESSAGE value="Remove SearchBar" />
     <MESSAGE value="Change search filters" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change search filters" />
+    <MESSAGE value="Remove filter size" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove filter size" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

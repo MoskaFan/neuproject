@@ -18,5 +18,9 @@ public class LocationController {
         return locationService.listLocations();
     }
 
+    @GetMapping("/{id}")
+    public Location getLocationByID(@PathVariable String id){
+        return locationService.getLocationByID(id);
+    }
 
 }
