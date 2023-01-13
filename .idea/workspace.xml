@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change SearchBar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/entity/locationData.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseLocation.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,14 +239,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="24275000" />
-    </task>
-    <task id="LOCAL-00012" summary="Add junit test for addOwner">
-      <created>1671213008276</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1671213008276</updated>
+      <workItem from="1673458208986" duration="40407000" />
     </task>
     <task id="LOCAL-00013" summary="Add hook addOwner, component sign up, first styles">
       <created>1671221482637</created>
@@ -588,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673509957547</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Change SearchBar">
+      <created>1673545907717</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1673545907719</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
