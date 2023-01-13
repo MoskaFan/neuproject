@@ -13,7 +13,6 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
     const [searchCity, setSearchCity] = useState<string>("")
     const [maxPrice, setMaxPrice] = useState<string>("")
-    const [searchSize, setSize] = useState<string>("")
     const [searchCapacity, setCapacity] = useState<string>("")
     const [searchEventType, setSearchEventType] = useState<string>("")
 
@@ -29,10 +28,6 @@ export default function LocationGallery(props: LocationGalleryProps) {
         return searchCapacity !== "" && location.maxCapacity! <= parseInt(searchCapacity)
     })
 
-    const filterBySize= props.locations.filter((location) => {
-        return searchSize !== "" && location.size! <= parseInt(searchCapacity)
-    })
-
     const filterByEventType = props.locations.filter((location) => {
         return searchEventType !== "" && location.eventType!
             .toLowerCase().includes(searchEventType.toLowerCase())
@@ -44,10 +39,6 @@ export default function LocationGallery(props: LocationGalleryProps) {
             return <LocationCard location={location} key={location.id}/>
         })
 
-    const locationCardsSize =
-        filterBySize.map((location: LocationData) => {
-            return <LocationCard location={location} key={location.id}/>
-        })
     const locationCardsPrice =
         filterByPrice.map((location: LocationData) => {
             return <LocationCard location={location} key={location.id}/>
@@ -67,26 +58,17 @@ export default function LocationGallery(props: LocationGalleryProps) {
                 <form>
                     <fieldset>
                         <h3>Stadt:</h3>
-                        <label htmlFor="City">Stadt:</label>
+                        <label htmlFor="City">Stadt: </label>
                         <input name="City" onChange={(event: ChangeEvent<HTMLInputElement>) =>
                             setSearchCity(event.target.value)}/>
                     </fieldset>
                     <fieldset className={"price-input"}>
                         <h3>Preis</h3>
                         <div>
-                            <label htmlFor="Max">Max Preis:</label>
+                            <label htmlFor="Max">Max Preis: </label>
                             <input type="number" className="maxPrice" name="maxPrice"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setMaxPrice(event.target.value)}/>
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <h3>Fläche:</h3>
-                        <div>
-                            <label htmlFor="hundert">Max. Fläche: </label>
-                            <input type="number" className={"size"} name="size"
-                                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                       setSize(event.target.value)}/>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -102,7 +84,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
                     <fieldset>
                         <h3>Personenanzahl:</h3>
                         <div>
-                            <label htmlFor="zehn">Max. Personenanzahl</label>
+                            <label htmlFor="zehn">Max Personenanzahl: </label>
                             <input type="number" className="maxCapacity" name="maxCapacity"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setCapacity(event.target.value)}/>
@@ -113,7 +95,6 @@ export default function LocationGallery(props: LocationGalleryProps) {
             </section>
             <section>
                 {locationCardsCity}
-                {locationCardsSize}
                 {locationCardsPrice}
                 {locationCardsEventType}
                 {locationCardsCapacity}
