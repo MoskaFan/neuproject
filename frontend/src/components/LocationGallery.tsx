@@ -1,7 +1,7 @@
 import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
 import {ChangeEvent, useState} from "react";
-import {Button} from "@mui/material";
+import "../styles/Gallery.css"
 
 
 type LocationGalleryProps = {
@@ -18,7 +18,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
 
     const filterByCity = props.locations.filter((location) => {
-        return searchCity !== "" && location.address!.city.includes(searchCity)
+        return searchCity !== ""&& location.address!.city.includes(searchCity)
     })
 
     const filterByPrice = props.locations.filter((location) => {
@@ -54,8 +54,8 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
     return (
         <section>
-            <section>
-                <form>
+            <section className={"search-element"}>
+                <form className = "search-bar">
                     <fieldset>
                         <h3>Stadt:</h3>
                         <label htmlFor="City">Stadt: </label>
@@ -90,14 +90,15 @@ export default function LocationGallery(props: LocationGalleryProps) {
                                        setCapacity(event.target.value)}/>
                         </div>
                     </fieldset>
-                    <Button>Suchen</Button>
+
                 </form>
             </section>
-            <section>
+            <section className={"cards"}>
                 {locationCardsCity}
+                {locationCardsCapacity}
                 {locationCardsPrice}
                 {locationCardsEventType}
-                {locationCardsCapacity}
+
             </section>
         </section>
 
