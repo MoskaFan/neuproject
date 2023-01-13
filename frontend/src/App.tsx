@@ -11,6 +11,7 @@ import UseOwner from "./hooks/UseOwner";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import LocationDetails from "./components/LocationDetails";
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
                     <Route path={"/locations/newlocation"} element={<AddLocation addLocation={addLocation}/> } />
                     <Route path={"/locations"} element={<LocationGallery locations={locations}/>}/>
                     <Route path={"/"} element={<Home/>}/>
+                    <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
                 </Routes>
             </section>
 

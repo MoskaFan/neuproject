@@ -58,14 +58,14 @@ export default function LocationGallery(props: LocationGalleryProps) {
                 <form className = "search-bar">
                     <fieldset>
                         <h3>Stadt:</h3>
-                        <label htmlFor="City">Stadt: </label>
+                        <label htmlFor="City">Stadt: </label><br/>
                         <input name="City" onChange={(event: ChangeEvent<HTMLInputElement>) =>
                             setSearchCity(event.target.value)}/>
                     </fieldset>
                     <fieldset className={"price-input"}>
                         <h3>Preis</h3>
                         <div>
-                            <label htmlFor="Max">Max Preis: </label>
+                            <label htmlFor="Max">Max Preis: </label><br/>
                             <input type="number" className="maxPrice" name="maxPrice"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setMaxPrice(event.target.value)}/>
@@ -74,7 +74,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
                     <fieldset>
                         <h3>Anlass:</h3>
                         <div>
-                            <label htmlFor="anlass">Anlass: </label>
+                            <label htmlFor="anlass">Anlass: </label><br/>
                             <input type="text" className="eventType" name="eventType"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setSearchEventType(event.target.value)}/>
@@ -84,7 +84,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
                     <fieldset>
                         <h3>Personenanzahl:</h3>
                         <div>
-                            <label htmlFor="zehn">Max Personenanzahl: </label>
+                            <label htmlFor="zehn">Max Personenanzahl: </label><br/>
                             <input type="number" className="maxCapacity" name="maxCapacity"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setCapacity(event.target.value)}/>

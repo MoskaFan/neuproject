@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Remove filter size">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/LocationCard.css" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add getLocationByID, add LocationDetails">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +110,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="LocationControllerTest.when_positive_then_empty_list_is_got" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -244,14 +241,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="48145000" />
-    </task>
-    <task id="LOCAL-00016" summary="Fix test coverage">
-      <created>1671366232396</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1671366232397</updated>
+      <workItem from="1673458208986" duration="51087000" />
     </task>
     <task id="LOCAL-00017" summary="Add jacoco dependency">
       <created>1671367880460</created>
@@ -589,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673610086944</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add getLocationByID, add LocationDetails">
+      <created>1673620393879</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1673620393881</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +608,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Fix bug with AddLocation.tsx" />
     <MESSAGE value="Fix test when_positive_then_location_is_added_by_consisting_owner" />
     <MESSAGE value="Change sonar settings" />
     <MESSAGE value="Return sonar settings" />
@@ -636,7 +632,8 @@
     <MESSAGE value="Remove SearchBar" />
     <MESSAGE value="Change search filters" />
     <MESSAGE value="Remove filter size" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove filter size" />
+    <MESSAGE value="Add getLocationByID, add LocationDetails" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add getLocationByID, add LocationDetails" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
