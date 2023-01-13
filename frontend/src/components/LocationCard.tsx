@@ -12,7 +12,7 @@ export default function LocationCard(props: LocationCardProps) {
     const navigate = useNavigate()
 
     function getLocationByIdOnClick() {
-        navigate("/locations/" + props.location.id!)
+        navigate("/locations/" + props.location.id)
     }
 
     return(

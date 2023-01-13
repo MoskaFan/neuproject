@@ -17,18 +17,18 @@ export default function LocationDetails() {
 
     useEffect(() => {
         if (id) {
-            getLocationDetailsByID()
+            getLocationDetailsByID(id)
         }
-        //eslint-disable-next-line
-    }, [])
+    }, [id])
 
-    function getLocationDetailsByID() {
+    function getLocationDetailsByID(id: string) {
 
         axios.get("/api/locations/" + id)
             .then(response => {
                 console.log(response.data)
                 setLocation(response.data)
             })
+            .catch(console.error)
     }
 
 
@@ -37,7 +37,7 @@ export default function LocationDetails() {
             <section>
                 <h1>{location.name}</h1>
                {location.description}<br/>
-                src={location.image}<br/>
+               <img alt={""} src={location.image} /><br/>
                 {location.maxCapacity}<br /><br />
 
 
