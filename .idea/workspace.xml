@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add Routr LocationDetails">
-      <change afterPath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change home page">
+      <change afterPath="$PROJECT_DIR$/frontend/src/styles/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Home.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +21,8 @@
         <option value="JUnit5 Test Class" />
         <option value="TypeScript File" />
         <option value="Class" />
-        <option value="CSS File" />
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -243,14 +239,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="61167000" />
-    </task>
-    <task id="LOCAL-00018" summary="Add jacoco plugin">
-      <created>1671368238687</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1671368238687</updated>
+      <workItem from="1673458208986" duration="65614000" />
     </task>
     <task id="LOCAL-00019" summary="Fix jacoco plugin">
       <created>1671368592647</created>
@@ -588,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673629820114</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Add table with location data">
+      <created>1673644795154</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1673644795160</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,8 +606,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change sonar settings" />
-    <MESSAGE value="Return sonar settings" />
     <MESSAGE value="Remove test for contextLoads" />
     <MESSAGE value="Fix code smell" />
     <MESSAGE value="Add new integration test" />
@@ -635,7 +629,9 @@
     <MESSAGE value="Remove filter size" />
     <MESSAGE value="Add getLocationByID, add LocationDetails" />
     <MESSAGE value="Add Routr LocationDetails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Routr LocationDetails" />
+    <MESSAGE value="Add table with location data" />
+    <MESSAGE value="Change home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change home page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

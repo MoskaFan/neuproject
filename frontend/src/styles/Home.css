@@ -1,0 +1,19 @@
+.home-page h1{
+    font-size: 15rem;
+    font-weight: bold;
+}
+
+.home-page{
+    display: block;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.home-page .btn {
+    font-size: 4rem;
+}
+
+.home-page .btn:hover {
+    color: red;
+}
