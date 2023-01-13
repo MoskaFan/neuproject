@@ -6,14 +6,12 @@ import {Button} from "@mui/material";
 
 type LocationGalleryProps = {
     locations: LocationData[]
-
 }
 
 export default function LocationGallery(props: LocationGalleryProps) {
 
 
     const [searchCity, setSearchCity] = useState<string>("")
-    const [minPrice, setMinPrice] = useState<string>("")
     const [maxPrice, setMaxPrice] = useState<string>("")
     const [searchSize, setSize] = useState<string>("")
     const [searchCapacity, setCapacity] = useState<string>("")
@@ -25,15 +23,14 @@ export default function LocationGallery(props: LocationGalleryProps) {
     })
 
     const filterByPrice = props.locations.filter((location) => {
-        return minPrice !== "" && maxPrice !== "" && location.pricePerPerson! > parseInt(minPrice)
-            && location.pricePerPerson! < parseInt(maxPrice)
+        return maxPrice !== "" && location.pricePerPerson! < parseInt(maxPrice)
     })
     const filterByCapacity = props.locations.filter((location) => {
         return searchCapacity !== "" && location.maxCapacity! <= parseInt(searchCapacity)
     })
 
     const filterBySize= props.locations.filter((location) => {
-        return searchSize!== "" && location.size! <= parseInt(searchCapacity)
+        return searchSize !== "" && location.size! <= parseInt(searchCapacity)
     })
 
     const filterByEventType = props.locations.filter((location) => {
@@ -77,14 +74,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
                     <fieldset className={"price-input"}>
                         <h3>Preis</h3>
                         <div>
-                            <label htmlFor="Min">Min:</label>
-                            <input type="number" className="minPrice" name="minPrice"
-                                   onChange={(event: ChangeEvent<HTMLInputElement>) =>
-                                       setMinPrice(event.target.value)}/>
-                        </div>
-                        <div>-</div>
-                        <div>
-                            <label htmlFor="Max">Max:</label>
+                            <label htmlFor="Max">Max Preis:</label>
                             <input type="number" className="maxPrice" name="maxPrice"
                                    onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                        setMaxPrice(event.target.value)}/>
