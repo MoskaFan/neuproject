@@ -11,9 +11,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
-import java.security.Principal;
 import java.util.List;
-import java.util.Optional;
+import java.util.NoSuchElementException;
+
 
 @Service
 public class OwnerService implements UserDetailsService {
@@ -36,8 +36,9 @@ public class OwnerService implements UserDetailsService {
         return ownerRepository.save(newOwner);
     }
 
-    public Optional<Owner> getOwnerById(String ownerId) {
-            return ownerRepository.findById(ownerId);
+    public Owner getOwnerById(String ownerId) {
+            return ownerRepository.findById(ownerId)
+                    .orElseThrow(()-> new NoSuchElementException(ownerId));
     }
 
     @Override
@@ -50,12 +51,9 @@ public class OwnerService implements UserDetailsService {
         return new User(owner.getUsername(), owner.getPassword(), List.of());
     }
 
-    public Owner getOwnerByUserName(String username) throws NoSuchOwnerException{
-        return ownerRepository.findByUsername(username).orElseThrow(()-> new NoSuchOwnerException(username));
 
-    }
-    public Owner addLocation(Principal principal, LocationDTO locationDTO) {
-        Owner owner = getOwnerByUserName(principal.getName());
+    public Owner addLocation(String ownerId, LocationDTO locationDTO) {
+        Owner owner = getOwnerById(ownerId);
         String id = idGenerator.generateID();
         Location location = new Location(id, locationDTO.name(),
                 locationDTO.image(), locationDTO.description(),

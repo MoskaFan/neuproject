@@ -102,7 +102,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/login/me").contentType(MediaType.APPLICATION_JSON).content("""
+        mockMvc.perform(put("/api/owners/10").contentType(MediaType.APPLICATION_JSON).content("""
                         {"name": "name",
                         "image": "image",
                         "description": "description",
