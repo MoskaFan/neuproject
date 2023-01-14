@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change home page">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change style LocationGallery">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,14 +241,7 @@
       <workItem from="1672844562310" duration="37821000" />
       <workItem from="1672939832071" duration="44414000" />
       <workItem from="1673263812574" duration="50300000" />
-      <workItem from="1673458208986" duration="66792000" />
-    </task>
-    <task id="LOCAL-00020" summary="Fix jacoco plugin">
-      <created>1671369090876</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1671369090876</updated>
+      <workItem from="1673458208986" duration="68195000" />
     </task>
     <task id="LOCAL-00021" summary="Fix frontend coverage">
       <created>1671371040524</created>
@@ -584,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673652236364</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Change style LocationGallery">
+      <created>1673653650317</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1673653650318</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -606,7 +608,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Remove test for contextLoads" />
     <MESSAGE value="Fix code smell" />
     <MESSAGE value="Add new integration test" />
     <MESSAGE value="Change integration test for login" />
@@ -631,7 +632,8 @@
     <MESSAGE value="Add Routr LocationDetails" />
     <MESSAGE value="Add table with location data" />
     <MESSAGE value="Change home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change home page" />
+    <MESSAGE value="Change style LocationGallery" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change style LocationGallery" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
