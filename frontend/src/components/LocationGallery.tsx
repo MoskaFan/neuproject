@@ -56,7 +56,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
     return (
         <section>
             <img alt = "location" src = "https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg" />
-            <Typography variant={"h6"} className={"title"}>Geben Sie die Suchkriterien:</Typography>
+            <Typography variant={"h6"} className={"title"}>Geben Sie die Suchkriterien ein:</Typography>
             <section className={"search-element"}>
                 <form className = "search-bar">
                     <fieldset>

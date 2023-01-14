@@ -6,7 +6,6 @@ import de.neuefische.backend.service.OwnerService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import java.security.Principal;
-import java.util.Optional;
 
 @RestController
 @RequestMapping ("/api/owners")
@@ -25,12 +24,12 @@ public class OwnerController {
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
     @GetMapping("/{ownerId}")
-    public Optional<Owner> getOwnerById(@PathVariable String ownerId){
+    public Owner getOwnerById(@PathVariable String ownerId){
         return ownerService.getOwnerById(ownerId);
     }
-    @PutMapping("/login/me")
-    public Owner addLocation(Principal principal, @RequestBody LocationDTO locationDTO){
-        return ownerService.addLocation(principal, locationDTO);
+    @PutMapping("/{ownerId}")
+    public Owner addLocation(@PathVariable String ownerId, @RequestBody LocationDTO locationDTO){
+        return ownerService.addLocation(ownerId, locationDTO);
     }
     @GetMapping("/login/me")
     public String helloMe(Principal principal){
