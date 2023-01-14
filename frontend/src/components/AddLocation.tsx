@@ -5,8 +5,9 @@ import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";
 
 
+
 type AddLocationProps = {
-    addLocation(newLocation: LocationData): void;
+    addLocation(ownerId: string, newLocation: LocationData): void;
 }
 
 export default function AddLocation(props: AddLocationProps) {
@@ -32,7 +33,7 @@ export default function AddLocation(props: AddLocationProps) {
         endDate: ""
     });
 
-
+    const [ownerId] = useState<string>("")
 
 
     function handleChangeLocation (event: ChangeEvent<HTMLInputElement>)  {
@@ -53,7 +54,7 @@ export default function AddLocation(props: AddLocationProps) {
 
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        props.addLocation(location)
+        props.addLocation(ownerId, location)
         setLocation({...location})
         navigate("/locations")
     }
