@@ -8,7 +8,7 @@ export default function Home() {
 
     return(
         <section className={"home-page"}>
-            <Typography variant={"h1"}>
+            <Typography variant={"h6"}>
 
             Perfekte Locations finden
 

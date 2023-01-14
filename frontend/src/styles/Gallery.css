@@ -1,11 +1,12 @@
-section .h1{
+section .title{
     font-weight: bold;
-    margin: 2rem;
+    margin: 1rem;
+    text-align: center;
 }
 .search-element{
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .search-bar{
@@ -15,10 +16,10 @@ section .h1{
 }
 
 .search-bar input{
-    width: 10rem;
+    width: 7rem;
 }
 .search-bar fieldset{
-    width: 15rem;
+    width: 10rem;
 }
 .search-bar fieldset h3{
     justify-content: center;
