@@ -5,6 +5,8 @@ import de.neuefische.backend.modelle.OwnerDTO;
 import de.neuefische.backend.service.OwnerService;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 
 @RestController
@@ -37,6 +39,12 @@ public class OwnerController {
         if(principal != null){
             return principal.getName();
         }
+        return "anonymousUser";
+    }
+    @PostMapping("/logout")
+    public String logout(HttpSession httpSession){
+        httpSession.invalidate();
+        SecurityContextHolder.clearContext();
         return "anonymousUser";
     }
 

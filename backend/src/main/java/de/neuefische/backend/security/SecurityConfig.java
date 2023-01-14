@@ -30,6 +30,7 @@ public class SecurityConfig {
                         , HttpStatus.UNAUTHORIZED.getReasonPhrase()))
                 .and()
                 .authorizeRequests()
+                .antMatchers("/api/users/me").authenticated()
                 .antMatchers("/**").permitAll()
                 .and()
                 .formLogin()

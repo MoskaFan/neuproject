@@ -13,10 +13,12 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
 
+
 function App() {
 
     const {login, addOwner, addLocation} = UseOwner()
     const [locations, setLocations] = useState<LocationData[]>([])
+
 
     useEffect(() => {
         getLocations()
@@ -34,7 +36,6 @@ function App() {
                 <Header></Header>
             <section className={"content"}>
                 <Routes>
-
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/locations/newlocation"} element={<AddLocation addLocation={addLocation}/> } />
