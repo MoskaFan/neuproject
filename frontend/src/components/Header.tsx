@@ -1,16 +1,17 @@
 import React from "react";
 import NavigationBar from "./NavigationBar";
 import "../App.css"
-import UseOwner from "../hooks/UseOwner";
+type HeaderProps ={
+    username: string
+    logout(): Promise<string>
+}
 
-export default function Header() {
-
-    const {userName, logout} = UseOwner()
+export default function Header(props: HeaderProps) {
 
     return(
         <section className={"header"}>
-            <NavigationBar logout={logout} />
-            <h2>Hallo {userName}!</h2>
+            <NavigationBar  logout={props.logout}/>
+            <h6>Hello {props.username}</h6>
         </section>
     );
 }

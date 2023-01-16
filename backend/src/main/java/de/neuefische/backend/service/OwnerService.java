@@ -1,18 +1,17 @@
 package de.neuefische.backend.service;
-import de.neuefische.backend.modelle.Location;
-import de.neuefische.backend.modelle.LocationDTO;
+import de.neuefische.backend.modelle.*;
 import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.repository.OwnerRepository;
-import de.neuefische.backend.modelle.Owner;
-import de.neuefische.backend.modelle.OwnerDTO;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
+import java.security.Principal;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 
 @Service
@@ -28,7 +27,7 @@ public class OwnerService implements UserDetailsService {
         this.idGenerator = idGenerator;
     }
 
-    public Owner addOwner(OwnerDTO owner){
+    public Owner addOwner(OwnerDTO owner) {
         String id = idGenerator.generateID();
         String password = new Argon2PasswordEncoder().encode(owner.password());
         Owner newOwner = new Owner(id, owner.username(),
@@ -36,14 +35,13 @@ public class OwnerService implements UserDetailsService {
         return ownerRepository.save(newOwner);
     }
 
-    public Owner getOwnerById(String ownerId) {
-            return ownerRepository.findById(ownerId)
-                    .orElseThrow(()-> new NoSuchElementException(ownerId));
+    public Owner getOwnerByUsername(String username) {
+        return ownerRepository.findByUsername(username)
+                .orElseThrow(() -> new NoSuchOwnerException(username));
     }
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
-             {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Owner owner = ownerRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User with username: "
                         + username + " not found!"));
@@ -51,8 +49,8 @@ public class OwnerService implements UserDetailsService {
         return new User(owner.getUsername(), owner.getPassword(), List.of());
     }
 
-
-    public Owner addLocation(String ownerId, LocationDTO locationDTO) {
+    public Owner addLocation(String ownerId,
+                             LocationDTO locationDTO) {
         Owner owner = getOwnerById(ownerId);
         String id = idGenerator.generateID();
         Location location = new Location(id, locationDTO.name(),
@@ -67,7 +65,34 @@ public class OwnerService implements UserDetailsService {
         return ownerRepository.save(owner);
     }
 
+    private Owner getOwnerById(String ownerId) {
+        return ownerRepository.findById(ownerId).orElseThrow(()-> new NoSuchElementException(ownerId));
 
+    }
+
+    private void checkIfOwnerExists(String ownerId) {
+        for (Owner owner : ownerRepository.findAll()) {
+            if (owner.getId().equals((ownerId))) {
+                return;
+            }
+        }
+        throw new NoSuchElementException("Owner with id: " + ownerId + " not found");
+    }
+
+
+    public Owner updateOwner(String ownerId, Owner newOwner) {
+        checkIfOwnerExists(ownerId);
+        return ownerRepository.save(newOwner);
+
+    }
+
+    public String getOwnerIdByUsername(Principal principal) {
+        String username = principal.getName();
+        Optional<Owner> owner = ownerRepository.findByUsername(username);
+        return owner.map(Owner::getId).orElseThrow(()->
+                new NoSuchElementException(("Owner with username" + username + " not found")));
+
+    }
 }
 
 

@@ -4,10 +4,10 @@
 }
 .table{
     text-align: center;
+    width:100%;
 }
 .table h1{
     font-weight: bold;
-    font-size: 2.5rem;
 }
 .table img{
     margin: 2rem;
@@ -19,5 +19,31 @@
 
 .calendar{
     margin: 5rem;
+    width: 100%;
 }
+@media screen and (max-width: 48rem){
+    .location{
+        display: inline;
+        justify-content: center;
+    }
+    .table{
+        text-align: center;
+        width:100%;
+    }
+    .table h1{
+        font-weight: bold;
+    }
+    .table img{
+        margin: 0.5rem;
+        width: 33%;
+    }
+    .table-header{
+        font-size: .2rem;
+        font-weight: bold;
+    }
 
+    .calendar{
+        margin: 0.5rem;
+        width: 100%;
+    }
+}

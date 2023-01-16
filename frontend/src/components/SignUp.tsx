@@ -1,6 +1,6 @@
-import { Button } from '@mui/material';
+import {Box, Button, TextField, Typography} from '@mui/material';
 import React, {ChangeEvent, FormEvent, useState} from 'react';
-import { OwnerData } from '../entity/ownerData';
+import {OwnerData} from '../entity/ownerData';
 import "../styles/SiLoLoc.css"
 
 type SignUpProps = {
@@ -12,61 +12,71 @@ export default function SignUp(props: SignUpProps) {
     const emptyUserObject: OwnerData = {
         "username": "",
         "password": "",
-        "email":"",
-        "locations":[]
+        "email": "",
+        "locations": []
     }
 
     const [profile, setProfile] = useState(emptyUserObject);
-    const [passwordShown, setPasswordShown] = useState(false);
 
-    function togglePasswordVisiblity(){
-        setPasswordShown(!passwordShown);
-    }
-
-    function handleChange(event: ChangeEvent<HTMLInputElement>)  {
+    function handleChange(event: ChangeEvent<HTMLInputElement>) {
         const {name, value} = event.target;
         setProfile((prevOwner) => ({...prevOwner, [name]: value}));
     }
 
-    function handleSubmit (event: FormEvent) {
+    function handleSubmit(event: FormEvent) {
         event.preventDefault()
-        if(profile.username === "" || profile.password === ""){
+        if (profile.username === "" || profile.password === "") {
             console.log("Bitte geben Sie die Daten")
-        }else
-        {
+        } else {
             props.addOwner(profile)
             setProfile(emptyUserObject)
         }
     }
 
     return (
-            <form onSubmit={handleSubmit} className="form">
-                <div className="form-header">
-                    <h1>Sign up</h1>
-                </div>
+        <form onSubmit={handleSubmit} className="form">
+            <Box display="flex" flexDirection={"column"} maxWidth={400}
+                 alignItems={"center"} justifyContent={"center"}
+                 borderRadius={5} margin={5}
+                 padding={3}
+                 boxShadow={'5px 5px 10px #ccc'}
+                 sx={{
+                     ":hover": {
+                         boxShadow: '10px 10px 20px #ccc',
+                     }
+                 }}>
 
-                <div>
-                    <label htmlFor="username">Fullname: </label><br/>
-                    <input type="text"
-                           name="username"
+                <Typography variant={"h2"} margin={3}
+                            alignItems={"center"} >
+                    Registrieren
+                </Typography>
+
+                <TextField name="username"
+                           margin={"normal"}
+                           type={"text"}
+                           placeholder={"username"}
                            value={profile.username}
-                           onChange={handleChange} /><br/>
-                    <label htmlFor="password">Password: </label><br/>
-                    <input
-                        type={passwordShown ? 'text' : 'password'}
-                        name="password"
-                        value={profile.password}
-                        onChange={handleChange}
-                    /><br/>
-                    <i className="eye" onClick={togglePasswordVisiblity}></i>
-                    <label htmlFor="email">Email: </label><br/>
-                    <input
-                        type="text"
-                        name="email"
-                        value={profile.email}
-                        onChange={handleChange} /><br/>
-                    <Button type="submit" className = {"btn"}>Sign Up</Button>
-                    </div>
-            </form>
+                           onChange={handleChange}/>
+
+                <TextField type={"password"}
+                           margin={"normal"}
+                           placeholder={"password"}
+                           name="password"
+                           value={profile.password}
+                           onChange={handleChange}/>
+
+                <TextField type="email"
+                           margin={"normal"}
+                           placeholder={"email"}
+                           name="email"
+                           value={profile.email}
+                           onChange={handleChange}/>
+
+                <Button sx={{marginTop:3, borderRadius: 3}} type="submit" variant="contained"
+                        color={"warning"}>Registrieren</Button>
+
+            </Box>
+
+        </form>
     );
 }
