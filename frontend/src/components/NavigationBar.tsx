@@ -22,16 +22,16 @@ export default function NavigationBar(props: NavigationBarProps) {
             <NavLink to={"/"} className={"site-title"}>Perfect Location</NavLink>
             <ul >
                 <li >
-                    <NavLink to={"/owners/register"}>Sign Up</NavLink>
+                    <NavLink to={"/owners/register"}>Registrieren</NavLink>
                 </li>
                 <li >
-                    <NavLink to={"/owners/login"}>Login</NavLink>
+                    <NavLink to={"/owners/login"}>Einloggen</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/locations/newlocation"}>Location anlegen</NavLink>
+                    <NavLink to={"/owners/login/me/:ownerId"}>Als Gastgeber:in loslegen</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/locations"}>Locations</NavLink>
+                    <NavLink to={"/locations"}>Locations finden</NavLink>
                 </li>
                 <li>
                     <Button onClick={logout}>Logout</Button>

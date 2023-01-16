@@ -11,16 +11,13 @@ section .title{
 
 .search-bar{
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     text-align: center;
     justify-items: center;
 }
 
-.search-bar input{
-    width: 7rem;
-}
-.search-bar fieldset{
-    width: 10rem;
-}
+
 .search-bar fieldset h3{
     justify-content: center;
 }
@@ -31,6 +28,5 @@ section .title{
     justify-content: center;
 }
 img{
-    width: 100%;
     margin-bottom: 2rem;
 }

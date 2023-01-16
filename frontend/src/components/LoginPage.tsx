@@ -1,8 +1,8 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
-import {Button} from "@mui/material";
+import {Box, Button, TextField, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import "../styles/SiLoLoc.css"
-import { LoginData } from "../entity/loginData";
+import {LoginData} from "../entity/loginData";
 
 type LoginPageProps = {
     login: (owner: LoginData) => Promise<void>
@@ -25,38 +25,54 @@ export default function LoginPage(props: LoginPageProps) {
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         props.login(owner)
-            .then(()=> {
+            .then(() => {
                 setOwner(emptyLoginData)
             })
             .then(() => {
-                navigate("/api/locations/newlocation")
+                navigate("/locations")
             })
 
     }
 
     return (
-            <form onSubmit={handleSubmit} >
-                <div className="form-header">
-                    <h1>Login</h1>
-                </div>
-                <div className="form">
-                <label>Fullname: </label>
-                <input
+        <form onSubmit={handleSubmit}>
+            <Box display="flex" flexDirection={"column"} maxWidth={400}
+                 alignItems={"center"} justifyContent={"center"}
+                 borderRadius={5} margin={5}
+                 padding={3}
+                 boxShadow={'5px 5px 10px #ccc'}
+                 sx={{
+                     ":hover": {
+                         boxShadow: '10px 10px 20px #ccc',
+                     }
+                 }}>
+
+                <Typography variant={"h2"} margin={3}
+                            alignItems={"center"}>Login</Typography>
+
+                <TextField
+                    name={"username"}
+                    placeholder={"username"}
+                    margin={"normal"}
                     type={"text"}
                     value={owner.username}
-                    name={"username"}
                     onChange={handleChange}
-                    className={"Textfield"}/><br/>
-                <label>Password: </label>
-                <input
+                    className={"Textfield"}
+                />
+
+                <TextField
+                    name={"password"}
+                    margin={"normal"}
+                    placeholder={"password"}
                     type={"password"}
                     value={owner.password}
-                    name={"password"}
                     onChange={handleChange}
-                    className={"Textfield"}/><br/>
-                <Button type={"submit"} className = {"btn"}>Login</Button>
-                </div>
-            </form>
+                    className={"Textfield"} />
+
+            <Button sx={{marginTop:3, borderRadius: 3}} type={"submit"} variant="contained"
+                    color={"warning"}>Einloggen</Button>
+            </Box>
+        </form>
 
     )
 

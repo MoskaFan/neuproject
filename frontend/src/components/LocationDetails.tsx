@@ -48,7 +48,7 @@ export default function LocationDetails() {
                 <a  href={location.website}>{location.website}</a>
                 <br/><br/><br/><br/>
                 <TableContainer component={Paper}>
-                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                    <Table sx={{ maxWidth: 800 }} aria-label="simple table">
                         <TableHead>
                             <TableRow >
                                 <TableCell align="center">Price</TableCell>
