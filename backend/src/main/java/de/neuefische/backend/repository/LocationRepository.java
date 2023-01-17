@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface LocationRepository extends MongoRepository<Location, String> {
 
 
-
+    void findAndModify(String locationId, Location location);
 }

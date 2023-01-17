@@ -4,23 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change styles, fix bug by add location">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add editLocations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/LocationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/repository/LocationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/repository/LocationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/LocationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/styles/SiLoLoc.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/SiLoLoc.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,14 +247,7 @@
       <workItem from="1673458208986" duration="68195000" />
       <workItem from="1673700745538" duration="19487000" />
       <workItem from="1673774500834" duration="8260000" />
-      <workItem from="1673805266038" duration="49907000" />
-    </task>
-    <task id="LOCAL-00024" summary="Change endpoints">
-      <created>1671448641545</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1671448641546</updated>
+      <workItem from="1673805266038" duration="57732000" />
     </task>
     <task id="LOCAL-00025" summary="Add security, add login, addlocation">
       <created>1671567304308</created>
@@ -601,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673729749259</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Change styles, fix bug by add location">
+      <created>1673890835936</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1673890835939</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +614,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change security config" />
     <MESSAGE value="Change class to record by LocationDTO" />
     <MESSAGE value="Fix React problem" />
     <MESSAGE value="Change styles, fix test addLocation, add address to addLocation in frontend" />
@@ -648,7 +638,8 @@
     <MESSAGE value="Change endpoint for addLocation" />
     <MESSAGE value="Add checkout" />
     <MESSAGE value="Change styles, fix bug by add location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change styles, fix bug by add location" />
+    <MESSAGE value="Add editLocations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add editLocations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
