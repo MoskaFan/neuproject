@@ -85,7 +85,9 @@ export default function LocationDetails() {
         }
             <br/><br/>
             <Button onClick={() => navigate("/locations")}>Go back</Button>
-            <Button>Buchen</Button>
+            <Button>BUCHEN</Button>
+            <Button>ÄNDERN</Button>
+            <Button>LÖSCHEN</Button>
         </div>
     )
 }

@@ -23,4 +23,5 @@ public class LocationService {
         return locationRepository.findById(id).orElseThrow(() 
                 -> new NoSuchElementException("Die Location wurde nicht gefunden"));
     }
+
 }

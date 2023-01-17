@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.security.Principal;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -92,6 +93,23 @@ public class OwnerService implements UserDetailsService {
         return owner.map(Owner::getId).orElseThrow(()->
                 new NoSuchElementException(("Owner with username" + username + " not found")));
 
+    }
+
+    public Owner editLocation(String ownerId, String locationId, LocationDTO locationDTO) {
+        Owner owner = getOwnerById(ownerId);
+
+        Location location = new Location(locationId, locationDTO.name(),
+                locationDTO.image(), locationDTO.description(),
+                locationDTO.website(),
+                locationDTO.pricePerPerson(), locationDTO.size(),
+                locationDTO.eventType(), locationDTO.maxCapacity(),
+                locationDTO.address(), locationDTO.startDate(),
+                locationDTO.endDate());
+        owner.getLocations().get(locationId).
+        locationRepository.findAndModify(locationId, location);
+        owner.getLocations().add(location);
+        locationRepository.save(location);
+        return ownerRepository.save(owner);
     }
 }
 
