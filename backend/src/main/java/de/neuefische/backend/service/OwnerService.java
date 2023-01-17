@@ -1,4 +1,5 @@
 package de.neuefische.backend.service;
+
 import de.neuefische.backend.modelle.*;
 import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.repository.OwnerRepository;
@@ -8,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
@@ -67,7 +69,7 @@ public class OwnerService implements UserDetailsService {
     }
 
     private Owner getOwnerById(String ownerId) {
-        return ownerRepository.findById(ownerId).orElseThrow(()-> new NoSuchElementException(ownerId));
+        return ownerRepository.findById(ownerId).orElseThrow(() -> new NoSuchElementException(ownerId));
 
     }
 
@@ -90,7 +92,7 @@ public class OwnerService implements UserDetailsService {
     public String getOwnerIdByUsername(Principal principal) {
         String username = principal.getName();
         Optional<Owner> owner = ownerRepository.findByUsername(username);
-        return owner.map(Owner::getId).orElseThrow(()->
+        return owner.map(Owner::getId).orElseThrow(() ->
                 new NoSuchElementException(("Owner with username" + username + " not found")));
 
     }
@@ -105,10 +107,25 @@ public class OwnerService implements UserDetailsService {
                 locationDTO.eventType(), locationDTO.maxCapacity(),
                 locationDTO.address(), locationDTO.startDate(),
                 locationDTO.endDate());
-        owner.getLocations().get(locationId).
-        locationRepository.findAndModify(locationId, location);
+        for (Location oldLocation : owner.getLocations()) {
+            if (location.getId().equals(locationId)) {
+                owner.getLocations().remove(oldLocation);
+            }
+        }
         owner.getLocations().add(location);
-        locationRepository.save(location);
+        locationRepository.findAndModify(locationId, location);
+        return ownerRepository.save(owner);
+    }
+    public Owner editLocation(String ownerId, String locationId) {
+        Owner owner = getOwnerById(ownerId);
+
+        for (Location oldLocation : owner.getLocations()) {
+            if (location.getId().equals(locationId)) {
+                owner.getLocations().remove(oldLocation);
+            }
+        }
+        owner.getLocations().add(location);
+        locationRepository.findAndModify(locationId, location);
         return ownerRepository.save(owner);
     }
 }
