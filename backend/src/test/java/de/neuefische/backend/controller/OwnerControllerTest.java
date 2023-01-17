@@ -4,6 +4,8 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import de.neuefische.backend.modelle.Address;
+import de.neuefische.backend.modelle.Location;
 import de.neuefische.backend.modelle.Owner;
 import de.neuefische.backend.modelle.OwnerDTO;
 import de.neuefische.backend.repository.OwnerRepository;
@@ -18,7 +20,9 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -83,7 +87,6 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(), ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
         mockMvc.perform(get("/api/owners/10"))
-
                 .andExpect(status().isOk()).andExpect(content().json("""
                          {
                          "username": "StandardUser",
@@ -102,7 +105,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/10").contentType(MediaType.APPLICATION_JSON).content("""
+        mockMvc.perform(put("/api/owners/locations/10").contentType(MediaType.APPLICATION_JSON).content("""
                         {"name": "name",
                         "image": "image",
                         "description": "description",
@@ -162,6 +165,7 @@ class OwnerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("anonymousUser"));
     }
+
     @Test
     @DirtiesContext
     @WithMockUser("StandardUser")
@@ -170,4 +174,61 @@ class OwnerControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("anonymousUser"));
     }
+
+    @Test
+    @DirtiesContext
+    @WithMockUser("StandardUser")
+    void editLocation() throws Exception {
+        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
+                "password", new ArrayList<>(List.of(new Location("140", "name",
+                "image", "description", "website", new BigDecimal("120"),
+                20, "Hochzeit", 50,
+                new Address("Deutschland", "Hamburg", "00000", "Test Street",
+                        "12"), null, null))));
+        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
+                ownerDTO.password(), ownerDTO.locations());
+        ownerRepository.save(owner);
+        mockMvc.perform(put("api/owners/locations/10/140").contentType(MediaType.APPLICATION_JSON).content("""
+                        {"name": "name",
+                        "image": "image",
+                        "description": "description",
+                        "website": "website",
+                        "pricePerPerson":"120",
+                        "size": 20,
+                        "eventType":"Hochzeit",
+                        "maxCapacity": 50,
+                        "address": {
+                        "country": "Deutschland",
+                        "city": "Hamburg",
+                        "zipCode": "00000",
+                        "street": "Test Street",
+                        "houseNumber": "16"}}
+                        """).with(csrf()))
+                .andExpect(status().isOk())
+                .andExpect(content().json("""
+                        {"id":"10",
+                        "username":"StandardUser",
+                        "email":"test@test.com",
+                        "password":"password",
+                        "locations":[{"name":"name",
+                        "image":"image",
+                        "description":"description",
+                        "website":"website",
+                        "pricePerPerson":"120",
+                        "size":20,
+                        "eventType":"Hochzeit",
+                        "maxCapacity":50,
+                        "address":
+                        {"addressId":null,
+                        "country":"Deutschland",
+                        "city":"Hamburg",
+                        "zipCode":"00000",
+                        "street":"Test Street",
+                        "houseNumber":"12"},
+                        "startDate": null,
+                        "endDate": null}]}
+                        """));
+    }
+
+
 }

@@ -34,7 +34,7 @@ public class OwnerController {
         return ownerService.getOwnerByUsername(username);
     }
 
-    @PutMapping("/login/me/{ownerId}")
+    @PutMapping("/locations/{ownerId}")
     public Owner addLocation(@PathVariable String ownerId, @RequestBody LocationDTO locationDTO) {
         return ownerService.addLocation(ownerId, locationDTO);
     }
@@ -73,7 +73,7 @@ public class OwnerController {
 
     return ownerService.editLocation(ownerId, locationId, locationDTO);
     }
-    @PutMapping("/locations/{ownerId}/{locationId}")
+    @DeleteMapping ("/locations/{ownerId}/{locationId}")
     public Owner deleteLocation(@PathVariable String ownerId,
                               @PathVariable String locationId) {
 
