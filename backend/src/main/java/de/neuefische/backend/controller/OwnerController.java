@@ -73,6 +73,12 @@ public class OwnerController {
 
     return ownerService.editLocation(ownerId, locationId, locationDTO);
     }
+    @PutMapping("/locations/{ownerId}/{locationId}")
+    public Owner deleteLocation(@PathVariable String ownerId,
+                              @PathVariable String locationId) {
+
+        return ownerService.deleteLocation(ownerId, locationId);
+    }
 }
 
 

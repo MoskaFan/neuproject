@@ -11,7 +11,6 @@ import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
-import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -107,25 +106,23 @@ public class OwnerService implements UserDetailsService {
                 locationDTO.eventType(), locationDTO.maxCapacity(),
                 locationDTO.address(), locationDTO.startDate(),
                 locationDTO.endDate());
-        for (Location oldLocation : owner.getLocations()) {
-            if (location.getId().equals(locationId)) {
-                owner.getLocations().remove(oldLocation);
-            }
-        }
+        deleteLocationInOwnerData(ownerId, locationId);
         owner.getLocations().add(location);
         locationRepository.findAndModify(locationId, location);
         return ownerRepository.save(owner);
     }
-    public Owner editLocation(String ownerId, String locationId) {
+    public void deleteLocationInOwnerData(String ownerId, String locationId){
         Owner owner = getOwnerById(ownerId);
-
         for (Location oldLocation : owner.getLocations()) {
-            if (location.getId().equals(locationId)) {
+            if (oldLocation.getId().equals(locationId)) {
                 owner.getLocations().remove(oldLocation);
             }
         }
-        owner.getLocations().add(location);
-        locationRepository.findAndModify(locationId, location);
+    }
+    public Owner deleteLocation(String ownerId, String locationId) {
+        Owner owner = getOwnerById(ownerId);
+        deleteLocationInOwnerData(ownerId, locationId);
+        locationRepository.deleteById(locationId);
         return ownerRepository.save(owner);
     }
 }

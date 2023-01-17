@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add editLocations">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change editLocations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
     </list>
@@ -242,14 +242,7 @@
       <workItem from="1673458208986" duration="68195000" />
       <workItem from="1673700745538" duration="19487000" />
       <workItem from="1673774500834" duration="8260000" />
-      <workItem from="1673805266038" duration="60863000" />
-    </task>
-    <task id="LOCAL-00026" summary="Fix tests">
-      <created>1671622375859</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1671622375859</updated>
+      <workItem from="1673805266038" duration="61590000" />
     </task>
     <task id="LOCAL-00027" summary="AddLocation in frontend">
       <created>1671630926203</created>
@@ -587,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673953947887</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Change editLocations">
+      <created>1673958202806</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1673958202809</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,7 +609,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change class to record by LocationDTO" />
     <MESSAGE value="Fix React problem" />
     <MESSAGE value="Change styles, fix test addLocation, add address to addLocation in frontend" />
     <MESSAGE value="Fix bug by add address" />
@@ -634,7 +633,8 @@
     <MESSAGE value="Add checkout" />
     <MESSAGE value="Change styles, fix bug by add location" />
     <MESSAGE value="Add editLocations" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add editLocations" />
+    <MESSAGE value="Change editLocations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change editLocations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
