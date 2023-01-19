@@ -172,7 +172,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(get("/api/owners/login/"))
+        mockMvc.perform(get("/api/owners/login/owner"))
                 .andExpect(status().isOk());
     }
 
