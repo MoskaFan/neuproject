@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix test wenn_positive_then_owner_id_will_be_got">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change delete location">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
@@ -247,14 +246,7 @@
       <workItem from="1673774500834" duration="8260000" />
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
-      <workItem from="1673991095941" duration="62706000" />
-    </task>
-    <task id="LOCAL-00035" summary="Fix bug by add location">
-      <created>1672745131271</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1672745131273</updated>
+      <workItem from="1673991095941" duration="66272000" />
     </task>
     <task id="LOCAL-00036" summary="Add test for addLocation">
       <created>1672749784883</created>
@@ -592,7 +584,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674144759673</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Change delete location">
+      <created>1674163471495</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1674163471500</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +613,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change filters" />
     <MESSAGE value="Add OnClick" />
     <MESSAGE value="Change SearchBar" />
     <MESSAGE value="Remove SearchBar" />
@@ -639,7 +637,8 @@
     <MESSAGE value="Add endpoints" />
     <MESSAGE value="Fix test logout" />
     <MESSAGE value="Fix test wenn_positive_then_owner_id_will_be_got" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix test wenn_positive_then_owner_id_will_be_got" />
+    <MESSAGE value="Change delete location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change delete location" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
