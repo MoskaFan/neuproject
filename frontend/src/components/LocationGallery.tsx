@@ -4,15 +4,14 @@ import {useState} from "react";
 import "../styles/Gallery.css"
 import {Box, Container} from "@mui/material";
 import SearchBar from "./SearchBar";
-import {OwnerData} from "../entity/ownerData";
+
 
 
 
 type LocationGalleryProps = {
     locations: LocationData[]
-    owner: OwnerData
-    deleteLocation(ownerId: string, locationId: string): void
-    editLocation(ownerId: string, locationId: string, location: LocationData): void
+    deleteLocation(locationId: string): void
+    editLocation(locationId: string, location: LocationData): void
 }
 
 export default function LocationGallery(props: LocationGalleryProps) {
@@ -49,10 +48,10 @@ return(
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
             <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
                 <section className={"cards"}>
-                    {filterLocations.map(location => (
+                    {props.locations.map(location => (
                         <LocationCard location={location} key={location.id}
                                        editLocation={props.editLocation}
-                                      owner={props.owner} removeLocation={props.deleteLocation}/>
+                                      removeLocation={props.deleteLocation} />
                     ))}
 
             </section>
