@@ -1,10 +1,10 @@
 import React, {ChangeEvent, FormEvent, useState} from "react";
-import {Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField} from "@mui/material";
+import {Box, Button,InputLabel,TextField} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import {LocationData} from "../entity/locationData";
 import "../styles/SiLoLoc.css"
-import { OwnerData } from "../entity/ownerData";
-
+import {OwnerData} from "../entity/ownerData";
+import {Typography, Accordion, AccordionSummary, AccordionDetails} from '@mui/material'
 
 
 
@@ -37,15 +37,6 @@ export default function AddLocation(props: AddLocationProps) {
         startDate: "",
         endDate: ""
     });
-    const [open, setOpen] = useState<boolean>(false)
-
-    function handleOpen() {
-        setOpen(true)
-    }
-
-    function handleClose() {
-        setOpen(false)
-    }
 
 
     function handleChangeLocation(event: ChangeEvent<HTMLInputElement>) {
@@ -70,7 +61,7 @@ export default function AddLocation(props: AddLocationProps) {
         event.preventDefault()
         props.addLocation(props.owner.id!, location)
         setLocation({...location})
-            navigate("/locations")
+        navigate("/locations")
 
     }
 
@@ -90,6 +81,14 @@ export default function AddLocation(props: AddLocationProps) {
                      }
                  }}>
                 <h1>Location anlegen</h1>
+                <TextField
+                    type="text"
+                    name="city"
+                    fullWidth
+                    placeholder={"Stadt"}
+                    margin={"dense"}
+                    value={location.address.city}
+                    onChange={handleChangeAddress}/>
 
                 <TextField
                     type="text"
@@ -109,23 +108,25 @@ export default function AddLocation(props: AddLocationProps) {
                     value={location.image}
                     onChange={handleChangeLocation}/>
 
-                <TextField
-                    type="text"
-                    fullWidth
-                    margin={"dense"}
-                    name="website"
-                    placeholder={"Link zu Webseite"}
-                    value={location.website}
-                    onChange={handleChangeLocation}/>
 
                 <TextField
                     type="area"
                     fullWidth
                     margin={"dense"}
+                    placeholder={"description"}
                     name="description"
                     value={location.description}
                     onChange={handleChangeLocation}/>
-
+                <InputLabel htmlFor={"maxCapacity"}>Max Personenanzahl:</InputLabel>
+                <TextField
+                    type="number"
+                    fullWidth
+                    margin={"dense"}
+                    name="maxCapacity"
+                    placeholder={"Max PersonenAnzahl"}
+                    value={location.maxCapacity}
+                    onChange={handleChangeLocation}/>
+                <InputLabel htmlFor={"pricePerPerson"}>Preis pro Person:</InputLabel>
                 <TextField
                     type="number"
                     fullWidth
@@ -135,103 +136,100 @@ export default function AddLocation(props: AddLocationProps) {
                     value={location.pricePerPerson}
                     onChange={handleChangeLocation}/>
 
-                <TextField
-                    type="number"
-                    fullWidth
-                    margin={"dense"}
-                    name="size"
-                    value={location.size}
-                    onChange={handleChangeLocation}/>
 
-                <TextField
-                    type="text"
-                    fullWidth
-                    margin={"dense"}
-                    name="eventType"
-                    placeholder={"Anlass"}
-                    value={location.eventType}
-                    onChange={handleChangeLocation}/>
+                <Accordion id={"panel1-header"}
+                           aria-controls={"panel1-content"}>
+                    <AccordionSummary>
+                        <Typography>Zusätzliche Daten</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails>
+                        <InputLabel htmlFor={"pricePerPerson"}>Seit wann ist die Location verfügbar?</InputLabel>
+                        <TextField
+                            type={"date"}
+                            placeholder={"Seit wann ist die Location verfügbar?"}
+                            fullWidth
+                            name={"startDate"}
+                            margin={"dense"}
+                            value={location.startDate}
+                            onChange={handleChangeLocation}/>
+                        <InputLabel htmlFor={"pricePerPerson"}>Bis wann ist die Location verfügbar?</InputLabel>
+                        <TextField
+                            type={"date"}
+                            fullWidth
+                            name={"endDate"}
+                            margin={"dense"}
+                            placeholder={"Bis wann ist die Location verfügbar?"}
+                            value={location.endDate}
+                            onChange={handleChangeLocation}/>
+                        <TextField
+                            type="text"
+                            fullWidth
+                            margin={"dense"}
+                            name="website"
+                            placeholder={"Link zu Webseite"}
+                            value={location.website}
+                            onChange={handleChangeLocation}/>
+                        <InputLabel htmlFor={"size"}>Fläche:</InputLabel>
+                        <TextField
+                            type="number"
+                            fullWidth
+                            margin={"dense"}
+                            name="size"
+                            value={location.size}
+                            onChange={handleChangeLocation}/>
 
-                <TextField
-                    type="number"
-                    fullWidth
-                    margin={"dense"}
-                    name="maxCapacity"
-                    placeholder={"Max PersonenAnzahl"}
-                    value={location.maxCapacity}
-                    onChange={handleChangeLocation}/>
-                <TextField
-                    type={"date"}
-                    placeholder={"Seit wann ist die Location verfügbar?"}
-                    fullWidth
-                    name={"startDate"}
-                    margin={"dense"}
-                    value={location.startDate}
-                    onChange={handleChangeLocation}/><br/>
-                <TextField
-                    type={"date"}
-                    fullWidth
-                    name={"endDate"}
-                    margin={"dense"}
-                    placeholder={"Bis wann ist die Location verfügbar?"}
-                    value={location.endDate}
-                    onChange={handleChangeLocation}/><br/>
-                <Button onClick={handleOpen}>Adresse hizufügen</Button>
-                <Dialog open={open} onClose={handleClose}>
-                    <DialogTitle>Neue Adresse</DialogTitle>
-                    <DialogContent>
-                <TextField
-                    type="text"
-                    name="country"
-                    fullWidth
-                    placeholder={"Land"}
-                    margin={"dense"}
-                    value={location.address.country}
-                    onChange={handleChangeAddress}/>
+                        <TextField
+                            type="text"
+                            fullWidth
+                            margin={"dense"}
+                            name="eventType"
+                            placeholder={"Anlass"}
+                            value={location.eventType}
+                            onChange={handleChangeLocation}/>
 
-                <TextField
-                    type="text"
-                    name="city"
-                    fullWidth
-                    placeholder={"Stadt"}
-                    margin={"dense"}
-                    value={location.address.city}
-                    onChange={handleChangeAddress}/>
-
-                <TextField
-                    type="text"
-
-                    placeholder={"PLZ"}
-                    name="zipCode"
-                    margin={"dense"}
-                    value={location.address.zipCode}
-                    onChange={handleChangeAddress}/>
-
-                <TextField
-                    type="text"
-                    placeholder={"Strasse"}
-                    name="street"
-                    margin={"dense"}
-                    value={location.address.street}
-                    onChange={handleChangeAddress}/>
-                <TextField
-                    type="text"
-                    name="houseNumber"
-                    placeholder={"Hausnummer"}
-                    margin={"dense"}
-                    value={location.address.houseNumber}
-                    onChange={handleChangeAddress}/>
-                    </DialogContent>
-                    <DialogActions>
-                        <Button onClick={handleClose}>
-                            Cancel
-                        </Button>
-
-                    </DialogActions>
-                </Dialog>
+                        <TextField
+                            type="text"
+                            name="country"
+                            fullWidth
+                            placeholder={"Land"}
+                            margin={"dense"}
+                            value={location.address.country}
+                            onChange={handleChangeAddress}/>
 
 
-                <Button type="submit" sx={{marginTop:3, borderRadius: 3}} variant="contained"
+
+                        <TextField
+                            type="text"
+                            fullWidth
+                            placeholder={"PLZ"}
+                            name="zipCode"
+                            margin={"dense"}
+                            value={location.address.zipCode}
+                            onChange={handleChangeAddress}/>
+
+                        <TextField
+                            type="text"
+                            fullWidth
+                            placeholder={"Strasse"}
+                            name="street"
+                            margin={"dense"}
+                            value={location.address.street}
+                            onChange={handleChangeAddress}/>
+                        <TextField
+                            type="text"
+                            fullWidth
+                            name="houseNumber"
+                            placeholder={"Hausnummer"}
+                            margin={"dense"}
+                            value={location.address.houseNumber}
+                            onChange={handleChangeAddress}/>
+
+
+                    </AccordionDetails>
+                </Accordion>
+
+
+                <Button type="submit" sx={{marginTop: 3, borderRadius: 3}} variant="contained"
                         color={"warning"}>Speichern</Button><br/>
 
             </Box>

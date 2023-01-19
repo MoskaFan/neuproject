@@ -88,16 +88,14 @@ public class OwnerService implements UserDetailsService {
 
     }
 
-    public String getOwnerIdByUsername(Principal principal) {
+    public Optional<Owner> getOwnerByUsername(Principal principal) {
         String username = principal.getName();
-        Optional<Owner> owner = ownerRepository.findByUsername(username);
-        return owner.map(Owner::getId).orElseThrow(() ->
-                new NoSuchElementException(("Owner with username" + username + " not found")));
-
+        return ownerRepository.findByUsername(username);
     }
 
     public void deleteLocationInOwnerData(String ownerId, String locationId){
         Owner owner = getOwnerById(ownerId);
+
         for (Location oldLocation : owner.getLocations()) {
             if (oldLocation.getId().equals(locationId)) {
                 owner.getLocations().remove(oldLocation);

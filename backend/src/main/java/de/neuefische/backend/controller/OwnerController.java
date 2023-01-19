@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/owners/")
@@ -62,8 +63,8 @@ public class OwnerController {
     }
 
     @GetMapping("/login/")
-    public String getOwnerIdByUsername(Principal principal) {
-        return ownerService.getOwnerIdByUsername(principal);
+    public Optional<Owner> getOwnerByUsername(Principal principal) {
+        return ownerService.getOwnerByUsername(principal);
     }
 
     @PutMapping("/locations/{ownerId}/{locationId}")

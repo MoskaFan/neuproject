@@ -13,6 +13,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
 import {OwnerData} from "./entity/ownerData";
+import {EditLocation} from "@mui/icons-material";
 
 
 function App() {
@@ -75,9 +76,11 @@ function App() {
                                                                             owner={owner}/>}/>
                     <Route path={"/locations"} element={<LocationGallery locations={locations}
                                                                          deleteLocation={deleteLocation}
-                    editLocation={editLocation}/>}/>
+                                                                         editLocation={editLocation} owner={owner}/>}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
+                    <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
+                    <Route path={"/locations/edit/:id"} element={<EditLocation/>}></Route>
                 </Routes>
             </section>
 
