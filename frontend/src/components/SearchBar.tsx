@@ -1,15 +1,18 @@
 
-import {Button, FormControl, Typography} from "@mui/material";
+import { FormControl, Typography} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import {ChangeEvent} from "react";
 
 type SearchBarProps = {
-    searchCityFunction(): void
-    handleSearch(): void
+    searchCityFunction(searchCity: string): void
+
 }
 
 export default function SearchBar(props: SearchBarProps){
 
-
+    function handleOnChangeSearchText(event: ChangeEvent<HTMLInputElement>){
+        props.searchCityFunction(event.target.value)
+    }
 
 
     return (
@@ -18,10 +21,10 @@ export default function SearchBar(props: SearchBarProps){
                 variant={"h6"} className={"title"}>Geben Sie die gesuchte Stadt ein:
             </Typography>
             <FormControl variant="standard">
-                <input onChange={props.searchCityFunction}/>
+                <SearchIcon/> <input onChange={handleOnChangeSearchText}/>
             </FormControl>
-            <SearchIcon/>
-            <Button onClick={props.handleSearch} variant="contained" color={"primary"}>Suchen</Button>
+
+
         </section>
 
     )

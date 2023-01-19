@@ -79,7 +79,6 @@ function App() {
                                                                          editLocation={editLocation} owner={owner}/>}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
-                    <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
                     <Route path={"/locations/edit/:id"} element={<EditLocation/>}></Route>
                 </Routes>
             </section>

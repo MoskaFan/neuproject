@@ -27,11 +27,10 @@ export default function LocationCard(props: LocationCardProps) {
         props.removeLocation(props.owner.id!, props.location.id!)
 
     }
-    function handleEditOnClick() {
-        props.editLocation(props.owner.id!, props.location.id!, props.location)
+    function getEditLocationById() {
         navigate("/locations/edit/" + props.location.id)
-
     }
+
 
     return(
         <Card className={"card"}>
@@ -42,7 +41,7 @@ export default function LocationCard(props: LocationCardProps) {
                 </Card.Text>
                 <ButtonGroup sx={{margin:3, borderRadius: 3}} variant="contained" color={"primary"} >
                     <InfoIcon onClick={getLocationByIdOnClick} className={"Details"} >DETAILS</InfoIcon>
-                    <EditIcon onClick = {handleEditOnClick}></EditIcon>
+                    <EditIcon onClick={getEditLocationById}></EditIcon>
                     <DeleteIcon onClick = {handleDeleteOnClick}>LÖSCHEN</DeleteIcon>
                 </ButtonGroup>
 

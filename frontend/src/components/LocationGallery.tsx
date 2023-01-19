@@ -1,6 +1,6 @@
 import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
-import {ChangeEvent, useState} from "react";
+import {useState} from "react";
 import "../styles/Gallery.css"
 import {Box, Container} from "@mui/material";
 import SearchBar from "./SearchBar";
@@ -23,13 +23,11 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
 
 
-    function handleChangeCity (event: ChangeEvent<HTMLInputElement>)  {
-        setSearchCity(event.target.value)
-    }
-
-    function handleSearch() {
+    function handleChangeCity (searchCity: string)  {
         setSearchCity(searchCity)
     }
+
+
 
     const filter = (locations: LocationData[], query: string) => {
         if (!searchCity) {
@@ -49,10 +47,7 @@ return(
         <Box>
             <img alt="location"
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
-            <SearchBar handleSearch={handleSearch} searchCityFunction={function (): void {
-                throw new Error("Function not implemented.");
-            }} ></SearchBar>
-
+            <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
                 <section className={"cards"}>
                     {filterLocations.map(location => (
                         <LocationCard location={location} key={location.id}
