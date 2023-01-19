@@ -1,14 +1,12 @@
 import {
-    Accordion,
-    AccordionDetails,
-    AccordionSummary,
+
     Box,
     Button,
     InputLabel,
     TextField,
-    Typography
+
 } from "@mui/material";
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React, {ChangeEvent, FormEvent,  useState} from "react";
 import {useNavigate} from "react-router-dom";
 import { LocationData } from "../entity/locationData";
 import { OwnerData } from "../entity/ownerData";
@@ -18,58 +16,41 @@ type EditLocationProps = {
     location: LocationData
     editLocation (ownerId: string, locationId: string, location: LocationData): void
 }
-export default function EditLocation(props: EditLocationProps){
+
+export default function EditLocation(props: EditLocationProps) {
     const navigate = useNavigate();
+const id =  props.location.id;
+
+    const [name, setName] = useState(props.location.name);
+    const [city, setCity] = useState(props.location.address!.city);
+    const [price, setPrice] = useState(props.location.pricePerPerson);
+    const [maxCapacity, setMaxCapacity] = useState(props.location.maxCapacity);
 
 
-    const [location, setLocation] = useState({
-        name: "",
-        image: "",
-        description: "",
-        website: "",
-        pricePerPerson: 0,
-        size: 0,
-        eventType: "",
-        maxCapacity: 0,
-        address: {
-            country: "",
-            city: "",
-            zipCode: "",
-            street: "",
-            houseNumber: "",
-        },
-        startDate: "",
-        endDate: ""
-    });
-
-
-    function handleChangeLocation(event: ChangeEvent<HTMLInputElement>) {
-        const {name, value} = event.target;
-        setLocation({
-            ...location,
-            [name]: value
-        });
+    function handleChangeCity(event: ChangeEvent<HTMLInputElement>) {
+       setCity(event.target.value)
+    }
+    function handleChangeName(event: ChangeEvent<HTMLInputElement>) {
+        setName(event.target.value)
+    }
+    function handleChangePrice(event: ChangeEvent<HTMLInputElement>) {
+        setPrice(parseInt(event.target.value))
+    }
+    function handleChangeMaxCapacity(event: ChangeEvent<HTMLInputElement>) {
+        setMaxCapacity(parseInt(event.target.value))
     }
 
-    function handleChangeAddress(event: ChangeEvent<HTMLInputElement>) {
-        const {name, value} = event.target;
-
-        setLocation({
-            ...location, address: {
-                ...(location.address), [name]: value,
-            }
-        });
-    }
+    const updatedLocation = {id, name, city, price, maxCapacity}
 
     async function handleEditSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        props.editLocation(props.owner.id!, props.location.id!, location)
-        setLocation({...location})
+        props.editLocation(props.owner.id!, props.location.id!, updatedLocation)
+
         navigate("/locations")
 
     }
 
-    return(
+    return (
         <section>
             <form onSubmit={handleEditSubmit}>
                 <Box display="flex" flexDirection={"column"} maxWidth={400}
@@ -90,8 +71,8 @@ export default function EditLocation(props: EditLocationProps){
                         fullWidth
                         placeholder={"Stadt"}
                         margin={"dense"}
-                        value={location.address.city}
-                        onChange={handleChangeAddress}/>
+                        value={city}
+                        onChange={handleChangeCity}/>
 
                     <TextField
                         type="text"
@@ -99,36 +80,18 @@ export default function EditLocation(props: EditLocationProps){
                         margin={"dense"}
                         placeholder={"name"}
                         name="name"
-                        value={location.name}
-                        onChange={handleChangeLocation}/>
-
-                    <TextField
-                        type="text"
-                        fullWidth
-                        margin={"dense"}
-                        name="image"
-                        placeholder={"image"}
-                        value={location.image}
-                        onChange={handleChangeLocation}/>
+                        value={name}
+                        onChange={handleChangeName}/>
 
 
-                    <TextField
-                        type="area"
-                        fullWidth
-                        margin={"dense"}
-                        placeholder={"description"}
-                        name="description"
-                        value={location.description}
-                        onChange={handleChangeLocation}/>
-                    <InputLabel htmlFor={"maxCapacity"}>Max Personenanzahl:</InputLabel>
                     <TextField
                         type="number"
                         fullWidth
                         margin={"dense"}
                         name="maxCapacity"
                         placeholder={"Max PersonenAnzahl"}
-                        value={location.maxCapacity}
-                        onChange={handleChangeLocation}/>
+                        value={maxCapacity}
+                        onChange={handleChangeMaxCapacity}/>
                     <InputLabel htmlFor={"pricePerPerson"}>Preis pro Person:</InputLabel>
                     <TextField
                         type="number"
@@ -136,100 +99,9 @@ export default function EditLocation(props: EditLocationProps){
                         margin={"dense"}
                         placeholder={"Preis pro Person"}
                         name="pricePerPerson"
-                        value={location.pricePerPerson}
-                        onChange={handleChangeLocation}/>
+                        value={price}
+                        onChange={handleChangePrice}/>
 
-
-                    <Accordion id={"panel1-header"}
-                               aria-controls={"panel1-content"}>
-                        <AccordionSummary>
-                            <Typography>Zusätzliche Daten</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <InputLabel htmlFor={"pricePerPerson"}>Seit wann ist die Location verfügbar?</InputLabel>
-                            <TextField
-                                type={"date"}
-                                placeholder={"Seit wann ist die Location verfügbar?"}
-                                fullWidth
-                                name={"startDate"}
-                                margin={"dense"}
-                                value={location.startDate}
-                                onChange={handleChangeLocation}/>
-                            <InputLabel htmlFor={"pricePerPerson"}>Bis wann ist die Location verfügbar?</InputLabel>
-                            <TextField
-                                type={"date"}
-                                fullWidth
-                                name={"endDate"}
-                                margin={"dense"}
-                                placeholder={"Bis wann ist die Location verfügbar?"}
-                                value={location.endDate}
-                                onChange={handleChangeLocation}/>
-                            <TextField
-                                type="text"
-                                fullWidth
-                                margin={"dense"}
-                                name="website"
-                                placeholder={"Link zu Webseite"}
-                                value={location.website}
-                                onChange={handleChangeLocation}/>
-                            <InputLabel htmlFor={"size"}>Fläche:</InputLabel>
-                            <TextField
-                                type="number"
-                                fullWidth
-                                margin={"dense"}
-                                name="size"
-                                value={location.size}
-                                onChange={handleChangeLocation}/>
-
-                            <TextField
-                                type="text"
-                                fullWidth
-                                margin={"dense"}
-                                name="eventType"
-                                placeholder={"Anlass"}
-                                value={location.eventType}
-                                onChange={handleChangeLocation}/>
-
-                            <TextField
-                                type="text"
-                                name="country"
-                                fullWidth
-                                placeholder={"Land"}
-                                margin={"dense"}
-                                value={location.address.country}
-                                onChange={handleChangeAddress}/>
-
-
-
-                            <TextField
-                                type="text"
-                                fullWidth
-                                placeholder={"PLZ"}
-                                name="zipCode"
-                                margin={"dense"}
-                                value={location.address.zipCode}
-                                onChange={handleChangeAddress}/>
-
-                            <TextField
-                                type="text"
-                                fullWidth
-                                placeholder={"Strasse"}
-                                name="street"
-                                margin={"dense"}
-                                value={location.address.street}
-                                onChange={handleChangeAddress}/>
-                            <TextField
-                                type="text"
-                                fullWidth
-                                name="houseNumber"
-                                placeholder={"Hausnummer"}
-                                margin={"dense"}
-                                value={location.address.houseNumber}
-                                onChange={handleChangeAddress}/>
-
-
-                        </AccordionDetails>
-                    </Accordion>
 
 
                     <Button type="submit" sx={{marginTop: 3, borderRadius: 3}} variant="contained"
