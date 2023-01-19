@@ -10,7 +10,7 @@ import {Typography, Accordion, AccordionSummary, AccordionDetails} from '@mui/ma
 
 type AddLocationProps = {
     owner: OwnerData
-    addLocation(username: string, newLocation: LocationData): void
+    addLocation(ownerId: string, newLocation: LocationData): void
 }
 
 

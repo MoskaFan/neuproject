@@ -2,7 +2,7 @@ import {Card} from "react-bootstrap";
 import "../styles/LocationCard.css"
 import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";
-import {ButtonGroup} from "@mui/material";
+import {Button, ButtonGroup} from "@mui/material";
 import {OwnerData} from "../entity/ownerData";
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -42,7 +42,7 @@ export default function LocationCard(props: LocationCardProps) {
                 <ButtonGroup sx={{margin:3, borderRadius: 3}} variant="contained" color={"primary"} >
                     <InfoIcon onClick={getLocationByIdOnClick} className={"Details"} >DETAILS</InfoIcon>
                     <EditIcon onClick={getEditLocationById}></EditIcon>
-                    <DeleteIcon onClick = {handleDeleteOnClick}>LÖSCHEN</DeleteIcon>
+                    <Button onClick = {handleDeleteOnClick}>LÖSCHEN</Button>
                 </ButtonGroup>
 
             </Card.Body>

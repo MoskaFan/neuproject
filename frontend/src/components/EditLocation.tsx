@@ -6,25 +6,46 @@ import {
     TextField,
 
 } from "@mui/material";
-import React, {ChangeEvent, FormEvent,  useState} from "react";
-import {useNavigate} from "react-router-dom";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import {useNavigate, useParams} from "react-router-dom";
 import { LocationData } from "../entity/locationData";
 import { OwnerData } from "../entity/ownerData";
+import axios from "axios";
 
 type EditLocationProps = {
     owner: OwnerData,
-    location: LocationData
     editLocation (ownerId: string, locationId: string, location: LocationData): void
 }
 
 export default function EditLocation(props: EditLocationProps) {
-    const navigate = useNavigate();
-const id =  props.location.id;
+    const params = useParams()
 
-    const [name, setName] = useState(props.location.name);
-    const [city, setCity] = useState(props.location.address!.city);
-    const [price, setPrice] = useState(props.location.pricePerPerson);
-    const [maxCapacity, setMaxCapacity] = useState(props.location.maxCapacity);
+    const locationId: string | undefined = params.locationId
+    useEffect(() => {
+        if (locationId) {
+            getLocationDetailsByID(locationId)
+        }
+
+    }, [locationId])
+
+    const [location, setLocation] = useState<LocationData>()
+
+    function getLocationDetailsByID(locationId: string) {
+
+        axios.get("/api/locations/" + locationId)
+            .then(response => {
+                console.log(response.data)
+                setLocation(response.data)
+            })
+            .catch(console.error)
+    }
+    const navigate = useNavigate();
+const id =  location.id;
+
+    const [name, setName] = useState(location.name);
+    const [city, setCity] = useState(location.address!.city);
+    const [price, setPrice] = useState(location.pricePerPerson);
+    const [maxCapacity, setMaxCapacity] = useState(location.maxCapacity);
 
 
     function handleChangeCity(event: ChangeEvent<HTMLInputElement>) {
@@ -44,7 +65,7 @@ const id =  props.location.id;
 
     async function handleEditSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        props.editLocation(props.owner.id!, props.location.id!, updatedLocation)
+        props.editLocation(props.owner.id!, location.id!, updatedLocation)
 
         navigate("/locations")
 
