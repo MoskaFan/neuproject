@@ -1,6 +1,7 @@
 import React from "react";
 import NavigationBar from "./NavigationBar";
 import "../App.css"
+import {Container} from "@mui/material";
 type HeaderProps ={
     username: string
     logout(): Promise<string>
@@ -9,9 +10,9 @@ type HeaderProps ={
 export default function Header(props: HeaderProps) {
 
     return(
-        <section className={"header"}>
+        <Container className={"header"}>
             <NavigationBar  logout={props.logout}/>
             <h6>Hello {props.username}</h6>
-        </section>
+        </Container>
     );
 }

@@ -1,7 +1,9 @@
-import { Button } from "react-bootstrap";
+
 import {NavLink, useNavigate} from "react-router-dom";
 import "../styles/NavigationBar.css"
-
+import {AppBar, Toolbar} from "@mui/material";
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import MenuIcon from '@mui/icons-material/Menu';
 
 type NavigationBarProps ={
     logout: () => Promise<string>
@@ -18,7 +20,9 @@ export default function NavigationBar(props: NavigationBarProps) {
 
 
     return (
-        <nav className={"nav-bar"}>
+        <AppBar position="relative" className={"nav-bar"}>
+            <Toolbar color={"info"}>
+                <MenuIcon className={"nav-bar-icon"}/>
             <NavLink to={"/"} className={"site-title"}>Perfect Location</NavLink>
             <ul >
                 <li >
@@ -34,9 +38,10 @@ export default function NavigationBar(props: NavigationBarProps) {
                     <NavLink to={"/locations"}>Locations finden</NavLink>
                 </li>
                 <li>
-                    <Button onClick={logout}>Logout</Button>
+                    <ExitToAppIcon onClick={logout}>Ausloggen</ExitToAppIcon>
                 </li>
             </ul>
-        </nav>
+            </Toolbar>
+        </AppBar>
     )
 }

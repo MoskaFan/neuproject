@@ -24,9 +24,10 @@ section .title{
 .cards{
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2em;
     justify-content: center;
 }
 img{
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
+    width:90%;
 }

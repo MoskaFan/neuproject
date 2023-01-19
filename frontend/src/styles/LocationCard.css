@@ -1,5 +1,5 @@
 .card {
-    width: 30rem;
+    width: 90%;
     border: 0.2rem solid #555555;
     justify-content: center;
     text-align: center;
@@ -9,13 +9,13 @@
 
 }
 .card-title{
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
 }
 
 .card-img-top{
     margin-top: 1rem;
-    width: 20rem;
+    width: 80%;
     justify-content: center;
 
 }

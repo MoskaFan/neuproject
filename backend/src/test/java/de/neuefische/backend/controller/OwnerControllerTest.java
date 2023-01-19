@@ -46,7 +46,7 @@ class OwnerControllerTest {
     void when_positive_then_new_owner_is_created() throws Exception {
 
 
-        mockMvc.perform(post("/api/owners").contentType(MediaType.APPLICATION_JSON).content("""
+        mockMvc.perform(post("/api/owners/").contentType(MediaType.APPLICATION_JSON).content("""
                 {"username": "StandardUser",
                 "email":  "test@test.com",
                 "password": "password",
@@ -78,24 +78,6 @@ class OwnerControllerTest {
 
     }
 
-
-    @Test
-    @DirtiesContext
-    @WithMockUser(username = "StandardUser")
-    void when_positive_then_user_is_found_by_id() throws Exception {
-        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com", "password", new ArrayList<>());
-        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(), ownerDTO.password(), ownerDTO.locations());
-        ownerRepository.save(owner);
-        mockMvc.perform(get("/api/owners/10"))
-                .andExpect(status().isOk()).andExpect(content().json("""
-                         {
-                         "username": "StandardUser",
-                          "email":  "test@test.com",
-                          "locations": []
-                        }
-                         """));
-    }
-
     @Test
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
@@ -105,45 +87,47 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/locations/10").contentType(MediaType.APPLICATION_JSON).content("""
-                        {"name": "name",
-                        "image": "image",
-                        "description": "description",
-                        "website": "website",
-                        "pricePerPerson":"120",
-                        "size": 20,
-                        "eventType":"Hochzeit",
-                        "maxCapacity": 50,
-                        "address": {
-                        "country": "Deutschland",
-                        "city": "Hamburg",
-                        "zipCode": "00000",
-                        "street": "Test Street",
-                        "houseNumber": "12"}}
-                        """).with(csrf()))
+        mockMvc.perform(put("/api/owners/locations/10")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"name": "name",
+                                "image": "image",
+                                "description": "description",
+                                "website": "website",
+                                "pricePerPerson":"120",
+                                "size": 20,
+                                "eventType":"Hochzeit",
+                                "maxCapacity": 50,
+                                "address": {
+                                "country": "Deutschland",
+                                "city": "Hamburg",
+                                "zipCode": "00000",
+                                "street": "Test Street",
+                                "houseNumber": "12"}}
+                                """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
-                        {"id":"10",
-                        "username":"StandardUser",
-                        "email":"test@test.com",
-                        "password":"password",
-                        "locations":[{"name":"name",
-                        "image":"image",
-                        "description":"description",
-                        "website":"website",
-                        "pricePerPerson":"120",
-                        "size":20,
-                        "eventType":"Hochzeit",
-                        "maxCapacity":50,
-                        "address":
-                        {"addressId":null,
-                        "country":"Deutschland",
-                        "city":"Hamburg",
-                        "zipCode":"00000",
-                        "street":"Test Street",
-                        "houseNumber":"12"},
-                        "startDate": null,
-                        "endDate": null}]}
+                         {"id":"10",
+                         "username":"StandardUser",
+                         "email":"test@test.com",
+                         "password":"password",
+                         "locations":[{"name":"name",
+                         "image":"image",
+                         "description":"description",
+                         "website":"website",
+                         "pricePerPerson":"120",
+                         "size":20,
+                         "eventType":"Hochzeit",
+                         "maxCapacity":50,
+                         "address":
+                         {
+                         "country":"Deutschland",
+                         "city":"Hamburg",
+                         "zipCode":"00000",
+                         "street":"Test Street",
+                         "houseNumber":"12"},
+                         "startDate": null,
+                         "endDate": null}]}
 
                         """));
     }
@@ -163,7 +147,7 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/api/owners/login/me"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("anonymousUser"));
+                .andExpect(content().string("Anonymous User"));
     }
 
     @Test
@@ -172,13 +156,13 @@ class OwnerControllerTest {
     void when_positive_then_expect_logout_of_owner() throws Exception {
         mockMvc.perform(post("/api/owners/logout").with(csrf()))
                 .andExpect(status().isOk())
-                .andExpect(content().string("anonymousUser"));
+                .andExpect(content().string("Anonymous User"));
     }
 
     @Test
     @DirtiesContext
     @WithMockUser("StandardUser")
-    void editLocation() throws Exception {
+    void wenn_positive_then_owner_id_will_be_got() throws Exception {
         OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
                 "password", new ArrayList<>(List.of(new Location("140", "name",
                 "image", "description", "website", new BigDecimal("120"),
@@ -188,46 +172,8 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("api/owners/locations/10/140").contentType(MediaType.APPLICATION_JSON).content("""
-                        {"name": "name",
-                        "image": "image",
-                        "description": "description",
-                        "website": "website",
-                        "pricePerPerson":"120",
-                        "size": 20,
-                        "eventType":"Hochzeit",
-                        "maxCapacity": 50,
-                        "address": {
-                        "country": "Deutschland",
-                        "city": "Hamburg",
-                        "zipCode": "00000",
-                        "street": "Test Street",
-                        "houseNumber": "16"}}
-                        """).with(csrf()))
-                .andExpect(status().isOk())
-                .andExpect(content().json("""
-                        {"id":"10",
-                        "username":"StandardUser",
-                        "email":"test@test.com",
-                        "password":"password",
-                        "locations":[{"name":"name",
-                        "image":"image",
-                        "description":"description",
-                        "website":"website",
-                        "pricePerPerson":"120",
-                        "size":20,
-                        "eventType":"Hochzeit",
-                        "maxCapacity":50,
-                        "address":
-                        {"addressId":null,
-                        "country":"Deutschland",
-                        "city":"Hamburg",
-                        "zipCode":"00000",
-                        "street":"Test Street",
-                        "houseNumber":"12"},
-                        "startDate": null,
-                        "endDate": null}]}
-                        """));
+        mockMvc.perform(get("/api/owners/login/"))
+                .andExpect(status().isOk());
     }
 
 

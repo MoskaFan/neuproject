@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
+import {OwnerData} from "./entity/ownerData";
 
 
 function App() {
@@ -30,14 +31,39 @@ function App() {
                 setLocations(response.data)
             })
     }
-    const [ownerId, setOwnerId] = useState<string>("")
+    const [owner, setOwner] = useState<OwnerData>({ id:"",
+        username:"",
+        email:"",
+        password:"",
+        locations: []})
+
     useEffect(() => {
         axios.get("/api/owners/login/")
             .then(response => response.data)
             .then(data => {
-                setOwnerId(data)
+                setOwner(data)
             })
     }, [])
+
+    function deleteLocation(ownerId: string, locationId: string) {
+        return axios.delete("/api/locations/" + ownerId + "/" + locationId)
+            .then(() => {
+                setLocations(prevState => {
+                    return prevState.filter((location: LocationData) => location.id! !== locationId)
+                })
+            })
+    }
+    function editLocation(ownerId: string, locationId: string, location: LocationData) {
+        return axios.put("/api/locations/" + ownerId + "/" + locationId, location)
+            .then(response => response.data)
+            .then(data => {
+                setOwner(data)
+            })
+            .catch(console.error)
+    }
+
+
+
     return (
         <BrowserRouter>
             <Header logout={logout} username={username}></Header>
@@ -46,8 +72,10 @@ function App() {
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/owners/login/me/:ownerId"} element={<AddLocation addLocation={addLocation}
-                                                                            ownerId={ownerId}/>}/>
-                    <Route path={"/locations"} element={<LocationGallery locations={locations}/>}/>
+                                                                            owner={owner}/>}/>
+                    <Route path={"/locations"} element={<LocationGallery locations={locations}
+                                                                         deleteLocation={deleteLocation}
+                    editLocation={editLocation}/>}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
                 </Routes>

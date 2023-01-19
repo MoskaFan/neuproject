@@ -48,7 +48,7 @@ export default function LoginPage(props: LoginPageProps) {
                  }}>
 
                 <Typography variant={"h2"} margin={3}
-                            alignItems={"center"}>Login</Typography>
+                            alignItems={"center"}>Einloggen</Typography>
 
                 <TextField
                     name={"username"}

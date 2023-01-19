@@ -1,16 +1,11 @@
-body{
-    margin: 0;
-    font-family: Raleway,sans-serif;
-    width:100%;
 
-}
 .nav-bar{
     background-color: white;
     color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    position: fixed;
+    position: relative;
     top: 0;
     left:0;
     right:0;
@@ -30,11 +25,12 @@ body{
     margin: 0;
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1em;
 }
+
 .site-title{
 
-    font: italic 3em "Fira Sans", serif;
+    font: italic 2.5em "Fira Sans", serif;
     color: goldenrod;
     font-weight: bold;
     font-stretch: expanded;
@@ -44,4 +40,13 @@ body{
 }
 .nav-bar li:hover{
     color: #777;
+}
+@media screen and (max-width: 500px) {
+    .nav-bar{
+        display: none;
+        height: auto;
+    }
+    .nav-bar-icon{
+        display: none;
+    }
 }
