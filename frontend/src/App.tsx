@@ -14,6 +14,7 @@ import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
 import {OwnerData} from "./entity/ownerData";
 import {EditLocation} from "@mui/icons-material";
+import EditForm from './components/EditForm';
 
 
 function App() {
@@ -75,13 +76,9 @@ function App() {
 
     }
 
-    function editLocation(locationId: string, location: LocationData) {
-        return axios.put("/api/owners/locations/" + locationId, location)
-            .then(response => response.data)
-            .then(data => {
-                setOwner(data)
-            })
-            .catch(console.error)
+    function editLocation(ownerId: string, locationId: string, location: LocationData){
+        return axios.put("/api/owners/locations/" + ownerId +"/"+locationId, location)
+
     }
 
 
@@ -99,7 +96,8 @@ function App() {
                                                                          editLocation={editLocation} />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
-                    <Route path={"/locations/edit/:id"} element={<EditLocation/>}></Route>
+                    <Route path={"/locations/edit/:locationId"} element={<EditForm
+                        owner={owner} editLocation={editLocation} />}></Route>
                 </Routes>
             </section>
 

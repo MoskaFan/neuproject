@@ -11,7 +11,7 @@ import SearchBar from "./SearchBar";
 type LocationGalleryProps = {
     locations: LocationData[]
     deleteLocation(locationId: string): void
-    editLocation(locationId: string, location: LocationData): void
+    editLocation(ownerId: string, locationId: string, location: LocationData): void
 }
 
 export default function LocationGallery(props: LocationGalleryProps) {
