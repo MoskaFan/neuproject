@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add endpoints">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/EditLocation.tsx" beforeDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix test logout">
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +106,22 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest">
+    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OwnerControllerTest.edit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -118,22 +133,6 @@
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
       <option name="METHOD_NAME" value="edit" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OwnerControllerTest.editLocation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="editLocation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,8 +196,8 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest.edit" />
-      <item itemvalue="JUnit.OwnerControllerTest.editLocation" />
       <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
       <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
       <item itemvalue="npm.start" />
@@ -206,11 +205,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="npm.start" />
         <item itemvalue="JUnit.OwnerControllerTest.edit" />
         <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
         <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
-        <item itemvalue="JUnit.OwnerControllerTest.editLocation" />
       </list>
     </recent_temporary>
   </component>
@@ -243,14 +242,7 @@
       <workItem from="1673774500834" duration="8260000" />
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
-      <workItem from="1673991095941" duration="50534000" />
-    </task>
-    <task id="LOCAL-00033" summary="Fix problems from review">
-      <created>1672344147772</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1672344147774</updated>
+      <workItem from="1673991095941" duration="50833000" />
     </task>
     <task id="LOCAL-00034" summary="Add handle to names of methods in frontend">
       <created>1672344997354</created>
@@ -588,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674144022773</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Fix test logout">
+      <created>1674144510590</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1674144510592</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +609,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change filteredLocations" />
     <MESSAGE value="Change GlobalExceptionHandler" />
     <MESSAGE value="Change filters" />
     <MESSAGE value="Add OnClick" />
@@ -635,7 +633,8 @@
     <MESSAGE value="Change edit location in frontend" />
     <MESSAGE value="Change LocationCard" />
     <MESSAGE value="Add endpoints" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add endpoints" />
+    <MESSAGE value="Fix test logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix test logout" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
