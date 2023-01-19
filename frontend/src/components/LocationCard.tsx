@@ -3,16 +3,15 @@ import "../styles/LocationCard.css"
 import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";
 import {Button, ButtonGroup} from "@mui/material";
-import {OwnerData} from "../entity/ownerData";
+
 import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
+
 import InfoIcon from '@mui/icons-material/Info';
 
 type LocationCardProps = {
     location: LocationData
-    owner: OwnerData
-    removeLocation(ownerId: string, locationId: string): void
-    editLocation(ownerId: string, locationId: string, location: LocationData): void
+    removeLocation(locationId: string): void
+    editLocation(locationId: string, location: LocationData): void
 }
 
 
@@ -24,7 +23,7 @@ export default function LocationCard(props: LocationCardProps) {
         navigate("/locations/" + props.location.id)
     }
     function handleDeleteOnClick() {
-        props.removeLocation(props.owner.id!, props.location.id!)
+        props.removeLocation(props.location.id!)
 
     }
     function getEditLocationById() {

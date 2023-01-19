@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./App.css"
-import {BrowserRouter, Route, Routes, useParams} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import LoginPage from './components/LoginPage';
 import AddLocation from './components/AddLocation';
@@ -20,6 +20,7 @@ function App() {
 
     const {username, addLocation, login, addOwner, logout} = UseOwner()
     const [locations, setLocations] = useState<LocationData[]>([])
+    const [owners, setOwners] = useState<OwnerData[]>([])
 
 
     useEffect(() => {
@@ -32,11 +33,15 @@ function App() {
                 setLocations(response.data)
             })
     }
-    const [owner, setOwner] = useState<OwnerData>({ id:"",
-        username:"",
-        email:"",
-        password:"",
-        locations: []})
+
+
+    const [owner, setOwner] = useState<OwnerData>({
+        id: "",
+        username: "",
+        email: "",
+        password: "",
+        locations: []
+    })
 
     useEffect(() => {
         axios.get("/api/owners/login/owner")
@@ -45,25 +50,39 @@ function App() {
                 setOwner(data)
             })
     }, [])
+    useEffect(() => {
+        getOwners()
+    }, [])
 
-    function deleteLocation(ownerId: string, locationId: string) {
-        return axios.delete("/api/owners/locations/"+ ownerId + "/" + locationId)
+    function getOwners() {
+        axios.get('/api/owners/')
+            .then((response) => {
+                setOwners(response.data)
+            })
+    }
+
+    function deleteLocation(locationId: string) {
+        return axios.delete("/api/owners/locations/" + locationId)
+            .then(response => response.data)
+            .then(data => {
+                setOwner(data)
+            })
             .then(() => {
-                setLocations(prevState => {
-                    return prevState.filter((location: LocationData) => location.id! !== locationId)
-                })
+                setLocations([...locations].filter((location: LocationData) =>
+                        location.id! !==locationId))
             })
 
+
     }
-    function editLocation(ownerId: string, locationId: string, location: LocationData) {
-        return axios.put("/api/owners/locations/" + ownerId + "/" + locationId, location)
+
+    function editLocation(locationId: string, location: LocationData) {
+        return axios.put("/api/owners/locations/" + locationId, location)
             .then(response => response.data)
             .then(data => {
                 setOwner(data)
             })
             .catch(console.error)
     }
-
 
 
     return (
@@ -74,10 +93,10 @@ function App() {
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/owners/login/me/:ownerId"} element={<AddLocation addLocation={addLocation}
-                                                                            owner={owner}/>}/>
+                                                                                    owner={owner}/>}/>
                     <Route path={"/locations"} element={<LocationGallery locations={locations}
                                                                          deleteLocation={deleteLocation}
-                                                                         editLocation={editLocation} owner={owner}/>}/>
+                                                                         editLocation={editLocation} />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
                     <Route path={"/locations/edit/:id"} element={<EditLocation/>}></Route>
