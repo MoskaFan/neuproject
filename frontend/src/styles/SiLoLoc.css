@@ -1,8 +1,15 @@
-.form{
-
-    padding-bottom: 15rem;
+form{
     text-align: center;
     justify-content: center;
     display: flex;
-    gap: 1rem;
+    margin: 0;
+    padding: 0;
+
+}
+@media only screen and (max-width: 500px) {
+    form{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
 }

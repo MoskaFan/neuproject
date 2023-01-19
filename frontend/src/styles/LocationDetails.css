@@ -1,6 +1,7 @@
+
 .location{
-    display: inline;
     justify-content: center;
+    text-align: center;
 }
 .table{
     text-align: center;
@@ -9,8 +10,9 @@
 .table h1{
     font-weight: bold;
 }
-.table img{
+img{
     margin: 2rem;
+    width: 90%;
 }
 .table-header{
     font-size: 1rem;
@@ -19,23 +21,22 @@
 
 .calendar{
     margin: 5rem;
-    width: 100%;
+    width: 50rem;
 }
 @media screen and (max-width: 48rem){
     .location{
-        display: inline;
+        display: flex;
         justify-content: center;
+        text-align: center;
     }
     .table{
         text-align: center;
-        width:100%;
     }
     .table h1{
         font-weight: bold;
     }
     .table img{
         margin: 0.5rem;
-        width: 33%;
     }
     .table-header{
         font-size: .2rem;
@@ -44,6 +45,6 @@
 
     .calendar{
         margin: 0.5rem;
-        width: 100%;
+        width: 33%;
     }
 }

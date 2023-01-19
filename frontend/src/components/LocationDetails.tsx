@@ -2,12 +2,27 @@ import axios from "axios";
 import {useEffect, useState} from "react";
 import {LocationData} from "../entity/locationData";
 import {useNavigate, useParams} from "react-router-dom";
-import {Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
+import {
+    Box,
+    Button,
+    ButtonGroup,
+    Container,
+    Paper,
+    Table,
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    TableRow
+} from "@mui/material";
 import Calendar from 'react-calendar';
 import "../styles/LocationDetails.css";
 
 
+
+
 export default function LocationDetails() {
+
 
     const params = useParams()
 
@@ -35,22 +50,24 @@ export default function LocationDetails() {
             })
             .catch(console.error)
     }
+
     const [date, setDate] = useState(new Date());
 
 
-    return(
-        <div className={"location"}>{location?
-            <section className={"table"}>
+    return (
+        <Container className={"location"}>{location ?
+            <Box display="flex" flexDirection={"column"} maxWidth={500}
+                 alignItems={"center"} justifyContent={"center"}
+                 borderRadius={5} margin={5}
+                 padding={3} className={"table"}>
                 <h1>{location.name}</h1>
-                <img alt={""} src={location.image} /><br/>
-                {location.description}<br/>
-                <br />
-                <a  href={location.website}>{location.website}</a>
-                <br/><br/><br/><br/>
-                <TableContainer component={Paper}>
-                    <Table sx={{ maxWidth: 800 }} aria-label="simple table">
+                <img alt={""} src={location.image}/>
+                {location.description}
+                <a href={location.website}>{location.website}</a>
+                <TableContainer sx={{maxWidth: 500}} component={Paper}>
+                    <Table aria-label="simple table">
                         <TableHead>
-                            <TableRow >
+                            <TableRow>
                                 <TableCell align="center">Price</TableCell>
                                 <TableCell align="center">Anlass</TableCell>
                                 <TableCell align="center">Personenanzahl</TableCell>
@@ -74,20 +91,22 @@ export default function LocationDetails() {
                     </Table>
                 </TableContainer>
                 <section className={"calendar"}>
-                <Calendar onChange={setDate} value={date} />
-                <p className='text-center'>
-                    <span className='bold'>Selected Date:</span>{' '}
-                    {date.toDateString()}
-                </p>
+                    <Calendar onChange={setDate} value={date}/>
+                    <p className='text-center'>
+                        <span className='bold'>Selected Date:</span>{' '}
+                        {date.toDateString()}
+                    </p>
                 </section>
-            </section>
+                <br/><br/>
+                <ButtonGroup variant="contained" color={"primary"} >
+                    <Button onClick={() => navigate("/locations")} >Go back</Button>
+
+                </ButtonGroup>
+            </Box>
             : <p>Loading...</p>
         }
-            <br/><br/>
-            <Button onClick={() => navigate("/locations")}>Go back</Button>
-            <Button>BUCHEN</Button>
-            <Button>ÄNDERN</Button>
-            <Button>LÖSCHEN</Button>
-        </div>
+
+
+        </Container>
     )
 }

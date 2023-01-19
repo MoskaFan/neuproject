@@ -46,13 +46,12 @@ public class OwnerController {
         return ownerService.updateOwner(ownerId, editedOwner);
     }
 
-    @GetMapping("/login/me/")
-
+    @GetMapping("/login/me")
     public String helloMe(Principal principal) {
         if (principal != null) {
             return principal.getName();
         }
-        return "anonymousUser";
+        return "Anonymous User";
     }
 
     @PostMapping("/logout")

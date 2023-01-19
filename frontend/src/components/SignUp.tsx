@@ -43,6 +43,7 @@ export default function SignUp(props: SignUpProps) {
                  sx={{
                      ":hover": {
                          boxShadow: '10px 10px 20px #ccc',
+                     flexGrow: 1
                      }
                  }}>
 
