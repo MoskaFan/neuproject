@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import "./App.css"
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, useParams} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import LoginPage from './components/LoginPage';
 import AddLocation from './components/AddLocation';
@@ -39,7 +39,7 @@ function App() {
         locations: []})
 
     useEffect(() => {
-        axios.get("/api/owners/login/")
+        axios.get("/api/owners/login/owner")
             .then(response => response.data)
             .then(data => {
                 setOwner(data)
@@ -47,15 +47,16 @@ function App() {
     }, [])
 
     function deleteLocation(ownerId: string, locationId: string) {
-        return axios.delete("/api/locations/" + ownerId + "/" + locationId)
+        return axios.delete("/api/owners/locations/"+ ownerId + "/" + locationId)
             .then(() => {
                 setLocations(prevState => {
                     return prevState.filter((location: LocationData) => location.id! !== locationId)
                 })
             })
+
     }
     function editLocation(ownerId: string, locationId: string, location: LocationData) {
-        return axios.put("/api/locations/" + ownerId + "/" + locationId, location)
+        return axios.put("/api/owners/locations/" + ownerId + "/" + locationId, location)
             .then(response => response.data)
             .then(data => {
                 setOwner(data)

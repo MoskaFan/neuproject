@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change edit location in frontend">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddLocation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/EditLocation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditLocation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,14 +248,7 @@
       <workItem from="1673774500834" duration="8260000" />
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
-      <workItem from="1673991095941" duration="44208000" />
-    </task>
-    <task id="LOCAL-00031" summary="Fix names of test methods">
-      <created>1672341449570</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1672341449582</updated>
+      <workItem from="1673991095941" duration="50185000" />
     </task>
     <task id="LOCAL-00032" summary="Fix problems from review">
       <created>1672343474589</created>
@@ -593,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674129154038</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Change LocationCard">
+      <created>1674137623913</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1674137623915</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,8 +615,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add GlobalExceptionHandler, search ba" />
-    <MESSAGE value="Change search bar" />
     <MESSAGE value="Change filteredLocations" />
     <MESSAGE value="Change GlobalExceptionHandler" />
     <MESSAGE value="Change filters" />
@@ -640,7 +638,9 @@
     <MESSAGE value="Add test edit location" />
     <MESSAGE value="Add edit location in frontend, change styles" />
     <MESSAGE value="Change edit location in frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change edit location in frontend" />
+    <MESSAGE value="Change LocationCard" />
+    <MESSAGE value="Add endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add endpoints" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

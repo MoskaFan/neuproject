@@ -62,7 +62,7 @@ public class OwnerController {
         return "anonymousUser";
     }
 
-    @GetMapping("/login/")
+    @GetMapping("/login/owner")
     public Optional<Owner> getOwnerByUsername(Principal principal) {
         return ownerService.getOwnerByUsername(principal);
     }
