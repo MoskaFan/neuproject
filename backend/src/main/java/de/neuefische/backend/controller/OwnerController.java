@@ -59,7 +59,7 @@ public class OwnerController {
     public String logout(HttpSession httpSession) {
         httpSession.invalidate();
         SecurityContextHolder.clearContext();
-        return "anonymousUser";
+        return "Anonymous User";
     }
 
     @GetMapping("/login/owner")
