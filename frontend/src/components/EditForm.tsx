@@ -88,7 +88,7 @@ export default function EditForm(props: EditFormProps) {
 
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        props.editLocation(props.owner.id!, locationId!, location)
+        props.editLocation(props.owner.id!, location.id!, location)
 
         navigate("/locations")
 

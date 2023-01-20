@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change delete location">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix bug with deleteLocation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,22 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="JUnit.OwnerServiceTest.loadUserByUsername">
+    <configuration name="LocationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.LocationControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -126,7 +140,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.edit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.wenn_positive_then_location_will_be_edited" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -136,13 +150,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="edit" />
+      <option name="METHOD_NAME" value="wenn_positive_then_location_will_be_edited" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.when_positive_then_new_owner_is_created" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -152,23 +166,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="wenn_positive_then_owner_id_will_be_got" />
+      <option name="METHOD_NAME" value="when_positive_then_new_owner_is_created" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerServiceTest.loadUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="when_positive_then_location_is_added_by_consisting_owner" />
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="loadUserByUsername" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,32 +202,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/frontend/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JUnit.LocationControllerTest" />
+      <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_location_will_be_edited" />
+      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
+      <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
       <item itemvalue="JUnit.OwnerControllerTest" />
-      <item itemvalue="JUnit.OwnerControllerTest.edit" />
-      <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
-      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
-      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
+        <item itemvalue="JUnit.LocationControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest" />
-        <item itemvalue="npm.start" />
-        <item itemvalue="JUnit.OwnerControllerTest.edit" />
-        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_location_is_added_by_consisting_owner" />
-        <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
+        <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_location_will_be_edited" />
       </list>
     </recent_temporary>
   </component>
@@ -246,14 +250,8 @@
       <workItem from="1673774500834" duration="8260000" />
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
-      <workItem from="1673991095941" duration="66272000" />
-    </task>
-    <task id="LOCAL-00036" summary="Add test for addLocation">
-      <created>1672749784883</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1672749784884</updated>
+      <workItem from="1673991095941" duration="66488000" />
+      <workItem from="1674200418525" duration="4480000" />
     </task>
     <task id="LOCAL-00037" summary="Add key by LocationCard">
       <created>1672750696974</created>
@@ -591,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674163471500</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Change edit location">
+      <created>1674167667167</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1674167667170</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,8 +618,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add OnClick" />
-    <MESSAGE value="Change SearchBar" />
     <MESSAGE value="Remove SearchBar" />
     <MESSAGE value="Change search filters" />
     <MESSAGE value="Remove filter size" />
@@ -638,7 +641,9 @@
     <MESSAGE value="Fix test logout" />
     <MESSAGE value="Fix test wenn_positive_then_owner_id_will_be_got" />
     <MESSAGE value="Change delete location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change delete location" />
+    <MESSAGE value="Change edit location" />
+    <MESSAGE value="Fix bug with deleteLocation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with deleteLocation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

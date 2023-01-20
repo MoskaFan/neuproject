@@ -99,7 +99,8 @@ public class OwnerService implements UserDetailsService {
         for (Location oldLocation : owner.getLocations()) {
             if (oldLocation.getId().equals(locationId)) {
                 owner.getLocations().remove(oldLocation);
-                return ownerRepository.save(owner);
+                return owner;
+
             }
 
         }
@@ -115,7 +116,7 @@ public class OwnerService implements UserDetailsService {
                 locationDTO.eventType(), locationDTO.maxCapacity(),
                 locationDTO.address(), locationDTO.startDate(),
                 locationDTO.endDate());
-        deleteLocationInOwnerData(ownerId, locationId);
+        owner = deleteLocationInOwnerData(ownerId, locationId);
         owner.getLocations().add(location);
         locationRepository.deleteById(locationId);
         locationRepository.save(location);
@@ -125,8 +126,8 @@ public class OwnerService implements UserDetailsService {
     public Owner deleteLocation(Principal principal, String locationId) {
 
         Owner owner = ownerRepository.findByUsername(principal.getName()).orElseThrow();
-        deleteLocationInOwnerData(owner.getId(), locationId);
         locationRepository.deleteById(locationId);
+        owner = deleteLocationInOwnerData(owner.getId(), locationId);
         return ownerRepository.save(owner);
     }
 
