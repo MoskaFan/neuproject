@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix bug with deleteLocation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -251,14 +248,7 @@
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
-      <workItem from="1674200418525" duration="4480000" />
-    </task>
-    <task id="LOCAL-00037" summary="Add key by LocationCard">
-      <created>1672750696974</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1672750696974</updated>
+      <workItem from="1674200418525" duration="4863000" />
     </task>
     <task id="LOCAL-00038" summary="Refactor Code">
       <created>1672908892751</created>
@@ -596,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674167667170</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Fix bug with deleteLocation">
+      <created>1674205171632</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1674205171664</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
