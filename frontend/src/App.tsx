@@ -3,7 +3,6 @@ import "./App.css"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import LoginPage from './components/LoginPage';
-import AddLocation from './components/AddLocation';
 import LocationGallery from './components/LocationGallery';
 import axios from 'axios';
 import {LocationData} from './entity/locationData';
@@ -82,15 +81,15 @@ function App() {
                 <Routes>
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
-                    <Route path={"/owners/login/me/:ownerId"} element={<AddLocation addLocation={addLocation}
-                                                                                    owner={owner}/>}/>
+                    <Route path={"/owners/edit"} element={<EditForm
+                        owner={owner} editLocation={editLocation}  addLocation={addLocation}/>}/>
                     <Route path={"/locations"} element={<LocationGallery locations={locations}
                                                                          deleteLocation={deleteLocation}
                                                                          editLocation={editLocation} />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
                     <Route path={"/locations/edit/:locationId"} element={<EditForm
-                        owner={owner} editLocation={editLocation} />}></Route>
+                        owner={owner} editLocation={editLocation}  addLocation={addLocation}/>}></Route>
                 </Routes>
             </section>
 

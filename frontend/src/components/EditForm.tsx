@@ -16,6 +16,7 @@ import axios from "axios";
 type EditFormProps = {
     owner: OwnerData
     editLocation(ownerId: string, locationId: string, newLocation: LocationData): void
+    addLocation(ownerId: string, newLocation: LocationData): void
 }
 
 
@@ -85,13 +86,22 @@ export default function EditForm(props: EditFormProps) {
             }
         });
     }
-
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
-        event.preventDefault()
-        props.editLocation(props.owner.id!, location.id!, location)
 
+        if (!location.id) {
+
+            event.preventDefault()
+            props.addLocation(props.owner.id!, location)
+            setLocation({...location})
+
+
+        } else {
+
+            event.preventDefault()
+            props.editLocation(props.owner.id!, location.id!, location)
+
+        }
         navigate("/locations")
-
     }
 
 

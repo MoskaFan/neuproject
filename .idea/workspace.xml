@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add test getLocationByID_negative_test">
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add test deleteLocationInOwnerDataTest_negativeTest">
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/LocationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
         <option value="TypeScript File" />
         <option value="CSS File" />
         <option value="Record" />
-        <option value="TypeScript JSX File" />
         <option value="Class" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -249,14 +252,7 @@
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
-      <workItem from="1674200418525" duration="20098000" />
-    </task>
-    <task id="LOCAL-00044" summary="Remove test for contextLoads">
-      <created>1672923718209</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1672923718210</updated>
+      <workItem from="1674200418525" duration="21087000" />
     </task>
     <task id="LOCAL-00045" summary="Fix code smell">
       <created>1672924652861</created>
@@ -594,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674222091749</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Add test deleteLocationInOwnerDataTest_negativeTest">
+      <created>1674222348058</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1674222348058</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +619,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change home page" />
     <MESSAGE value="Change style LocationGallery" />
     <MESSAGE value="Change style Home" />
     <MESSAGE value="Change endpoint for addLocation" />
@@ -641,7 +643,8 @@
     <MESSAGE value="Add test wenn_positive_then_location_with_id_140_wil_be_got()" />
     <MESSAGE value="Add tests deleteLocationInOwnerDataTest &amp;     void getLocationByID_test" />
     <MESSAGE value="Add test getLocationByID_negative_test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test getLocationByID_negative_test" />
+    <MESSAGE value="Add test deleteLocationInOwnerDataTest_negativeTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test deleteLocationInOwnerDataTest_negativeTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
