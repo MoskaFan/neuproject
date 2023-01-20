@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Fix bug with deleteLocation">
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Refactor Code">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/controller/OwnerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +112,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerServiceTest.loadUserByUsername">
+  <component name="RunManager" selected="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got">
     <configuration name="LocationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -137,7 +143,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest.wenn_positive_then_location_will_be_edited" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -147,7 +153,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="METHOD_NAME" value="wenn_positive_then_location_will_be_edited" />
+      <option name="METHOD_NAME" value="wenn_positive_then_owner_id_will_be_got" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -202,19 +208,19 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="JUnit.LocationControllerTest" />
-      <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_location_will_be_edited" />
       <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
       <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
       <item itemvalue="JUnit.OwnerControllerTest" />
+      <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
         <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
         <item itemvalue="JUnit.LocationControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest" />
         <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
-        <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_location_will_be_edited" />
       </list>
     </recent_temporary>
   </component>
@@ -248,14 +254,7 @@
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
-      <workItem from="1674200418525" duration="4863000" />
-    </task>
-    <task id="LOCAL-00038" summary="Refactor Code">
-      <created>1672908892751</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1672908892752</updated>
+      <workItem from="1674200418525" duration="13210000" />
     </task>
     <task id="LOCAL-00039" summary="Fix bug with login">
       <created>1672913497784</created>
@@ -593,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674205171664</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Fix bug with editLocation">
+      <created>1674205697700</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1674205697701</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -615,8 +621,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Remove SearchBar" />
-    <MESSAGE value="Change search filters" />
     <MESSAGE value="Remove filter size" />
     <MESSAGE value="Add getLocationByID, add LocationDetails" />
     <MESSAGE value="Add Routr LocationDetails" />
@@ -640,7 +644,9 @@
     <MESSAGE value="Change delete location" />
     <MESSAGE value="Change edit location" />
     <MESSAGE value="Fix bug with deleteLocation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix bug with deleteLocation" />
+    <MESSAGE value="Fix bug with editLocation" />
+    <MESSAGE value="Refactor Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor Code" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

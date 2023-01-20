@@ -72,21 +72,9 @@ public class OwnerService implements UserDetailsService {
 
     }
 
-    private void checkIfOwnerExists(String ownerId) {
-        for (Owner owner : ownerRepository.findAll()) {
-            if (owner.getId().equals((ownerId))) {
-                return;
-            }
-        }
-        throw new NoSuchElementException("Owner with id: " + ownerId + " not found");
-    }
 
 
-    public Owner updateOwner(String ownerId, Owner newOwner) {
-        checkIfOwnerExists(ownerId);
-        return ownerRepository.save(newOwner);
 
-    }
 
     public Optional<Owner> getOwnerByUsername(Principal principal) {
         String username = principal.getName();
@@ -120,6 +108,7 @@ public class OwnerService implements UserDetailsService {
         owner.getLocations().add(location);
         locationRepository.deleteById(locationId);
         locationRepository.save(location);
+        // @ts-ignore
         return ownerRepository.save(owner);
     }
 
@@ -131,9 +120,7 @@ public class OwnerService implements UserDetailsService {
         return ownerRepository.save(owner);
     }
 
-    public List<Owner> getAllOwners() {
-        return ownerRepository.findAll();
-    }
+
 }
 
 

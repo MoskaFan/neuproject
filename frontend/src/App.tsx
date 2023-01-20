@@ -13,7 +13,6 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
 import {OwnerData} from "./entity/ownerData";
-import {EditLocation} from "@mui/icons-material";
 import EditForm from './components/EditForm';
 
 
@@ -21,7 +20,7 @@ function App() {
 
     const {username, addLocation, login, addOwner, logout} = UseOwner()
     const [locations, setLocations] = useState<LocationData[]>([])
-    const [owners, setOwners] = useState<OwnerData[]>([])
+
 
 
     useEffect(() => {
@@ -51,16 +50,10 @@ function App() {
                 setOwner(data)
             })
     }, [])
-    useEffect(() => {
-        getOwners()
-    }, [])
 
-    function getOwners() {
-        axios.get('/api/owners/')
-            .then((response) => {
-                setOwners(response.data)
-            })
-    }
+
+
+
 
     function deleteLocation(locationId: string) {
         return axios.delete("/api/owners/locations/" + locationId)
