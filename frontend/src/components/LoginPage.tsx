@@ -25,7 +25,8 @@ export default function LoginPage(props: LoginPageProps) {
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
         props.login(owner)
-            .then(() => {
+            .then((response) => {
+                console.log(response)
                 setOwner(emptyLoginData)
             })
             .then(() => {

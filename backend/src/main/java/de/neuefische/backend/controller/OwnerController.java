@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.security.Principal;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -25,10 +24,6 @@ public class OwnerController {
     public Owner addOwner(@RequestBody OwnerDTO ownerDTO) {
         return ownerService.addOwner(ownerDTO);
     }
-    @GetMapping
-    public List<Owner> getAllOwners(){
-        return ownerService.getAllOwners();
-    }
 
     @PostMapping("/login")
     public String login() {
@@ -43,13 +38,6 @@ public class OwnerController {
     @PutMapping("/locations/{ownerId}")
     public Owner addLocation(@PathVariable String ownerId, @RequestBody LocationDTO locationDTO) {
         return ownerService.addLocation(ownerId, locationDTO);
-    }
-
-    @PutMapping("/{ownerId}")
-    public Owner updateOwner(@PathVariable String ownerId, @RequestBody OwnerDTO owner) {
-        Owner editedOwner = new Owner(ownerId, owner.username(),
-                owner.email(), owner.password(), owner.locations());
-        return ownerService.updateOwner(ownerId, editedOwner);
     }
 
     @GetMapping("/login/me")

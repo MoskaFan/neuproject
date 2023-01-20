@@ -1,5 +1,5 @@
 
-import { FormControl, Typography} from "@mui/material";
+import { Typography} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import {ChangeEvent} from "react";
 
@@ -20,9 +20,9 @@ export default function SearchBar(props: SearchBarProps){
             <Typography
                 variant={"h6"} className={"title"}>Geben Sie die gesuchte Stadt ein:
             </Typography>
-            <FormControl variant="standard">
-                <SearchIcon/> <input onChange={handleOnChangeSearchText}/>
-            </FormControl>
+
+            <input onChange={handleOnChangeSearchText}/><SearchIcon/>
+
 
 
         </section>

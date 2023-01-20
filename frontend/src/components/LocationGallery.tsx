@@ -2,10 +2,8 @@ import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
 import {useState} from "react";
 import "../styles/Gallery.css"
-import {Box, Container} from "@mui/material";
+import {Box, Container, Typography} from "@mui/material";
 import SearchBar from "./SearchBar";
-
-
 
 
 type LocationGalleryProps = {
@@ -16,46 +14,43 @@ type LocationGalleryProps = {
 
 export default function LocationGallery(props: LocationGalleryProps) {
 
-
+// @ts-ignore
     const [searchCity, setSearchCity] = useState<string>("");
-    let [filteredLocations, setFilteredLocations] = useState(props.locations);
+    const [filteredLocations, setFilteredLocations] = useState(props.locations);
 
+    const searchAllCities = props.locations.map((location) => {
+        return (
+            <label>{location.address!.city}</label>)
 
+    })
 
-    function handleChangeCity (searchCity: string)  {
+    function handleChangeCity(searchCity: string) {
         setSearchCity(searchCity)
+        const filter: LocationData[] = props.locations.filter((location) =>
+            location.address!.city.toLowerCase() === searchCity.toLowerCase());
+        setFilteredLocations(filter);
     }
 
 
-
-    const filter = (locations: LocationData[], query: string) => {
-        if (!searchCity) {
-            return locations
-        }
-        return locations.filter((location) => {
-            const locationCity = location.address!.city.toLowerCase();
-            return locationCity.includes(query.toLowerCase());
-        })
-    }
-    const filterLocations = filter(filteredLocations, searchCity);
-
-
-
-return(
-    <Container>
-        <Box>
-            <img alt="location"
-                 src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
-            <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
+    return (
+        <Container>
+            <Box>
+                <img alt="location"
+                     src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
+                <Typography>{searchAllCities}</Typography>
+                <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
                 <section className={"cards"}>
-                    {props.locations.map(location => (
-                        <LocationCard location={location} key={location.id}
-                                       editLocation={props.editLocation}
-                                      removeLocation={props.deleteLocation} />
-                    ))}
 
-            </section>
-        </Box>
-    </Container>
-)
+                    <div>
+                        {filteredLocations.map(location => (
+                            <LocationCard location={location} key={location.id}
+                                          editLocation={props.editLocation}
+                                          removeLocation={props.deleteLocation}/>
+                        ))}
+                    </div>
+
+                </section>
+            </Box>
+        </Container>
+    )
 }
