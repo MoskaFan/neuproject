@@ -95,6 +95,7 @@ public class OwnerService implements UserDetailsService {
        return owner;
     }
     public Owner editLocation(String ownerId, String locationId, LocationDTO locationDTO) {
+        // @ts-ignore
         Owner owner = getOwnerById(ownerId);
 
         Location location = new Location(locationId, locationDTO.name(),
