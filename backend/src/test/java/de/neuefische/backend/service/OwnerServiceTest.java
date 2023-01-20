@@ -53,4 +53,19 @@ class OwnerServiceTest {
         owner = ownerService.deleteLocationInOwnerData("10", "140");
         assertTrue(owner.getLocations().isEmpty());
     }
+    @Test
+    void deleteLocationInOwnerDataTest_negativeTest(){
+        String username = "user";
+        Owner owner = new Owner("10", username,
+                "email","password",
+                new ArrayList<>(List.of(new Location("140", "name",
+                        "image", "description", "website", new BigDecimal("120"),
+                        20, "Hochzeit", 50,
+                        new Address("Deutschland", "Hamburg", "00000", "Test Street",
+                                "12"), null, null))));
+        when(ownerRepository.save(owner)).thenReturn(owner);
+        when(ownerRepository.findById("10")).thenReturn(Optional.of(owner));
+        owner = ownerService.deleteLocationInOwnerData("10", "145");
+        assertFalse(owner.getLocations().isEmpty());
+    }
 }

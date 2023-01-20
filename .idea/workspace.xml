@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add tests deleteLocationInOwnerDataTest &amp;     void getLocationByID_test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/LocationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/LocationServiceTest.java" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add test getLocationByID_negative_test">
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/service/OwnerServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +106,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LocationServiceTest.getLocationByID_negative_test">
+  <component name="RunManager" selected="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest">
     <configuration name="LocationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -156,22 +154,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationServiceTest.loadUserByUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.LocationServiceTest" />
-      <option name="METHOD_NAME" value="loadUserByUsername" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="OwnerServiceTest.deleteLocationInOwnerDataTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -183,6 +165,22 @@
       <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
       <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
       <option name="METHOD_NAME" value="deleteLocationInOwnerDataTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.OwnerServiceTest" />
+      <option name="METHOD_NAME" value="deleteLocationInOwnerDataTest_negativeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,17 +205,17 @@
       <item itemvalue="JUnit.LocationServiceTest" />
       <item itemvalue="JUnit.LocationServiceTest.getLocationByID_negative_test" />
       <item itemvalue="JUnit.LocationServiceTest.getLocationByID_test" />
-      <item itemvalue="JUnit.LocationServiceTest.loadUserByUsername" />
       <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest" />
+      <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest" />
         <item itemvalue="JUnit.LocationServiceTest.getLocationByID_negative_test" />
         <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest" />
         <item itemvalue="JUnit.LocationServiceTest.getLocationByID_test" />
         <item itemvalue="JUnit.LocationServiceTest" />
-        <item itemvalue="JUnit.LocationServiceTest.loadUserByUsername" />
       </list>
     </recent_temporary>
   </component>
@@ -251,14 +249,7 @@
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
-      <workItem from="1674200418525" duration="19668000" />
-    </task>
-    <task id="LOCAL-00043" summary="Return sonar settings">
-      <created>1672921958840</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1672921958841</updated>
+      <workItem from="1674200418525" duration="20098000" />
     </task>
     <task id="LOCAL-00044" summary="Remove test for contextLoads">
       <created>1672923718209</created>
@@ -596,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674220097007</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Add test getLocationByID_negative_test">
+      <created>1674222091749</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1674222091749</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -618,7 +616,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Add table with location data" />
     <MESSAGE value="Change home page" />
     <MESSAGE value="Change style LocationGallery" />
     <MESSAGE value="Change style Home" />
@@ -643,7 +640,8 @@
     <MESSAGE value="Add test wenn_positive_then_username_wil_be_got()" />
     <MESSAGE value="Add test wenn_positive_then_location_with_id_140_wil_be_got()" />
     <MESSAGE value="Add tests deleteLocationInOwnerDataTest &amp;     void getLocationByID_test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests deleteLocationInOwnerDataTest &amp;     void getLocationByID_test" />
+    <MESSAGE value="Add test getLocationByID_negative_test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test getLocationByID_negative_test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
