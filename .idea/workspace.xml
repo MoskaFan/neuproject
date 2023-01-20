@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Refactor Code">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/OwnerControllerTest.java" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add test wenn_positive_then_username_wil_be_got()">
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/de/neuefische/backend/controller/LocationControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +106,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerControllerTest.wenn_positive_then_username_wil_be_got">
+  <component name="RunManager" selected="JUnit.LocationControllerTest.wenn_positive_then_username_wil_be_got">
     <configuration name="LocationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -123,7 +122,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OwnerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LocationControllerTest.wenn_positive_then_username_wil_be_got" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
@@ -132,8 +131,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.LocationControllerTest" />
+      <option name="METHOD_NAME" value="wenn_positive_then_username_wil_be_got" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -203,19 +203,19 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="JUnit.LocationControllerTest" />
+      <item itemvalue="JUnit.LocationControllerTest.wenn_positive_then_username_wil_be_got" />
       <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_username_wil_be_got" />
       <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
-      <item itemvalue="JUnit.OwnerControllerTest" />
       <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LocationControllerTest.wenn_positive_then_username_wil_be_got" />
         <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_username_wil_be_got" />
         <item itemvalue="JUnit.OwnerControllerTest.wenn_positive_then_owner_id_will_be_got" />
         <item itemvalue="JUnit.OwnerServiceTest.loadUserByUsername" />
         <item itemvalue="JUnit.LocationControllerTest" />
-        <item itemvalue="JUnit.OwnerControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -249,14 +249,7 @@
       <workItem from="1673805266038" duration="74747000" />
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
-      <workItem from="1674200418525" duration="14431000" />
-    </task>
-    <task id="LOCAL-00040" summary="Fix bug with AddLocation.tsx">
-      <created>1672917235174</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1672917235175</updated>
+      <workItem from="1674200418525" duration="14844000" />
     </task>
     <task id="LOCAL-00041" summary="Fix test when_positive_then_location_is_added_by_consisting_owner">
       <created>1672919229154</created>
@@ -594,7 +587,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674215357296</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Add test wenn_positive_then_username_wil_be_got()">
+      <created>1674216513978</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1674216513979</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +616,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Remove filter size" />
     <MESSAGE value="Add getLocationByID, add LocationDetails" />
     <MESSAGE value="Add Routr LocationDetails" />
     <MESSAGE value="Add table with location data" />
@@ -641,7 +640,8 @@
     <MESSAGE value="Fix bug with deleteLocation" />
     <MESSAGE value="Fix bug with editLocation" />
     <MESSAGE value="Refactor Code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor Code" />
+    <MESSAGE value="Add test wenn_positive_then_username_wil_be_got()" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add test wenn_positive_then_username_wil_be_got()" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
