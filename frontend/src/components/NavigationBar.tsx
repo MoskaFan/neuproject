@@ -32,7 +32,7 @@ export default function NavigationBar(props: NavigationBarProps) {
                     <NavLink to={"/owners/login"}>Einloggen</NavLink>
                 </li>
                 <li>
-                    <NavLink to={"/owners/login/me/:ownerId"}>Als Gastgeber:in loslegen</NavLink>
+                    <NavLink to={"/owners/edit"}>Als Gastgeber:in loslegen</NavLink>
                 </li>
                 <li>
                     <NavLink to={"/locations"}>Locations finden</NavLink>
