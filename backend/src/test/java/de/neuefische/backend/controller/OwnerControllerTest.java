@@ -251,7 +251,46 @@ class OwnerControllerTest {
 
                         """));
 
+    }
+        @Test
+        @DirtiesContext
+        @WithMockUser("StandardUser")
+        void wenn_positive_then_username_wil_be_got() throws Exception {
+            OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
+                    "password", new ArrayList<>(List.of(new Location("140", "name",
+                    "image", "description", "website", new BigDecimal("120"),
+                    20, "Hochzeit", 50,
+                    new Address("Deutschland", "Hamburg", "00000", "Test Street",
+                            "12"), null, null))));
+            Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
+                    ownerDTO.password(), ownerDTO.locations());
+            ownerRepository.save(owner);
+            mockMvc.perform(get("/api/owners/StandardUser").with(csrf()))
+                    .andExpect(status().isOk())
+                    .andExpect(content().json("""
+                         {"id":"10",
+                         "username":"StandardUser",
+                         "email":"test@test.com",
+                         "password":"password",
+                         "locations":[{"id":"140",
+                                "name": "name",
+                                "image": "image",
+                                "description": "description",
+                                "website": "website",
+                                "pricePerPerson":"120",
+                                "size": 20,
+                                "eventType":"Hochzeit",
+                                "maxCapacity": 50,
+                                "address": {
+                                "country": "Deutschland",
+                                "city": "Hamburg",
+                                "zipCode": "00000",
+                                "street": "Test Street",
+                                "houseNumber": "12"},
+                         "startDate": null,
+                         "endDate": null}]}
 
+                        """));
 
     }
 
