@@ -22,7 +22,7 @@ type EditFormProps = {
 export default function EditForm(props: EditFormProps) {
     const params = useParams()
 
-    const locationId: string | undefined = params.i
+    const locationId: string | undefined = params.locationId
 
     const [location, setLocation] = useState<LocationData>({
         name: "",
