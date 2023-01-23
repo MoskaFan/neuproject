@@ -150,9 +150,6 @@ class OwnerControllerTest {
                 .andExpect(content().string("Anonymous User"));
     }
 
-
-
-
     @Test
     @DirtiesContext
     @WithMockUser("StandardUser")
