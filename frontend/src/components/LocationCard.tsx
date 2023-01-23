@@ -41,7 +41,6 @@ export default function LocationCard(props: LocationCardProps) {
                              startIcon={<EditIcon/>} onClick={getEditLocationById}>ÄNDERN</Button>
                     <Button size={"small"} variant="contained" color={"primary"}
                              startIcon={<DeleteIcon/>} onClick = {handleDeleteOnClick}>LÖSCHEN</Button>
-
             </Card.Body>
         </Card>
 )
