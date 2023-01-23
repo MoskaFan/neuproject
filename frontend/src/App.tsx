@@ -80,8 +80,8 @@ function App() {
             <section className={"app"}>
             <NavigationBar  logout={logout}/>
             <section className={"content"}>
+                <Typography>Hello {username}</Typography>
                 <Routes>
-                    <Typography>Hello {username}</Typography>
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/owners/edit"} element={<EditForm
