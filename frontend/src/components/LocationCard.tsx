@@ -35,7 +35,6 @@ export default function LocationCard(props: LocationCardProps) {
             <Card.Img variant="top" src={props.location.image} className={"card-img-top"} alt = "..."/>
             <Card.Body>
                 <Card.Title className={"card-title"}>{props.location.name}</Card.Title>
-
                     <Button size={"small"} variant="contained" color={"primary"}
                             startIcon={<InfoIcon/>} onClick={getLocationByIdOnClick} className={"Details"} >DETAILS</Button>
                     <Button size={"small"} variant="contained" color={"primary"}
