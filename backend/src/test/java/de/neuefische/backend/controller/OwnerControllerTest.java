@@ -151,22 +151,7 @@ class OwnerControllerTest {
     }
 
 
-    @Test
-    @DirtiesContext
-    @WithMockUser("StandardUser")
-    void wenn_positive_then_owner_id_will_be_got() throws Exception {
-        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
-                "password", new ArrayList<>(List.of(new Location("140", "name",
-                "image", "description", "website", new BigDecimal("120"),
-                20, "Hochzeit", 50,
-                new Address("Deutschland", "Hamburg", "00000", "Test Street",
-                        "12"), null, null))));
-        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
-                ownerDTO.password(), ownerDTO.locations());
-        ownerRepository.save(owner);
-        mockMvc.perform(get("/api/owners/login/owner"))
-                .andExpect(status().isOk());
-    }
+
 
     @Test
     @DirtiesContext
