@@ -1,15 +1,15 @@
+.section{
+    height: 100vh;
+}
+
+
+
+
 form{
     text-align: center;
     justify-content: center;
     display: flex;
-    margin: 0;
-    padding: 0;
+    margin-bottom: auto;
+    margin-top: auto;
+}
 
-}
-@media only screen and (max-width: 500px) {
-    form{
-        text-align: center;
-        justify-content: center;
-        display: flex;
-    }
-}

@@ -2,10 +2,9 @@ import {Card} from "react-bootstrap";
 import "../styles/LocationCard.css"
 import {LocationData} from "../entity/locationData";
 import {useNavigate} from "react-router-dom";
-import {Button, ButtonGroup} from "@mui/material";
-
+import {Button} from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-
 import InfoIcon from '@mui/icons-material/Info';
 
 type LocationCardProps = {
@@ -32,17 +31,18 @@ export default function LocationCard(props: LocationCardProps) {
 
 
     return(
-        <Card className={"card"}>
+        <Card className={"card"} >
             <Card.Img variant="top" src={props.location.image} className={"card-img-top"} alt = "..."/>
             <Card.Body>
                 <Card.Title className={"card-title"}>{props.location.name}</Card.Title>
-                <Card.Text className={"card-text"}>{props.location.description}
-                </Card.Text>
-                <ButtonGroup sx={{margin:3, borderRadius: 3}} variant="contained" color={"primary"} >
-                    <InfoIcon onClick={getLocationByIdOnClick} className={"Details"} >DETAILS</InfoIcon>
-                    <EditIcon onClick={getEditLocationById}></EditIcon>
-                    <Button onClick = {handleDeleteOnClick}>LÖSCHEN</Button>
-                </ButtonGroup>
+
+                    <Button size={"small"} variant="contained" color={"primary"}
+                            startIcon={<InfoIcon/>} onClick={getLocationByIdOnClick} className={"Details"} >DETAILS</Button>
+                    <Button size={"small"} variant="contained" color={"primary"}
+                             startIcon={<EditIcon/>} onClick={getEditLocationById}>ÄNDERN</Button>
+                    <Button size={"small"} variant="contained" color={"primary"}
+                             startIcon={<DeleteIcon/>} onClick = {handleDeleteOnClick}>LÖSCHEN</Button>
+
 
             </Card.Body>
         </Card>

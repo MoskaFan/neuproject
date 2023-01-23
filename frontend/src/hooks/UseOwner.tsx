@@ -37,7 +37,7 @@ export default function UseOwner() {
     }
 
     function addOwner(newUser: OwnerData) {
-        axios.put(API_URL, newUser)
+        axios.post(API_URL, newUser)
             .catch(console.error)
     }
 

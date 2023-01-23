@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 import "../styles/SiLoLoc.css"
 import {LoginData} from "../entity/loginData";
 
+
 type LoginPageProps = {
     login: (owner: LoginData) => Promise<void>
 }
@@ -36,6 +37,7 @@ export default function LoginPage(props: LoginPageProps) {
     }
 
     return (
+        <section className={"section"}>
         <form onSubmit={handleSubmit}>
             <Box display="flex" flexDirection={"column"} maxWidth={400}
                  alignItems={"center"} justifyContent={"center"}
@@ -74,7 +76,7 @@ export default function LoginPage(props: LoginPageProps) {
                     color={"warning"}>Einloggen</Button>
             </Box>
         </form>
-
+        </section>
     )
 
 }

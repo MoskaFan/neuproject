@@ -34,6 +34,7 @@ export default function SignUp(props: SignUpProps) {
     }
 
     return (
+        <section className={"section"}>
         <form onSubmit={handleSubmit} className="form">
             <Box display="flex" flexDirection={"column"} maxWidth={400}
                  alignItems={"center"} justifyContent={"center"}
@@ -43,7 +44,8 @@ export default function SignUp(props: SignUpProps) {
                  sx={{
                      ":hover": {
                          boxShadow: '10px 10px 20px #ccc',
-                     flexGrow: 1
+                     flexGrow: 1,
+
                      }
                  }}>
 
@@ -79,5 +81,6 @@ export default function SignUp(props: SignUpProps) {
             </Box>
 
         </form>
+        </section>
     );
 }

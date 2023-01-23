@@ -47,7 +47,7 @@ jobs:
     needs: build-backend
     environment:
       name: production-fly.io
-      url: https://capstone-app-locations.fly.dev/
+      url: https://capstone-app-event-locations.fly.dev/
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_KEY }}
     steps:

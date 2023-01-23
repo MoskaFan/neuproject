@@ -7,6 +7,7 @@ img{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
+    height: 100vh;
 }
 
 .home-page .btn {
@@ -16,3 +17,5 @@ img{
 .home-page .btn:hover {
     color: red;
 }
+
+

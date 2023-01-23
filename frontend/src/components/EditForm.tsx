@@ -12,6 +12,7 @@ import {
 
 } from "@mui/material";
 import axios from "axios";
+import "../styles/SiLoLoc.css"
 
 type EditFormProps = {
     owner: OwnerData
@@ -98,7 +99,7 @@ export default function EditForm(props: EditFormProps) {
         } else {
 
             event.preventDefault()
-            props.editLocation(props.owner.id!, location.id!, location)
+            props.editLocation(props.owner.id!, location.id, location)
 
         }
         navigate("/locations")
@@ -107,6 +108,7 @@ export default function EditForm(props: EditFormProps) {
 
 
     return (
+        <section className={"section"}>
         <form onSubmit={handleSubmit}>
             <Box display="flex" flexDirection={"column"} maxWidth={400}
                  borderRadius={5} margin={5}
@@ -273,6 +275,6 @@ export default function EditForm(props: EditFormProps) {
 
             </Box>
         </form>
-
+        </section>
     );
 }

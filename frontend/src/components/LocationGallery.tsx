@@ -34,14 +34,14 @@ export default function LocationGallery(props: LocationGalleryProps) {
 
     return (
         <Container>
-            <Box>
+            <Box className={"form"}>
                 <img alt="location"
                      src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
                 <Typography>{searchAllCities}</Typography>
                 <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
                 <section className={"cards"}>
 
-                    <div>
+                    <div className={"cards"}>
                         {filteredLocations.map(location => (
                             <LocationCard location={location} key={location.id}
                                           editLocation={props.editLocation}

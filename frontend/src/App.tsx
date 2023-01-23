@@ -8,14 +8,16 @@ import axios from 'axios';
 import {LocationData} from './entity/locationData';
 import UseOwner from "./hooks/UseOwner";
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 import Home from "./components/Home";
 import LocationDetails from "./components/LocationDetails";
 import {OwnerData} from "./entity/ownerData";
 import EditForm from './components/EditForm';
+import NavigationBar from "./components/NavigationBar";
+import { Typography } from '@mui/material';
 
 
 function App() {
+
 
     const {username, addLocation, login, addOwner, logout} = UseOwner()
     const [locations, setLocations] = useState<LocationData[]>([])
@@ -49,8 +51,7 @@ function App() {
                 setOwner(data)
             })
     }, [])
-
-
+    
 
 
 
@@ -76,9 +77,11 @@ function App() {
 
     return (
         <BrowserRouter>
-            <Header logout={logout} username={username}></Header>
+            <section className={"app"}>
+            <NavigationBar  logout={logout}/>
             <section className={"content"}>
                 <Routes>
+                    <Typography>Hello {username}</Typography>
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/owners/edit"} element={<EditForm
@@ -92,8 +95,8 @@ function App() {
                         owner={owner} editLocation={editLocation}  addLocation={addLocation}/>}></Route>
                 </Routes>
             </section>
-
             <Footer></Footer>
+            </section>
         </BrowserRouter>
 
     );

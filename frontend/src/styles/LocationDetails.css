@@ -1,11 +1,7 @@
 
-.location{
-    justify-content: center;
-    text-align: center;
-}
 .table{
     text-align: center;
-    width:100%;
+
 }
 .table h1{
     font-weight: bold;
@@ -23,7 +19,17 @@ img{
     margin: 5rem;
     width: 50rem;
 }
-@media screen and (max-width: 48rem){
+.rotate{
+    height: 200px;
+    white-space: nowrap;
+    transform:
+        /* Magic Numbers */
+            translate(25px, 51px)
+                /* 45 is really 360 - 45 */
+            rotate(315deg);
+
+}
+@media screen and (min-width: 400px){
     .location{
         display: flex;
         justify-content: center;

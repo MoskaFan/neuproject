@@ -1,5 +1,5 @@
-
 .nav-bar{
+    width: 100%;
     background-color: white;
     color: black;
     display: flex;
@@ -9,31 +9,26 @@
     top: 0;
     left:0;
     right:0;
-    border: 0.5rem solid #777777;
+    gap: 5rem;
+}
 
-}
-.nav-bar a{
-    color: inherit;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: .25rem;
-    text-decoration: none;
-}
-.nav-bar ul{
+.nav-bar-element{
     padding: 0;
     margin: 0;
     list-style: none;
     display: flex;
     gap: 1em;
+    color: black;
+    text-decoration: none;
 }
 
 .site-title{
 
-    font: italic 2.5em "Fira Sans", serif;
-    color: goldenrod;
+    font-style: italic;
+    color: black;
     font-weight: bold;
     font-stretch: expanded;
+    text-decoration: none;
 }
 .nav-bar li.active{
     color: #555;
@@ -41,12 +36,12 @@
 .nav-bar li:hover{
     color: #777;
 }
-@media screen and (max-width: 500px) {
+@media screen and (min-width: 400px) {
     .nav-bar{
-        display: none;
-        height: auto;
-    }
-    .nav-bar-icon{
-        display: none;
+        background-color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        position: relative;
     }
 }

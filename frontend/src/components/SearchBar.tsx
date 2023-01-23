@@ -1,7 +1,8 @@
 
-import { Typography} from "@mui/material";
+import {Typography, Input, InputAdornment} from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 import {ChangeEvent} from "react";
+
 
 type SearchBarProps = {
     searchCityFunction(searchCity: string): void
@@ -21,7 +22,8 @@ export default function SearchBar(props: SearchBarProps){
                 variant={"h6"} className={"title"}>Geben Sie die gesuchte Stadt ein:
             </Typography>
 
-            <input onChange={handleOnChangeSearchText}/><SearchIcon/>
+            <Input startAdornment={
+                <InputAdornment position="start"><SearchIcon/></InputAdornment>} onChange={handleOnChangeSearchText}/>
 
 
 

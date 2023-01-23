@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Add test deleteLocationInOwnerDataTest_negativeTest">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/LocationForm.tsx" afterDir="false" />
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change styles">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deployfly.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deployfly.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/EditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationDetails.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LocationGallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/LoginPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/NavigationBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/hooks/UseOwner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Gallery.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/LocationCard.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/LocationCard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/LocationDetails.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/NavigationBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles/SiLoLoc.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles/SiLoLoc.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,22 +127,7 @@
       <recent name="de.neuefische.backend" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest">
-    <configuration name="LocationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="backend" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.LocationServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="npm.start">
     <configuration name="LocationServiceTest.getLocationByID_negative_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
@@ -141,17 +144,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LocationServiceTest.getLocationByID_test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OwnerControllerTest.when_positive_then_new_owner_is_created" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.neuefische.backend.service.*" />
+          <option name="PATTERN" value="de.neuefische.backend.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.neuefische.backend.service" />
-      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.service.LocationServiceTest" />
-      <option name="METHOD_NAME" value="getLocationByID_test" />
+      <option name="PACKAGE_NAME" value="de.neuefische.backend.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.neuefische.backend.controller.OwnerControllerTest" />
+      <option name="METHOD_NAME" value="when_positive_then_new_owner_is_created" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,22 +206,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
-      <item itemvalue="JUnit.LocationServiceTest" />
+      <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
       <item itemvalue="JUnit.LocationServiceTest.getLocationByID_negative_test" />
-      <item itemvalue="JUnit.LocationServiceTest.getLocationByID_test" />
       <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest" />
       <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest" />
+      <item itemvalue="npm.start" />
       <item itemvalue="Spring Boot.BackendApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="JUnit.OwnerControllerTest.when_positive_then_new_owner_is_created" />
         <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest_negativeTest" />
         <item itemvalue="JUnit.LocationServiceTest.getLocationByID_negative_test" />
         <item itemvalue="JUnit.OwnerServiceTest.deleteLocationInOwnerDataTest" />
-        <item itemvalue="JUnit.LocationServiceTest.getLocationByID_test" />
-        <item itemvalue="JUnit.LocationServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -253,6 +266,7 @@
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
       <workItem from="1674200418525" duration="21087000" />
+      <workItem from="1674478095866" duration="3099000" />
     </task>
     <task id="LOCAL-00045" summary="Fix code smell">
       <created>1672924652861</created>
@@ -619,7 +633,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change style LocationGallery" />
     <MESSAGE value="Change style Home" />
     <MESSAGE value="Change endpoint for addLocation" />
     <MESSAGE value="Add checkout" />
@@ -644,7 +657,8 @@
     <MESSAGE value="Add tests deleteLocationInOwnerDataTest &amp;     void getLocationByID_test" />
     <MESSAGE value="Add test getLocationByID_negative_test" />
     <MESSAGE value="Add test deleteLocationInOwnerDataTest_negativeTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add test deleteLocationInOwnerDataTest_negativeTest" />
+    <MESSAGE value="Change styles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change styles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -657,6 +671,11 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/src/main/java/de/neuefische/backend/service/OwnerService.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
