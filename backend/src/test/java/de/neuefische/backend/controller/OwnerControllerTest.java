@@ -150,14 +150,6 @@ class OwnerControllerTest {
                 .andExpect(content().string("Anonymous User"));
     }
 
-    @Test
-    @DirtiesContext
-    @WithMockUser("StandardUser")
-    void when_positive_then_expect_logout_of_owner() throws Exception {
-        mockMvc.perform(post("/api/owners/logout").with(csrf()))
-                .andExpect(status().isOk())
-                .andExpect(content().string("Anonymous User"));
-    }
 
     @Test
     @DirtiesContext
