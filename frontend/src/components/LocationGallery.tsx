@@ -14,8 +14,8 @@ type LocationGalleryProps = {
 
 export default function LocationGallery(props: LocationGalleryProps) {
 
-// @ts-ignore
-    const [searchCity, setSearchCity] = useState<string>("");
+
+
     const [filteredLocations, setFilteredLocations] = useState(props.locations);
 
     const searchAllCities = props.locations.map((location) => {
@@ -25,7 +25,6 @@ export default function LocationGallery(props: LocationGalleryProps) {
     })
 
     function handleChangeCity(searchCity: string) {
-        setSearchCity(searchCity)
         const filter: LocationData[] = props.locations.filter((location) =>
             location.address!.city.toLowerCase() === searchCity.toLowerCase());
         setFilteredLocations(filter);
