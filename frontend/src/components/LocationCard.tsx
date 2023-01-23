@@ -42,7 +42,6 @@ export default function LocationCard(props: LocationCardProps) {
                     <Button size={"small"} variant="contained" color={"primary"}
                              startIcon={<DeleteIcon/>} onClick = {handleDeleteOnClick}>LÖSCHEN</Button>
 
-
             </Card.Body>
         </Card>
 )
