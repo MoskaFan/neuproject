@@ -72,7 +72,6 @@ export default function LocationDetails() {
             : <p>Loading...</p>
         }
 
-
         </Container>
     )
 }
