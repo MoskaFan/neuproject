@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Change styles">
+    <list default="true" id="f96a6ec1-8c6e-4c6e-8566-d254af30fd43" name="Changes" comment="Set secrets">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -245,14 +245,7 @@
       <workItem from="1673984999313" duration="3548000" />
       <workItem from="1673991095941" duration="66488000" />
       <workItem from="1674200418525" duration="21087000" />
-      <workItem from="1674478095866" duration="4045000" />
-    </task>
-    <task id="LOCAL-00046" summary="Add new integration test">
-      <created>1672926555460</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1672926555460</updated>
+      <workItem from="1674478095866" duration="5583000" />
     </task>
     <task id="LOCAL-00047" summary="Change integration test for login">
       <created>1672930873971</created>
@@ -590,7 +583,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674481926399</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Set secrets">
+      <created>1674482667456</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1674482667456</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -612,7 +612,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/backend" />
     </ignored-roots>
-    <MESSAGE value="Change style Home" />
     <MESSAGE value="Change endpoint for addLocation" />
     <MESSAGE value="Add checkout" />
     <MESSAGE value="Change styles, fix bug by add location" />
@@ -637,7 +636,8 @@
     <MESSAGE value="Add test getLocationByID_negative_test" />
     <MESSAGE value="Add test deleteLocationInOwnerDataTest_negativeTest" />
     <MESSAGE value="Change styles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change styles" />
+    <MESSAGE value="Set secrets" />
+    <option name="LAST_COMMIT_MESSAGE" value="Set secrets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
