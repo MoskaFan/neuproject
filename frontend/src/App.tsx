@@ -15,28 +15,14 @@ import EditForm from './components/EditForm';
 import NavigationBar from "./components/NavigationBar";
 import { Typography } from '@mui/material';
 import LocationApp from './components/LocationApp';
+import AddLocation from './components/AddLocation';
 
 
 function App() {
 
-    const {username, addLocation, login, addOwner, logout} = UseOwner()
+    const {owner, username, addLocation, login, addOwner, logout} = UseOwner()
 
-    const [owner, setOwner] = useState<OwnerData>({
-        id: "",
-        username: "",
-        email: "",
-        password: "",
-        locations: []
-    })
 
-    useEffect(() => {
-        axios.get("/api/owners/login/owner")
-            .then(response => response.data)
-            .then(data => {
-                setOwner(data)
-            })
-    }, [])
-    
 
     return (
         <BrowserRouter>
@@ -51,7 +37,9 @@ function App() {
                     <Route path={"/locations"} element={<LocationApp user={owner} />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
-
+                    <Route path={"/locations/edit/:id"} element={<EditForm />}></Route>
+                    <Route path={"/locations/form"} element={<AddLocation owner={owner}
+                                                                     addLocation={addLocation}/>} ></Route>
                 </Routes>
             </section>
             <Footer></Footer>
