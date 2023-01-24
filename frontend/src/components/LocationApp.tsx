@@ -1,7 +1,9 @@
 import axios from "axios"
 import {useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
 import { LocationData } from "../entity/locationData"
 import { OwnerData } from "../entity/ownerData"
+import useLocation from "../hooks/useLocation"
 import LocationGallery from "./LocationGallery"
 import SearchBar from "./SearchBar"
 
@@ -11,6 +13,8 @@ type LocationAppProps={
 export default function LocationApp(props: LocationAppProps){
     const [locations, setLocations] = useState<LocationData[]>([])
     const [searchCity, setSearchCity] = useState<string>("")
+    const {id} = useParams()
+    const{getLocation, editLocation} = useLocation(id)
 
     useEffect(() => {
         getLocations()
@@ -59,10 +63,7 @@ export default function LocationApp(props: LocationAppProps){
             })
     }
 
-    function editLocation(ownerId: string, locationId: string, location: LocationData){
-        return axios.put("/api/owners/locations/" + ownerId +"/"+locationId, location)
 
-    }
 
     return (
         <div>
@@ -70,7 +71,8 @@ export default function LocationApp(props: LocationAppProps){
             <img alt="location"
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
             <SearchBar searchCityFunction={handleSearchText} />
-            <LocationGallery deleteLocation={deleteLocation} editLocation={editLocation} locationList={filteredSearch}            />
+            <LocationGallery deleteLocation={deleteLocation} locationList={filteredSearch}
+                             editLocation={editLocation}  />
         </div>
     )
 }

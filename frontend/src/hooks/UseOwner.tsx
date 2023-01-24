@@ -54,9 +54,25 @@ export default function UseOwner() {
                 return data
             })
     }
+    const [owner, setOwner] = useState<OwnerData>({
+        id: "",
+        username: "",
+        email: "",
+        password: "",
+        locations: []
+    })
+
+    useEffect(() => {
+        axios.get("/api/owners/login/owner")
+            .then(response => response.data)
+            .then(data => {
+                setOwner(data)
+            })
+    }, [])
 
 
 
 
-    return { username, login, addOwner, logout, addLocation}
+
+    return { owner, username, login, addOwner, logout, addLocation}
 }
