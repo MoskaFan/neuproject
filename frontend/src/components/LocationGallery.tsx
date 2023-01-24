@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar";
 
 
 type LocationGalleryProps = {
-    locations: LocationData[]
+    locationList: LocationData[]
     deleteLocation(locationId: string): void
     editLocation(ownerId: string, locationId: string, location: LocationData): void
 }
@@ -15,39 +15,18 @@ type LocationGalleryProps = {
 export default function LocationGallery(props: LocationGalleryProps) {
 
 
-
-    const [filteredLocations, setFilteredLocations] = useState(props.locations);
-
-    const searchAllCities = props.locations.map((location) => {
-        return (
-            <label>{location.address!.city}</label>)
-
-    })
-
-    function handleChangeCity(searchCity: string) {
-        const filter: LocationData[] = props.locations.filter((location) =>
-            location.address!.city.toLowerCase() === searchCity.toLowerCase());
-        setFilteredLocations(filter);
-    }
-
-
     return (
         <Container>
             <Box className={"form"}>
-                <img alt="location"
-                     src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
-                <Typography>{searchAllCities}</Typography>
-                <SearchBar searchCityFunction={handleChangeCity}></SearchBar>
                 <section className={"cards"}>
-
                     <div className={"cards"}>
-                        {filteredLocations.map(location => (
+                        {props.locationList.map(location => (
                             <LocationCard location={location} key={location.id}
                                           editLocation={props.editLocation}
-                                          removeLocation={props.deleteLocation}/>
+                                          removeLocation={props.deleteLocation}
+                            />
                         ))}
                     </div>
-
                 </section>
             </Box>
         </Container>
