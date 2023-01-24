@@ -24,6 +24,7 @@ export default function LocationCard(props: LocationCardProps) {
     function handleDeleteOnClick() {
         props.removeLocation(props.location.id!)
 
+
     }
     function getEditLocationById() {
         navigate("/locations/edit/" + props.location.id)

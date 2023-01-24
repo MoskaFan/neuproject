@@ -45,7 +45,7 @@ export default function NavigationBar(props: NavigationBarProps) {
     return (
         <Stack spacing={2} sx={{ flexGrow: 1 }}>
             <ThemeProvider theme={lightTheme}>
-        <AppBar position="relative" className={"nav-bar"}>
+        <AppBar  className={"nav-bar"}>
             <Toolbar>
                 <MenuIcon className={"nav-bar-icon"} onClick={handleClick}/>
 
