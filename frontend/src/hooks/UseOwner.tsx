@@ -70,9 +70,5 @@ export default function UseOwner() {
             })
     }, [])
 
-
-
-
-
     return { owner, username, login, addOwner, logout, addLocation}
 }

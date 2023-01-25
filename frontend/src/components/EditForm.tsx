@@ -29,6 +29,8 @@ export default function EditForm() {
     const {owner} = UseOwner()
 
     const{getLocation, editLocation} = useLocation(id)
+    const [location, setLocation]= useState<LocationData>()
+
 
     if(!getLocation) {
         return <h1>Die Location ist nicht vergeben</h1>
@@ -38,8 +40,6 @@ export default function EditForm() {
         editLocation(owner.id!, id!, location)
         navigate("/locations/" + id)
     }
-
-
 
 
     return (

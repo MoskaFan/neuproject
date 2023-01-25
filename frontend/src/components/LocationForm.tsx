@@ -23,8 +23,8 @@ export default function LocationForm(props: LocationFormProps) {
     const params = useParams()
 
     const locationId: string | undefined = params.locationId
+    const emptyLocation: LocationData = {
 
-    const [location, setLocation] = useState<LocationData>({
         name: "",
         image: "",
         description: "",
@@ -42,11 +42,9 @@ export default function LocationForm(props: LocationFormProps) {
         },
         startDate: "",
         endDate: ""
-    })
+    }
+    const [location, setLocation] = useState<LocationData>(emptyLocation)
     const navigate = useNavigate();
-
-
-
 
     function handleChangeLocation(event: ChangeEvent<HTMLInputElement>) {
         const {name, value} = event.target;
@@ -88,7 +86,7 @@ export default function LocationForm(props: LocationFormProps) {
                              flexGrow: 1
                          }
                      }}>
-                    <h1>Location editieren</h1>
+                    <h1>Locationsform:</h1>
                     <TextField
                         type="text"
                         name="city"
