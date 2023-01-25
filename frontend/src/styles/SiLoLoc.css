@@ -1,15 +1,7 @@
-.section{
-    height: 100vh;
-}
-
-
-
 
 form{
     text-align: center;
     justify-content: center;
     display: flex;
-    margin-bottom: auto;
-    margin-top: auto;
 }
 

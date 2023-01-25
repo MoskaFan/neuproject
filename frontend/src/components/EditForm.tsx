@@ -4,12 +4,8 @@ import {useNavigate, useParams} from "react-router-dom";
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import {
     Accordion, AccordionDetails, AccordionSummary,
-
-    Box,
-    Button, InputLabel,
-
+    Box, Button, InputLabel,
     TextField, Typography,
-
 } from "@mui/material";
 import axios from "axios";
 import "../styles/SiLoLoc.css"
@@ -17,34 +13,30 @@ import LocationForm from "./LocationForm";
 import useLocation from "../hooks/useLocation";
 import UseOwner from "../hooks/UseOwner";
 
+type EditFormProps = {
+    owner: OwnerData
+}
 
-
-export default function EditForm() {
+export default function EditForm(props: EditFormProps) {
     const navigate = useNavigate();
-
-    const params = useParams()
 
     const {id} = useParams()
 
-    const {owner} = UseOwner()
-
     const{getLocation, editLocation} = useLocation(id)
-    const [location, setLocation]= useState<LocationData>()
 
-
-    if(!getLocation) {
+    if(!id) {
         return <h1>Die Location ist nicht vergeben</h1>
     }
 
+
     function submitLocation(location: LocationData){
-        editLocation(owner.id!, id!, location)
+        editLocation(props.owner.id!, id!, location)
         navigate("/locations/" + id)
     }
 
-
     return (
         <section className={"section"}>
-        <LocationForm location={getLocation} submitLocation={submitLocation}></LocationForm>
+        <LocationForm submitLocation={submitLocation} location={getLocation}></LocationForm>
         </section>
     );
 }

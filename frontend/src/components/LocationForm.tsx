@@ -15,35 +15,12 @@ import "../styles/SiLoLoc.css"
 type LocationFormProps = {
     location: LocationData
     submitLocation(location: LocationData): void
-
 }
 
 
 export default function LocationForm(props: LocationFormProps) {
-    const params = useParams()
 
-    const locationId: string | undefined = params.locationId
-    const emptyLocation: LocationData = {
-
-        name: "",
-        image: "",
-        description: "",
-        website: "",
-        pricePerPerson: 0,
-        size: 0,
-        eventType: "",
-        maxCapacity: 0,
-        address: {
-            country: "",
-            city: "",
-            zipCode: "",
-            street: "",
-            houseNumber: "",
-        },
-        startDate: "",
-        endDate: ""
-    }
-    const [location, setLocation] = useState<LocationData>(emptyLocation)
+    const [location, setLocation] = useState<LocationData>(props.location)
     const navigate = useNavigate();
 
     function handleChangeLocation(event: ChangeEvent<HTMLInputElement>) {
@@ -56,8 +33,6 @@ export default function LocationForm(props: LocationFormProps) {
 
     function handleChangeAddress(event: ChangeEvent<HTMLInputElement>) {
         const {name, value} = event.target;
-
-
         setLocation({
             // @ts-ignore
             ...location, address: {
@@ -66,6 +41,7 @@ export default function LocationForm(props: LocationFormProps) {
         });
     }
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+        event.preventDefault()
         props.submitLocation(location)
         navigate("/locations")
     }
@@ -93,7 +69,7 @@ export default function LocationForm(props: LocationFormProps) {
                         fullWidth
                         placeholder={"Stadt"}
                         margin={"dense"}
-                        value={location.address!.city}
+                        value={props.location.address!.city}
                         onChange={handleChangeAddress}/>
 
                     <TextField
@@ -102,7 +78,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"name"}
                         name="name"
-                        value={location.name}
+                        value={props.location.name}
                         onChange={handleChangeLocation}/>
 
                     <TextField
@@ -111,7 +87,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         name="image"
                         placeholder={"image"}
-                        value={location.image}
+                        value={props.location.image}
                         onChange={handleChangeLocation}/>
 
 
@@ -121,7 +97,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"description"}
                         name="description"
-                        value={location.description}
+                        value={props.location.description}
                         onChange={handleChangeLocation}/>
                     <InputLabel htmlFor={"maxCapacity"}>Max Personenanzahl:</InputLabel>
                     <TextField
@@ -130,7 +106,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         name="maxCapacity"
                         placeholder={"Max PersonenAnzahl"}
-                        value={location.maxCapacity}
+                        value={props.location.maxCapacity}
                         onChange={handleChangeLocation}/>
                     <InputLabel htmlFor={"pricePerPerson"}>Preis pro Person:</InputLabel>
                     <TextField
@@ -139,7 +115,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"Preis pro Person"}
                         name="pricePerPerson"
-                        value={location.pricePerPerson}
+                        value={props.location.pricePerPerson}
                         onChange={handleChangeLocation}/>
 
 

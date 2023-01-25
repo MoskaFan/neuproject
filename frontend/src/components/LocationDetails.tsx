@@ -10,7 +10,6 @@ import {
 
 } from "@mui/material";
 
-import "../styles/LocationDetails.css";
 
 
 export default function LocationDetails() {
@@ -42,11 +41,11 @@ export default function LocationDetails() {
 
 
     return (
-        <Container className={"location"}>{location ?
+        <Container className={"form"}>{location ?
             <Box display="flex" flexDirection={"column"}
                  alignItems={"center"} justifyContent={"center"}
-                 borderRadius={5} margin={5}
-                 padding={3} className={"table"}>
+                 borderRadius={5} padding={3}
+                 className={"table"}>
                 <h1>{location.name}</h1>
                 <img alt={""} src={location.image}/>
                 {location.description}

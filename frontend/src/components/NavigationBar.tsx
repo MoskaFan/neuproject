@@ -68,7 +68,6 @@ export default function NavigationBar(props: NavigationBarProps) {
                     <MenuItem >
                         <ExitToAppIcon onClick={logout}>Ausloggen</ExitToAppIcon>
                     </MenuItem>
-
                 </Menu>
             </Toolbar>
         </AppBar>
