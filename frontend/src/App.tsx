@@ -37,7 +37,8 @@ function App() {
                     <Route path={"/locations"} element={<LocationApp user={owner} />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
-                    <Route path={"/locations/edit/:id"} element={<EditForm />}></Route>
+                    <Route path={"/locations/edit/:id"}
+                           element={<EditForm owner={owner} />}></Route>
                     <Route path={"/locations/form"} element={<AddLocation owner={owner}
                                                                      addLocation={addLocation}/>} ></Route>
                 </Routes>

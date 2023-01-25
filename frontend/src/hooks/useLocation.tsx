@@ -33,7 +33,6 @@ export default function useLocation(id: string | undefined) {
 
         axios.get("/api/locations/" + locationId)
             .then(response => {
-                console.log(response.data)
                 setGetLocation(response.data)
             })
             .catch(console.error)
