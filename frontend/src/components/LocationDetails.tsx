@@ -1,7 +1,7 @@
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {LocationData} from "../entity/locationData";
-import {useNavigate, useParams} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 import {
     Box,
     Button,
@@ -13,19 +13,13 @@ import {
 import "../styles/LocationDetails.css";
 
 
-
-
-
 export default function LocationDetails() {
 
 
     const params = useParams()
 
     const id: string | undefined = params.id
-
     const [location, setLocation] = useState<LocationData>()
-
-
     const navigate = useNavigate();
 
 
@@ -47,13 +41,12 @@ export default function LocationDetails() {
     }
 
 
-
     return (
         <Container className={"location"}>{location ?
             <Box display="flex" flexDirection={"column"}
-                   alignItems={"center"} justifyContent={"center"}
-                   borderRadius={5} margin={5}
-                   padding={3} className={"table"}>
+                 alignItems={"center"} justifyContent={"center"}
+                 borderRadius={5} margin={5}
+                 padding={3} className={"table"}>
                 <h1>{location.name}</h1>
                 <img alt={""} src={location.image}/>
                 {location.description}
@@ -66,8 +59,8 @@ export default function LocationDetails() {
 
 
                 <br/><br/><ButtonGroup variant="contained" color={"primary"}>
-                    <Button onClick={() => navigate("/locations")}>Go back</Button>
-                </ButtonGroup>
+                <Button onClick={() => navigate("/locations")}>Go back</Button>
+            </ButtonGroup>
             </Box>
             : <p>Loading...</p>
         }
