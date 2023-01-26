@@ -40,7 +40,7 @@ export default function AddLocation(props: AddLocationProps) {
 
     return (
         <section className={"section"}>
-            <LocationForm location={emptyLocation} submitLocation={submitLocation}></LocationForm>
+            <LocationForm  submitLocation={submitLocation} location={emptyLocation}></LocationForm>
         </section>
     );
 }

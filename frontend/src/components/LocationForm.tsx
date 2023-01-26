@@ -1,6 +1,5 @@
 import {OwnerData} from "../entity/ownerData";
 import {LocationData} from "../entity/locationData";
-import {useNavigate, useParams} from "react-router-dom";
 import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 import {
     Accordion, AccordionDetails,
@@ -14,39 +13,33 @@ import "../styles/SiLoLoc.css"
 
 type LocationFormProps = {
     location: LocationData
-    submitLocation(location: LocationData): void
+    submitLocation: (location: LocationData) => void
 }
 
 
 export default function LocationForm(props: LocationFormProps) {
 
-    const [location, setLocation] = useState<LocationData>(props.location)
-    const navigate = useNavigate();
+    const [newLocation, setLocation] = useState<LocationData>(props.location)
 
     function handleChangeLocation(event: ChangeEvent<HTMLInputElement>) {
-        const {name, value} = event.target;
-        setLocation({
-            ...location,
-            [name]: value
-        });
+        const inputValue = event.target.value
+        const nameOfInput = event.target.name
+        setLocation((prevState) => ({...prevState, [nameOfInput]: inputValue}))
     }
 
     function handleChangeAddress(event: ChangeEvent<HTMLInputElement>) {
         const {name, value} = event.target;
         setLocation({
             // @ts-ignore
-            ...location, address: {
-                ...(location.address), [name]: value,
+            ...newLocation, address: {
+                ...(newLocation.address), [name]: value,
             }
         });
     }
-    async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        props.submitLocation(location)
-        navigate("/locations")
+        props.submitLocation(newLocation)
     }
-
-
 
     return (
         <section className={"section"}>
@@ -69,7 +62,7 @@ export default function LocationForm(props: LocationFormProps) {
                         fullWidth
                         placeholder={"Stadt"}
                         margin={"dense"}
-                        value={props.location.address!.city}
+                        value={newLocation.address!.city}
                         onChange={handleChangeAddress}/>
 
                     <TextField
@@ -78,7 +71,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"name"}
                         name="name"
-                        value={props.location.name}
+                        value={newLocation.name}
                         onChange={handleChangeLocation}/>
 
                     <TextField
@@ -87,7 +80,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         name="image"
                         placeholder={"image"}
-                        value={props.location.image}
+                        value={newLocation.image}
                         onChange={handleChangeLocation}/>
 
 
@@ -97,7 +90,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"description"}
                         name="description"
-                        value={props.location.description}
+                        value={newLocation.description}
                         onChange={handleChangeLocation}/>
                     <InputLabel htmlFor={"maxCapacity"}>Max Personenanzahl:</InputLabel>
                     <TextField
@@ -106,7 +99,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         name="maxCapacity"
                         placeholder={"Max PersonenAnzahl"}
-                        value={props.location.maxCapacity}
+                        value={newLocation.maxCapacity}
                         onChange={handleChangeLocation}/>
                     <InputLabel htmlFor={"pricePerPerson"}>Preis pro Person:</InputLabel>
                     <TextField
@@ -115,7 +108,7 @@ export default function LocationForm(props: LocationFormProps) {
                         margin={"dense"}
                         placeholder={"Preis pro Person"}
                         name="pricePerPerson"
-                        value={props.location.pricePerPerson}
+                        value={newLocation.pricePerPerson}
                         onChange={handleChangeLocation}/>
 
 
@@ -132,7 +125,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 fullWidth
                                 name={"startDate"}
                                 margin={"dense"}
-                                value={location.startDate}
+                                value={newLocation.startDate}
                                 onChange={handleChangeLocation}/>
                             <InputLabel htmlFor={"pricePerPerson"}>Bis wann ist die Location verfügbar?</InputLabel>
                             <TextField
@@ -141,7 +134,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 name={"endDate"}
                                 margin={"dense"}
                                 placeholder={"Bis wann ist die Location verfügbar?"}
-                                value={location.endDate}
+                                value={newLocation.endDate}
                                 onChange={handleChangeLocation}/>
                             <TextField
                                 type="text"
@@ -149,7 +142,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 margin={"dense"}
                                 name="website"
                                 placeholder={"Link zu Webseite"}
-                                value={location.website}
+                                value={newLocation.website}
                                 onChange={handleChangeLocation}/>
                             <InputLabel htmlFor={"size"}>Fläche:</InputLabel>
                             <TextField
@@ -157,7 +150,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 fullWidth
                                 margin={"dense"}
                                 name="size"
-                                value={location.size}
+                                value={newLocation.size}
                                 onChange={handleChangeLocation}/>
 
                             <TextField
@@ -166,7 +159,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 margin={"dense"}
                                 name="eventType"
                                 placeholder={"Anlass"}
-                                value={location.eventType}
+                                value={newLocation.eventType}
                                 onChange={handleChangeLocation}/>
 
                             <TextField
@@ -175,7 +168,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 fullWidth
                                 placeholder={"Land"}
                                 margin={"dense"}
-                                value={location.address!.country}
+                                value={newLocation.address!.country}
                                 onChange={handleChangeAddress}/>
 
 
@@ -186,7 +179,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 placeholder={"PLZ"}
                                 name="zipCode"
                                 margin={"dense"}
-                                value={location.address!.zipCode}
+                                value={newLocation.address!.zipCode}
                                 onChange={handleChangeAddress}/>
 
                             <TextField
@@ -195,7 +188,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 placeholder={"Strasse"}
                                 name="street"
                                 margin={"dense"}
-                                value={location.address!.street}
+                                value={newLocation.address!.street}
                                 onChange={handleChangeAddress}/>
                             <TextField
                                 type="text"
@@ -203,7 +196,7 @@ export default function LocationForm(props: LocationFormProps) {
                                 name="houseNumber"
                                 placeholder={"Hausnummer"}
                                 margin={"dense"}
-                                value={location.address!.houseNumber}
+                                value={newLocation.address!.houseNumber}
                                 onChange={handleChangeAddress}/>
 
 

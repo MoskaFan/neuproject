@@ -27,7 +27,7 @@ function App() {
     return (
         <BrowserRouter>
             <section className={"app"}>
-            <NavigationBar  logout={logout}/>
+            <NavigationBar logout={logout}/>
             <section className={"content"}>
             <Typography>Hello {username}</Typography>
 
@@ -36,10 +36,10 @@ function App() {
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
                     <Route path={"/locations"} element={<LocationApp user={owner} />}/>
                     <Route path={"/"} element={<Home/>}/>
+                    <Route path={"/locations/:id/edit"} element={ <EditForm owner={owner}/> }></Route>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
-                    <Route path={"/locations/edit/:id"}
-                           element={<EditForm owner={owner} />}></Route>
-                    <Route path={"/locations/form"} element={<AddLocation owner={owner}
+
+                    <Route path={"/locations/add"} element={<AddLocation owner={owner}
                                                                      addLocation={addLocation}/>} ></Route>
                 </Routes>
             </section>
