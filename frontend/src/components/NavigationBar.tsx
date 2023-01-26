@@ -60,7 +60,7 @@ export default function NavigationBar(props: NavigationBarProps) {
                         <NavLink to={"/owners/login"} className={"nav-bar-element"}>Einloggen</NavLink>
                     </MenuItem>
                     <MenuItem>
-                        <NavLink to={"/locations/form"} className={"nav-bar-element"}>Als Gastgeber:in loslegen</NavLink>
+                        <NavLink to={"/locations/add"} className={"nav-bar-element"}>Als Gastgeber:in loslegen</NavLink>
                     </MenuItem>
                     <MenuItem >
                         <NavLink to={"/locations"} className={"nav-bar-element"}>Locations finden</NavLink>

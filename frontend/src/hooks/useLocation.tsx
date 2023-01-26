@@ -4,25 +4,7 @@ import { LocationData } from "../entity/locationData"
 
 export default function useLocation(id: string | undefined) {
 
-    const [getLocation, setGetLocation] = useState<LocationData>({
-        name: "",
-        image: "",
-        description: "",
-        website: "",
-        pricePerPerson: 0,
-        size: 0,
-        eventType: "",
-        maxCapacity: 0,
-        address: {
-            country: "",
-            city: "",
-            zipCode: "",
-            street: "",
-            houseNumber: "",
-        },
-        startDate: "",
-        endDate: ""
-    })
+    const [getLocation, setGetLocation] = useState<LocationData>()
     useEffect(() => {
         if (id) {
             getLocationDetailsByID(id)
@@ -32,8 +14,10 @@ export default function useLocation(id: string | undefined) {
     function getLocationDetailsByID(locationId: string) {
 
         axios.get("/api/locations/" + locationId)
-            .then(response => {
-                setGetLocation(response.data)
+            .then((response) => response.data)
+            .then((data) => {
+                setGetLocation(data)
+                return data
             })
             .catch(console.error)
     }

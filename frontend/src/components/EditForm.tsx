@@ -24,10 +24,11 @@ export default function EditForm(props: EditFormProps) {
 
     const{getLocation, editLocation} = useLocation(id)
 
-    if(!id) {
-        return <h1>Die Location ist nicht vergeben</h1>
+    if(!getLocation) {
+        return (<p>Die Location ist loading</p>)
     }
 
+    console.log("EditForm: ", getLocation)
 
     function submitLocation(location: LocationData){
         editLocation(props.owner.id!, id!, location)
