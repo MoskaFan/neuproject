@@ -1,9 +1,7 @@
 import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
-import {useState} from "react";
 import "../styles/Gallery.css"
-import {Box, Container, Typography} from "@mui/material";
-import SearchBar from "./SearchBar";
+import {Box, Container} from "@mui/material";
 
 
 type LocationGalleryProps = {

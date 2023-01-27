@@ -1,17 +1,11 @@
 import {OwnerData} from "../entity/ownerData";
 import {LocationData} from "../entity/locationData";
 import {useNavigate, useParams} from "react-router-dom";
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
-import {
-    Accordion, AccordionDetails, AccordionSummary,
-    Box, Button, InputLabel,
-    TextField, Typography,
-} from "@mui/material";
 import axios from "axios";
 import "../styles/SiLoLoc.css"
 import LocationForm from "./LocationForm";
 import useLocation from "../hooks/useLocation";
-import UseOwner from "../hooks/UseOwner";
+
 
 type EditFormProps = {
     owner: OwnerData

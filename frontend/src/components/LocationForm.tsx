@@ -1,6 +1,5 @@
-import {OwnerData} from "../entity/ownerData";
 import {LocationData} from "../entity/locationData";
-import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useState} from "react";
 import {
     Accordion, AccordionDetails,
     AccordionSummary, Box,
@@ -8,7 +7,6 @@ import {
     TextField, Typography,
 
 } from "@mui/material";
-import axios from "axios";
 import "../styles/SiLoLoc.css"
 
 type LocationFormProps = {
