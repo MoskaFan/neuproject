@@ -7,14 +7,12 @@ import useLocation from "../hooks/useLocation"
 import LocationGallery from "./LocationGallery"
 import SearchBar from "./SearchBar"
 
-type LocationAppProps={
-    user: OwnerData
-}
-export default function LocationApp(props: LocationAppProps){
+
+export default function LocationApp(){
     const [locations, setLocations] = useState<LocationData[]>([])
     const [searchCity, setSearchCity] = useState<string>("")
     const {id} = useParams()
-    const{getLocation, editLocation} = useLocation(id)
+    const{editLocation} = useLocation(id)
 
     useEffect(() => {
         getLocations()
@@ -67,7 +65,7 @@ export default function LocationApp(props: LocationAppProps){
 
     return (
         <div>
-            <h1>{props.user.username}</h1>
+            <h1>{owner.username}</h1>
             <img alt="location"
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
             <SearchBar searchCityFunction={handleSearchText} />

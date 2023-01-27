@@ -1,7 +1,6 @@
 import {OwnerData} from "../entity/ownerData";
 import {LocationData} from "../entity/locationData";
 import {useNavigate, useParams} from "react-router-dom";
-import axios from "axios";
 import "../styles/SiLoLoc.css"
 import LocationForm from "./LocationForm";
 import useLocation from "../hooks/useLocation";

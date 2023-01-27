@@ -2,7 +2,6 @@ import "./App.css"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import LoginPage from './components/LoginPage';
-import {LocationData} from './entity/locationData';
 import UseOwner from "./hooks/UseOwner";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
