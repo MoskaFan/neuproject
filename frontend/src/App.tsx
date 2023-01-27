@@ -29,7 +29,7 @@ function App() {
                 <Routes>
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
                     <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
-                    <Route path={"/locations"} element={<LocationApp user={owner} />}/>
+                    <Route path={"/locations"} element={<LocationApp />}/>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/locations/:id/edit"} element={ <EditForm owner={owner}/> }></Route>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
