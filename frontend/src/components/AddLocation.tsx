@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { LocationData } from "../entity/locationData";
 import { OwnerData } from "../entity/ownerData";
 import LocationForm from "./LocationForm";
+import "../styles/SiLoLoc.css"
 
 type AddLocationProps = {
     owner: OwnerData
