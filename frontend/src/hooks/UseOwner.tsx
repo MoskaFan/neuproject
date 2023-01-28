@@ -42,7 +42,7 @@ export default function UseOwner() {
     }
 
     function addLocation(ownerId: string, newLocation: LocationData){
-        axios.put(API_URL + "locations/" + ownerId, newLocation)
+        axios.put(API_URL + "locations/owner/" + ownerId, newLocation)
             .catch(console.error)
     }
 

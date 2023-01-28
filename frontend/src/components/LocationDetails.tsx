@@ -26,7 +26,6 @@ export default function LocationDetails() {
         if (id) {
             getLocationDetailsByID(id)
         }
-
     }, [id])
 
     function getLocationDetailsByID(id: string) {

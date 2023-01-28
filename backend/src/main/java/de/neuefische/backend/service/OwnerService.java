@@ -72,10 +72,6 @@ public class OwnerService implements UserDetailsService {
 
     }
 
-
-
-
-
     public Optional<Owner> getOwnerByUsername(Principal principal) {
         String username = principal.getName();
         return ownerRepository.findByUsername(username);
@@ -87,17 +83,14 @@ public class OwnerService implements UserDetailsService {
         for (Location oldLocation : owner.getLocations()) {
             if (oldLocation.getId().equals(locationId)) {
                 owner.getLocations().remove(oldLocation);
-                return owner;
-
+                return ownerRepository.save(owner);
             }
-
         }
        return owner;
     }
-    public Owner editLocation(String ownerId, String locationId, LocationDTO locationDTO) {
-        // @ts-ignore
-        Owner owner = getOwnerById(ownerId);
+    public Owner editLocation(Principal principal, String locationId, LocationDTO locationDTO) {
 
+        Owner owner = ownerRepository.findByUsername(principal.getName()).orElseThrow();
         Location location = new Location(locationId, locationDTO.name(),
                 locationDTO.image(), locationDTO.description(),
                 locationDTO.website(),
@@ -105,11 +98,13 @@ public class OwnerService implements UserDetailsService {
                 locationDTO.eventType(), locationDTO.maxCapacity(),
                 locationDTO.address(), locationDTO.startDate(),
                 locationDTO.endDate());
-        owner = deleteLocationInOwnerData(ownerId, locationId);
-        owner.getLocations().add(location);
+
         locationRepository.deleteById(locationId);
         locationRepository.save(location);
-        // @ts-ignore
+
+        owner = deleteLocationInOwnerData(owner.getId(), locationId);
+        owner.getLocations().add(location);
+
         return ownerRepository.save(owner);
     }
 

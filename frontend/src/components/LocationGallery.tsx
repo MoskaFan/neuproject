@@ -7,7 +7,7 @@ import {Box, Container} from "@mui/material";
 type LocationGalleryProps = {
     locationList: LocationData[]
     deleteLocation(locationId: string): void
-    editLocation(ownerId: string, locationId: string, location: LocationData): void
+    editLocation(locationId: string, location: LocationData): void
 }
 
 export default function LocationGallery(props: LocationGalleryProps) {

@@ -10,7 +10,7 @@ import InfoIcon from '@mui/icons-material/Info';
 type LocationCardProps = {
     location: LocationData
     removeLocation(locationId: string): void
-    editLocation(ownerId: string, locationId: string, location: LocationData): void
+    editLocation(locationId: string, location: LocationData): void
 }
 
 

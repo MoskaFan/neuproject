@@ -24,7 +24,7 @@ export default function EditForm(props: EditFormProps) {
     console.log("EditForm: ", getLocation)
 
     function submitLocation(location: LocationData){
-        editLocation(props.owner.id!, location.id!, location)
+        editLocation(location.id!, location)
         navigate("/locations/" + id)
     }
 

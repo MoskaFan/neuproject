@@ -50,7 +50,7 @@ export default function LocationApp(){
     }
 
     function deleteLocation(locationId: string) {
-        return axios.delete("/api/owners/locations/" + locationId)
+        return axios.delete("/api/owners/locations/location/" + locationId)
             .then(response => response.data)
             .then(data => {
                 setOwner(data)
@@ -65,7 +65,6 @@ export default function LocationApp(){
 
     return (
         <div>
-            <h1>{owner.username}</h1>
             <img alt="location"
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
             <SearchBar searchCityFunction={handleSearchText} />

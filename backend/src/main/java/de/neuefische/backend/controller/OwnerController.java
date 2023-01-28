@@ -35,7 +35,7 @@ public class OwnerController {
         return ownerService.getOwnerByUsername(username);
     }
 
-    @PutMapping("/locations/{ownerId}")
+    @PutMapping("/locations/owner/{ownerId}")
     public Owner addLocation(@PathVariable String ownerId, @RequestBody LocationDTO locationDTO) {
         return ownerService.addLocation(ownerId, locationDTO);
     }
@@ -60,17 +60,17 @@ public class OwnerController {
         return ownerService.getOwnerByUsername(principal);
     }
 
-    @PutMapping("/locations/{ownerId}/{locationId}")
-    public Owner editLocation(@PathVariable String ownerId,
+    @PutMapping("/locations/location/{locationId}")
+    public Owner editLocation(Principal principal,
                                     @PathVariable String locationId, @RequestBody LocationDTO locationDTO) {
 
-    return ownerService.editLocation(ownerId, locationId, locationDTO);
+    return ownerService.editLocation(principal, locationId, locationDTO);
     }
-    @DeleteMapping ("/locations/{locationId}")
+    @DeleteMapping ("/locations/location/{locationId}")
     public Owner deleteLocation(Principal principal,
                               @PathVariable String locationId) {
 
-        return ownerService.deleteLocation( principal, locationId);
+        return ownerService.deleteLocation(principal, locationId);
     }
 }
 
