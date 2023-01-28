@@ -25,22 +25,6 @@ export default function LocationApp(){
             })
     }
 
-    const [owner, setOwner] = useState<OwnerData>({
-        id: "",
-        username: "",
-        email: "",
-        password: "",
-        locations: []
-    })
-
-    useEffect(() => {
-        axios.get("/api/owners/login/owner")
-            .then(response => response.data)
-            .then(data => {
-                setOwner(data)
-            })
-    }, [])
-
 
     const filteredSearch = locations.filter((location) =>
         location.address!.city.toLowerCase().includes(searchCity.toLowerCase()));
@@ -52,9 +36,6 @@ export default function LocationApp(){
     function deleteLocation(locationId: string) {
         return axios.delete("/api/owners/locations/location/" + locationId)
             .then(response => response.data)
-            .then(data => {
-                setOwner(data)
-            })
             .then(() => {
                 setLocations([...locations].filter((location: LocationData) =>
                     location.id! !==locationId))
