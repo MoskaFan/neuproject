@@ -87,7 +87,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/locations/10")
+        mockMvc.perform(put("/api/owners/locations/owner/10")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {"name": "name",
@@ -163,7 +163,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(delete("/api/owners/locations/140").with(csrf()))
+        mockMvc.perform(delete("/api/owners/locations/location/140").with(csrf()))
                 .andExpect(status().isOk());
 
     }
@@ -180,7 +180,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/locations/10/140").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(put("/api/owners/locations/location/140").contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
                                 "id":"140",
