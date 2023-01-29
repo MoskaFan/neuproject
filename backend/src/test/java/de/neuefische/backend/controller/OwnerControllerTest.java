@@ -4,10 +4,10 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.neuefische.backend.modelle.Address;
-import de.neuefische.backend.modelle.Location;
-import de.neuefische.backend.modelle.Owner;
-import de.neuefische.backend.modelle.OwnerDTO;
+import de.neuefische.backend.model.Address;
+import de.neuefische.backend.model.Location;
+import de.neuefische.backend.model.Owner;
+import de.neuefische.backend.model.OwnerDTO;
 import de.neuefische.backend.repository.OwnerRepository;
 import de.neuefische.backend.service.IDGeneratorService;
 import org.junit.jupiter.api.Test;
@@ -67,15 +67,14 @@ class OwnerControllerTest {
     @DirtiesContext
     @WithMockUser(username = "StandardUser")
     void when_positive_then_user_is_logged_in() throws Exception {
-        mockMvc.perform(post("/api/owners/login").contentType(MediaType.APPLICATION_JSON).content("""
-                        {
-                             "username": "StandardUser",
-                             "password": "password",
-                             "email": "test@test.com"
-                        }
-                                """).with(csrf())).andExpect(status().isOk())
-                .andExpect(content().string("StandardUser"));
-
+        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
+                "password", new ArrayList<>());
+        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
+                ownerDTO.password(), ownerDTO.locations());
+        ownerRepository.save(owner);
+        mockMvc.perform(post("/api/owners/login/")
+                                .with(csrf()))
+                .andExpect(status().isOk());
     }
 
     @Test
@@ -87,27 +86,30 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/locations/owner/10")
+        mockMvc.perform(put("/api/owners/locations/owner/" + ownerDTO.username())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {"name": "name",
-                                "image": "image",
-                                "description": "description",
-                                "website": "website",
-                                "pricePerPerson":"120",
-                                "size": 20,
-                                "eventType":"Hochzeit",
-                                "maxCapacity": 50,
-                                "address": {
-                                "country": "Deutschland",
-                                "city": "Hamburg",
-                                "zipCode": "00000",
-                                "street": "Test Street",
-                                "houseNumber": "12"}}
+                                {"name":"name",
+                         "image":"image",
+                         "description":"description",
+                         "website":"website",
+                         "pricePerPerson":"120",
+                         "size":20,
+                         "eventType":"Hochzeit",
+                         "maxCapacity":50,
+                         "address":
+                         {
+                         "country":"Deutschland",
+                         "city":"Hamburg",
+                         "zipCode":"00000",
+                         "street":"Test Street",
+                         "houseNumber":"12"},
+                         "startDate": null,
+                         "endDate": null}
                                 """).with(csrf()))
                 .andExpect(status().isOk())
                 .andExpect(content().json("""
-                         {"id":"10",
+                         {
                          "username":"StandardUser",
                          "email":"test@test.com",
                          "password":"password",
@@ -132,13 +134,26 @@ class OwnerControllerTest {
                         """));
     }
 
-    @WithMockUser(username = "username")
+    @WithMockUser(username = "StandardUser")
     @Test
     @DirtiesContext
     void when_positive_then_the_username_of_owner_is_determined() throws Exception {
+        OwnerDTO ownerDTO = new OwnerDTO("StandardUser", "test@test.com",
+                "password", new ArrayList<>());
+        Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
+                ownerDTO.password(), ownerDTO.locations());
+        ownerRepository.save(owner);
         mockMvc.perform(get("/api/owners/login/me"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("username"));
+                .andExpect(content().json("""
+                         {
+                         "username":"StandardUser",
+                         "email":"test@test.com",
+                         "password":"password",
+                         "locations":[]}
+
+                        """));
+
     }
 
     @Test
@@ -147,7 +162,14 @@ class OwnerControllerTest {
 
         mockMvc.perform(get("/api/owners/login/me"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("Anonymous User"));
+                .andExpect(content().json("""
+                         {
+                         "username":"anonymousUser",
+                         "email":"",
+                         "password":"",
+                         "locations":[]}
+
+                        """));
     }
 
     @Test
@@ -163,7 +185,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(delete("/api/owners/locations/location/140").with(csrf()))
+        mockMvc.perform(delete("/api/owners/locations/owner/10/location/140").with(csrf()))
                 .andExpect(status().isOk());
 
     }
@@ -180,7 +202,7 @@ class OwnerControllerTest {
         Owner owner = new Owner("10", ownerDTO.username(), ownerDTO.email(),
                 ownerDTO.password(), ownerDTO.locations());
         ownerRepository.save(owner);
-        mockMvc.perform(put("/api/owners/locations/location/140").contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(put("/api/owners/locations/owner/10/location/140").contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
                                 "id":"140",

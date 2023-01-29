@@ -1,8 +1,8 @@
 package de.neuefische.backend.service;
 
-import de.neuefische.backend.modelle.Address;
-import de.neuefische.backend.modelle.Location;
-import de.neuefische.backend.modelle.Owner;
+import de.neuefische.backend.model.Address;
+import de.neuefische.backend.model.Location;
+import de.neuefische.backend.model.Owner;
 import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.repository.OwnerRepository;
 import org.junit.jupiter.api.Test;

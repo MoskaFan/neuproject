@@ -2,9 +2,11 @@ import axios from "axios"
 import {useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { LocationData } from "../entity/locationData"
+import { OwnerData } from "../entity/ownerData"
 import useLocation from "../hooks/useLocation"
 import LocationGallery from "./LocationGallery"
 import SearchBar from "./SearchBar"
+
 
 
 export default function LocationApp(){
@@ -49,7 +51,9 @@ export default function LocationApp(){
                  src="https://www.eventano.com/app/uploads/2021/08/freiheit15-trauung-1680x600.jpg"/>
             <SearchBar searchCityFunction={handleSearchText} />
             <LocationGallery deleteLocation={deleteLocation} locationList={filteredSearch}
-                             editLocation={editLocation}  />
+                             editLocation={editLocation} />
         </div>
     )
 }
+
+

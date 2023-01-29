@@ -8,6 +8,7 @@ import {
 
 } from "@mui/material";
 import "../styles/SiLoLoc.css"
+import { OwnerData } from "../entity/ownerData";
 
 type LocationFormProps = {
     location: LocationData

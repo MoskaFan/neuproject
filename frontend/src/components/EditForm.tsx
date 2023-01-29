@@ -6,11 +6,8 @@ import LocationForm from "./LocationForm";
 import useLocation from "../hooks/useLocation";
 
 
-type EditFormProps = {
-    owner: OwnerData
-}
 
-export default function EditForm(props: EditFormProps) {
+export default function EditForm() {
     const navigate = useNavigate();
 
     const {id} = useParams()
@@ -25,7 +22,7 @@ export default function EditForm(props: EditFormProps) {
 
     function submitLocation(location: LocationData){
         editLocation(location.id!, location)
-        navigate("/locations/" + id)
+        navigate("/" )
     }
 
     return (

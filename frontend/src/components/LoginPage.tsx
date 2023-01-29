@@ -3,10 +3,12 @@ import {Box, Button, TextField, Typography} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 import "../styles/SiLoLoc.css"
 import {LoginData} from "../entity/loginData";
+import { OwnerData } from "../entity/ownerData";
 
 
 type LoginPageProps = {
-    login: (owner: LoginData) => Promise<void>
+    login: (owner: LoginData) => Promise<void | OwnerData>
+    owner: OwnerData
 }
 
 export default function LoginPage(props: LoginPageProps) {

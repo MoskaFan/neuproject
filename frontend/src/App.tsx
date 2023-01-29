@@ -15,7 +15,7 @@ import LocationApp from "./components/LocationApp";
 
 function App() {
 
-    const {owner, username, addLocation, login, addOwner, logout} = UseOwner()
+    const {loggedInOwner, addLocation, login, addOwner, logout} = UseOwner()
 
 
 
@@ -24,17 +24,16 @@ function App() {
             <section className={"app"}>
             <NavigationBar logout={logout}/>
             <section className={"content"}>
-            <Typography>Hello {username}</Typography>
-
+                <Typography>Hello {loggedInOwner.username}</Typography>
                 <Routes>
                     <Route path={"/owners/register"} element={<SignUp addOwner={addOwner}/>}/>
-                    <Route path={"/owners/login"} element={<LoginPage login={login}/>}/>
-                    <Route path={"/locations"} element={<LocationApp />}/>
+                    <Route path={"/owners/login"} element={<LoginPage login={login} owner={loggedInOwner}/>}/>
+                    <Route path={"/locations"} element={<LocationApp  />}/>
                     <Route path={"/"} element={<Home/>}/>
-                    <Route path={"/locations/:id/edit"} element={ <EditForm owner={owner}/> }></Route>
+                    <Route path={"/locations/:id/edit"} element={ <EditForm /> }></Route>
                     <Route path={"/locations/:id"} element={<LocationDetails/>}></Route>
 
-                    <Route path={"/locations/add"} element={<AddLocation owner={owner}
+                    <Route path={"/locations/add"} element={<AddLocation
                                                                      addLocation={addLocation}/>} ></Route>
                 </Routes>
             </section>

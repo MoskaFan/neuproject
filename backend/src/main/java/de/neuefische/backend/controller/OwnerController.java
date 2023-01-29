@@ -1,9 +1,10 @@
 package de.neuefische.backend.controller;
-
-import de.neuefische.backend.modelle.LocationDTO;
-import de.neuefische.backend.modelle.Owner;
-import de.neuefische.backend.modelle.OwnerDTO;
+import de.neuefische.backend.model.LocationDTO;
+import de.neuefische.backend.model.Owner;
+import de.neuefische.backend.model.OwnerDTO;
 import de.neuefische.backend.service.OwnerService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,8 +26,8 @@ public class OwnerController {
         return ownerService.addOwner(ownerDTO);
     }
 
-    @PostMapping("/login")
-    public String login() {
+    @PostMapping("/login/")
+    public Object login() {
         return SecurityContextHolder.getContext().getAuthentication().getName();
     }
 
@@ -35,25 +36,27 @@ public class OwnerController {
         return ownerService.getOwnerByUsername(username);
     }
 
-    @PutMapping("/locations/owner/{ownerId}")
-    public Owner addLocation(@PathVariable String ownerId, @RequestBody LocationDTO locationDTO) {
-        return ownerService.addLocation(ownerId, locationDTO);
+    @PutMapping("/locations/location/")
+    public OwnerDTO addLocation(Principal principal, @RequestBody LocationDTO locationDTO) {
+        return ownerService.addLocation(principal, locationDTO);
     }
 
     @GetMapping("/login/me")
-    public String helloMe(Principal principal) {
+    public ResponseEntity<OwnerDTO> helloMe(Principal principal) {
         if (principal != null) {
-            return principal.getName();
+            return new ResponseEntity<>(ownerService.getOwnerInfo(principal.getName()), HttpStatus.OK);
         }
-        return "Anonymous User";
+        return new ResponseEntity<>(ownerService.returnAnonymousUser(), HttpStatus.OK);
     }
+
 
     @PostMapping("/logout")
     public String logout(HttpSession httpSession) {
         httpSession.invalidate();
         SecurityContextHolder.clearContext();
-        return "Anonymous User";
+        return "anonymousUser";
     }
+
 
     @GetMapping("/login/owner")
     public Optional<Owner> getOwnerByUsername(Principal principal) {
@@ -61,14 +64,13 @@ public class OwnerController {
     }
 
     @PutMapping("/locations/location/{locationId}")
-    public Owner editLocation(Principal principal,
-                                    @PathVariable String locationId, @RequestBody LocationDTO locationDTO) {
+    public Owner editLocation(Principal principal, @PathVariable String locationId,
+                              @RequestBody LocationDTO locationDTO) {
 
     return ownerService.editLocation(principal, locationId, locationDTO);
     }
     @DeleteMapping ("/locations/location/{locationId}")
-    public Owner deleteLocation(Principal principal,
-                              @PathVariable String locationId) {
+    public Owner deleteLocation(Principal principal, @PathVariable String locationId) {
 
         return ownerService.deleteLocation(principal, locationId);
     }

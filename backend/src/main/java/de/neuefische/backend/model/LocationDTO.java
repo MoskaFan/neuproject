@@ -1,4 +1,4 @@
-package de.neuefische.backend.modelle;
+package de.neuefische.backend.model;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

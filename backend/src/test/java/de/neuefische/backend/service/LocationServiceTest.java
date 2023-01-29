@@ -1,6 +1,6 @@
 package de.neuefische.backend.service;
-import de.neuefische.backend.modelle.Address;
-import de.neuefische.backend.modelle.Location;
+import de.neuefische.backend.model.Address;
+import de.neuefische.backend.model.Location;
 import de.neuefische.backend.repository.LocationRepository;
 import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;

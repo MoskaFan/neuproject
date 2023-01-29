@@ -1,5 +1,5 @@
 package de.neuefische.backend.service;
-import de.neuefische.backend.modelle.Location;
+import de.neuefische.backend.model.Location;
 import de.neuefische.backend.repository.LocationRepository;
 import org.springframework.stereotype.Service;
 

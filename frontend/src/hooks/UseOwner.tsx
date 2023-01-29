@@ -10,20 +10,32 @@ const API_URL = "/api/owners/";
 
 export default function UseOwner() {
 
+    const emptyOwner: OwnerData = {
+        "username": "anonymousUser",
+        "email": "",
+        "password": "",
+        "locations": []
+    }
 
+    const [loggedInOwner, setLoggedInOwner] = useState<OwnerData>(emptyOwner)
     const [username, setUsername] = useState<string>("")
 
     useEffect(() => {
-        axios.get("/api/owners/login/me/")
-            .then(response => response.data)
-            .then(data => {
-                setUsername(data)
-            })
+        if (loggedInOwner.username !== "anonymousUser") {
+            (axios.get(API_URL + "login/me/"))
+                .then(response => response.data)
+                .then(owner => {
+                    setLoggedInOwner(owner)
+                })
+                .catch(console.error)
+        }
+
     }, [])
 
-    function login(newOwner: LoginData): Promise<void> {
 
-        return axios.post(API_URL + "login", undefined, {
+    function login(newOwner: OwnerData): Promise<OwnerData> {
+
+        return axios.post(API_URL + "login/", undefined, {
             auth: {
                 username: newOwner.username,
                 password: newOwner.password
@@ -31,44 +43,39 @@ export default function UseOwner() {
         })
             .then(response => response.data)
             .then(data => {
-                setUsername(data)
+                setLoggedInOwner(data)
                 return data
             })
+            .catch(console.error)
     }
+    console.log(loggedInOwner)
 
     function addOwner(newUser: OwnerData) {
         axios.post(API_URL, newUser)
             .catch(console.error)
     }
 
-    function addLocation(ownerId: string, newLocation: LocationData){
-        axios.put(API_URL + "locations/owner/" + ownerId, newLocation)
+    function addLocation(newLocation: LocationData){
+        axios.put(API_URL + "locations/location/", newLocation)
+            .then(response => response.data)
+            .then(owner => {
+                setLoggedInOwner(owner)
+                return owner
+            })
             .catch(console.error)
     }
 
     function logout(): Promise<string>{
         return axios.post("/api/owners/logout")
             .then((response) => response.data)
-            .then((data) => {
-                setUsername(data)
-                return data
+            .then(owner => {
+                setLoggedInOwner(owner)
+                return owner
             })
+            .catch(console.error)
     }
-    const [owner, setOwner] = useState<OwnerData>({
-        id: "",
-        username: "",
-        email: "",
-        password: "",
-        locations: []
-    })
 
-    useEffect(() => {
-        axios.get("/api/owners/login/owner")
-            .then(response => response.data)
-            .then(data => {
-                setOwner(data)
-            })
-    }, [])
 
-    return { owner, username, login, addOwner, logout, addLocation}
+
+    return {loggedInOwner, login, addOwner, logout, addLocation}
 }

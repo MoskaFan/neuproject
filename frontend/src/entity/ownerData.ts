@@ -1,10 +1,10 @@
 import {LocationData} from "./locationData";
 
 export type OwnerData ={
-    id?:"",
-    username:"",
-    email?:"",
-    password?:"",
+    id?:string,
+    username:string,
+    email?:string,
+    password:string,
     locations?: LocationData[]
 
 }

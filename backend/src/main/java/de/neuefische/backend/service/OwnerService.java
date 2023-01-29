@@ -1,6 +1,6 @@
 package de.neuefische.backend.service;
 
-import de.neuefische.backend.modelle.*;
+import de.neuefische.backend.model.*;
 import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.repository.OwnerRepository;
 import org.springframework.security.core.userdetails.User;
@@ -11,9 +11,7 @@ import org.springframework.security.crypto.argon2.Argon2PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.security.Principal;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+import java.util.*;
 
 
 @Service
@@ -44,16 +42,23 @@ public class OwnerService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Owner owner = ownerRepository.findByUsername(username)
+        return ownerRepository.findByUsername(username)
+                .map(foundOwner -> new User(foundOwner.getUsername(), foundOwner.getPassword(),
+                        List.of()))
                 .orElseThrow(() -> new UsernameNotFoundException("User with username: "
                         + username + " not found!"));
 
-        return new User(owner.getUsername(), owner.getPassword(), List.of());
+        }
+
+    public OwnerDTO returnAnonymousUser() {
+        List<Location> locations = new ArrayList<>();
+        return new OwnerDTO("anonymousUser", "", "", locations);
     }
 
-    public Owner addLocation(String ownerId,
+
+    public OwnerDTO addLocation(Principal principal,
                              LocationDTO locationDTO) {
-        Owner owner = getOwnerById(ownerId);
+        Owner owner = ownerRepository.findByUsername(principal.getName()).orElseThrow();
         String id = idGenerator.generateID();
         Location location = new Location(id, locationDTO.name(),
                 locationDTO.image(), locationDTO.description(),
@@ -64,7 +69,9 @@ public class OwnerService implements UserDetailsService {
                 locationDTO.endDate());
         owner.getLocations().add(location);
         locationRepository.save(location);
-        return ownerRepository.save(owner);
+        ownerRepository.save(owner);
+        return new OwnerDTO(owner.getUsername(), owner.getEmail(),
+                owner.getPassword(), owner.getLocations());
     }
 
     private Owner getOwnerById(String ownerId) {
@@ -88,7 +95,8 @@ public class OwnerService implements UserDetailsService {
         }
        return owner;
     }
-    public Owner editLocation(Principal principal, String locationId, LocationDTO locationDTO) {
+    public Owner editLocation(Principal principal, String locationId,
+                          LocationDTO locationDTO) {
 
         Owner owner = ownerRepository.findByUsername(principal.getName()).orElseThrow();
         Location location = new Location(locationId, locationDTO.name(),
@@ -117,6 +125,13 @@ public class OwnerService implements UserDetailsService {
     }
 
 
+    public OwnerDTO getOwnerInfo(String username) {
+        Owner owner = ownerRepository.findByUsername(username)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(username)
+                );
+        return new OwnerDTO(owner.getUsername(), owner.getEmail(), owner.getPassword(), owner.getLocations());
+    }
 }
 
 

@@ -1,7 +1,7 @@
 package de.neuefische.backend.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import de.neuefische.backend.modelle.Address;
-import de.neuefische.backend.modelle.Location;
+import de.neuefische.backend.model.Address;
+import de.neuefische.backend.model.Location;
 import de.neuefische.backend.repository.LocationRepository;
 import de.neuefische.backend.service.IDGeneratorService;
 import org.junit.jupiter.api.Test;

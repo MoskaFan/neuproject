@@ -2,6 +2,7 @@ import {LocationData} from "../entity/locationData";
 import LocationCard from "./LocationCard";
 import "../styles/Gallery.css"
 import {Box, Container} from "@mui/material";
+import { OwnerData } from "../entity/ownerData";
 
 
 type LocationGalleryProps = {
@@ -17,7 +18,7 @@ export default function LocationGallery(props: LocationGalleryProps) {
         <Container>
             <Box className={"form"}>
                 <section className={"cards"}>
-                    <div className={"cards"}>
+                    <div >
                         {props.locationList.map(location => (
                             <LocationCard location={location} key={location.id}
                                           editLocation={props.editLocation}
